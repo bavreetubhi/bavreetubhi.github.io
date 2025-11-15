@@ -1,31 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- HEAD (common) -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Bavreet Ubhi</title>
+  <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
   <div id="navbar-placeholder"></div>
 
-  <section class="hero" style="--hero-height: 60vh;">
+  <!-- ===== HERO ===== -->
+  <section class="hero hero-about">
     <div class="hero-content">
-      <h1>About Me</h1>
-      <h2>Engineering & Innovation</h2>
+      <h1>About</h1>
+      <h2>Propulsion Engineer | Innovator | Builder</h2>
     </div>
   </section>
 
-  <section class="white-block" style="--white-block-height: 80vh;">
-    <div class="white-content">
-      <h2>Background</h2>
-      <p>I focus on hybrid propulsion, composites, and test operations...</p>
+  <!-- ===== ABOUT SECTION ===== -->
+  <section class="experience-section">
+    <div class="experience-container">
+      <div class="experience-left">
+        <h2>Who I Am</h2>
+        <p>
+          I’m an aerospace engineering student and propulsion engineer focused on designing, testing, and optimizing
+          high-performance hybrid rocket systems. My work spans from composite pressure vessels and feed systems to
+          combustion analysis and regenerative cooling.
+        </p>
+        <p>
+          I’m passionate about bridging theory and manufacturing — combining analytical modeling with practical testing
+          to create reliable, efficient, and elegant engineering systems.
+        </p>
+      </div>
+
+      <div class="experience-right">
+        <div class="exp-item">
+          <h3>Engineering Philosophy</h3>
+          <p>
+            “Design isn’t just about solving problems — it’s about discovering how materials, geometry, and physics can
+            work together to push limits safely.”
+          </p>
+        </div>
+        <div class="exp-item">
+          <h3>Focus Areas</h3>
+          <ul style="color:#333; line-height:1.8;">
+            <li>Hybrid propulsion design and optimization</li>
+            <li>Structural composites and stress analysis</li>
+            <li>Thermal management and fluid systems</li>
+            <li>Simulation-driven design (C++, MATLAB, Ansys)</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
-  <script src="js/script.js"></script>
+  <!-- Load shared navbar -->
+  <script>
+    fetch('navbar.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+        const script = document.createElement('script');
+        script.src = "js/script.js";
+        document.body.appendChild(script);
+      });
+  </script>
 </body>
 </html>

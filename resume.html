@@ -1,31 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- HEAD (common) -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Resume | Bavreet Ubhi</title>
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
+
 <body>
   <div id="navbar-placeholder"></div>
 
-  <section class="hero" style="--hero-height: 50vh;">
+  <!-- ===== HERO ===== -->
+  <section class="hero hero-about">
     <div class="hero-content">
       <h1>Resume</h1>
-      <h2>Experience & Education</h2>
+      <h2>Experience | Education | Skills</h2>
     </div>
   </section>
 
-  <section class="white-block" style="--white-block-height: 80vh;">
-    <div class="white-content">
-      <h2>Download</h2>
-      <p>Grab the PDF or browse highlights below.</p>
+  <!-- ===== RESUME SECTION ===== -->
+  <section class="experience-section">
+    <div class="experience-container">
+      <div class="experience-left">
+        <h2>Education</h2>
+        <p><strong>Monash University</strong> – Bachelor of Aerospace Engineering (Honours)<br>Focus on propulsion, thermofluids, and structural design.</p>
+        <p><strong>The Geelong College</strong> – VCE Graduate<br>Developed foundation in STEM and applied physics through project-based learning.</p>
+      </div>
+
+      <div class="experience-right">
+        <div class="exp-item">
+          <h3>2023 – PRESENT</h3>
+          <h4>Monash HPR – Propulsion Engineer</h4>
+          <p>Leading the design of pressurant systems, COPVs, and hybrid propulsion assemblies. Managing testing documentation and system validation workflows.</p>
+        </div>
+        <div class="exp-item">
+          <h3>2020 – 2024</h3>
+          <h4>Independent Engineering Projects</h4>
+          <p>Built multiple analysis and visualization tools in Python, MATLAB, and C++ to model structural performance and optimize design efficiency.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <script src="js/script.js"></script>
+  <!-- Load shared navbar -->
+  <script>
+    fetch('navbar.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+        const script = document.createElement('script');
+        script.src = "js/script.js";
+        document.body.appendChild(script);
+      });
+  </script>
 </body>
 </html>

@@ -1,22 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- HEAD (common) -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home | Bavreet Ubhi</title>
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <title>Bavreet Ubhi | Portfolio</title>
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-  <div id="navbar-placeholder"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="site-header">
+    <nav class="nav">
+      <div class="logo">Bavreet Ubhi | Portfolio</div>
+
+      <!-- Hamburger icon -->
+      <div class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+
+      <!-- Nav links -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <!-- ===== HERO SECTION ===== -->
-  <section class="hero" style="--hero-height: 100vh;">
+  <section class="hero hero-home">
     <div class="hero-content">
       <h1>Bavreet Ubhi</h1>
       <h2>Aerospace Engineering Student</h2>
+
       <a href="resume.html" class="btn">View Resume</a>
 
       <div class="socials">
@@ -27,20 +45,13 @@
     </div>
   </section>
 
-  <!-- ===== EXPERIENCE SECTION ===== -->
+  <!-- ===== EXPERIENCE ===== -->
   <section class="experience-section">
     <div class="experience-container">
       <div class="experience-left">
         <h2>Aerospace Engineering Student</h2>
-        <p>
-          As an aerospace engineering student, I'm driven by curiosity for how systems come together,
-          from design theory to full-scale testing. My focus lies in understanding the relationships
-          between materials, structure, and performance.
-        </p>
-        <p>
-          Through Monash HPR and independent projects, I aim to bridge analytical thinking with
-          hands-on experimentation.
-        </p>
+        <p>As an aerospace engineering student, I’m driven by curiosity for how systems come together, from design theory to full-scale testing. My focus lies in understanding the relationships between materials, structure, and performance, and how small design decisions scale into real engineering impact.</p>
+        <p>Through Monash HPR and independent projects, I aim to bridge analytical thinking with hands-on experimentation.</p>
       </div>
 
       <div class="experience-right">
@@ -49,16 +60,19 @@
           <h4>Monash HPR</h4>
           <p>Leading design of COPVs, pressurant systems, and structural interfaces.</p>
         </div>
+
         <div class="exp-item">
           <h3>2020 – 2024</h3>
           <h4>Singh & Dollys</h4>
           <p>Developed strong attention to detail, process discipline, and time management.</p>
         </div>
+
         <div class="exp-item">
           <h3>2018 – 2020</h3>
           <h4>Independent Projects</h4>
-          <p>Learnt the fundamentals of CAD, design, manufacturing and testing.</p>
+          <p>Learnt fundamentals of CAD, design, manufacturing, and testing.</p>
         </div>
+
         <div class="exp-item">
           <h3>2019 – 2022</h3>
           <h4>The Geelong College</h4>
@@ -68,60 +82,21 @@
     </div>
   </section>
 
-  <!-- ===== IMAGE CAROUSEL ===== -->
+  <!-- ===== CAROUSEL ===== -->
   <section class="carousel-section">
     <h2>Project Highlights</h2>
     <div class="carousel-container">
-      <div class="carousel-slide">
+      <div class="carousel-slide" id="carousel-slide">
         <img src="assets/carousel/carousel1.jpg" alt="Project 1">
         <img src="assets/carousel/carousel2.jpg" alt="Project 2">
         <img src="assets/carousel/carousel3.jpg" alt="Project 3">
         <img src="assets/carousel/carousel4.jpg" alt="Project 4">
         <img src="assets/carousel/carousel5.jpg" alt="Project 5">
-        <img src="assets/carousel/carousel1.jpg" alt="Project 6">
       </div>
     </div>
   </section>
 
-  <script src="js/script.js"></script>
-
-  <!-- ===== SKILLS SECTION ===== -->
-  <section class="skills-section">
-    <h2>Key skills and experience</h2>
-    <p class="skills-intro">
-      Propulsion engineer with hands-on experience in hybrid engine design, composite manufacturing, and test operations.
-      Skilled in CAD, FEA, and CNC machining, with proven ability to collaborate across teams
-      and deliver innovative, high-performance engineering solutions.
-    </p>
-
-    <div class="skills-grid">
-      <div class="skill-item">
-        <i class="fa-solid fa-drafting-compass"></i>
-        <h3>CAD & Simulation</h3>
-        <p>Skilled in 3D modelling and structural analysis using Fusion 360, Creo, and Ansys.</p>
-      </div>
-
-      <div class="skill-item">
-        <i class="fa-solid fa-layer-group"></i>
-        <h3>Composite Production</h3>
-        <p>Experienced in layups, curing, and structural testing of advanced materials.</p>
-      </div>
-
-      <div class="skill-item">
-        <i class="fa-solid fa-screwdriver-wrench"></i>
-        <h3>Precision Machining</h3>
-        <p>Proficient in CNC and manual machining for high-tolerance components.</p>
-      </div>
-
-      <div class="skill-item">
-        <i class="fa-solid fa-chart-line"></i>
-        <h3>Testing & Operations</h3>
-        <p>Conducted hybrid engine tests, ensuring system safety and operational readiness.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== ABOUT / PROFILE SECTION ===== -->
+  <!-- ===== PROFILE ===== -->
   <section class="profile-section">
     <div class="profile-container">
       <div class="profile-image">
@@ -130,41 +105,108 @@
 
       <div class="profile-content">
         <h2>Bavreet Ubhi: Propulsion Engineer</h2>
-        <p>
-          Engineering student passionate about transforming ideas into functional, high-performance systems.
-          Experienced across the full design cycle, from concept modelling and composite prototyping to hands-on testing
-          and evaluation. I enjoy blending creative design with technical precision to build reliable, efficient propulsion hardware.
-        </p>
+        <p>Engineering student passionate about transforming ideas into functional, high-performance systems. Experienced across the full design cycle, From concept modelling and composite prototyping to hands-on testing and evaluation. I enjoy blending creative design with technical precision to build reliable, efficient propulsion hardware.</p>
 
         <h3>Design and Development Tools</h3>
-        <p>
-          Proficient in Fusion 360, Creo Parametric, and Ansys for CAD, simulation, and structural optimization.
-          Skilled in Python and MATLAB for data analysis, automation, and performance modelling, bridging digital design
-          with real-world results.
-        </p>
+        <p>Proficient in Fusion 360, Creo Parametric, and Ansys for CAD, simulation, and structural optimization. Skilled in Python and MATLAB for data analysis, automation, and performance modelling, bridging digital design with real-world results.</p>
 
         <h3>Manufacturing & Testing</h3>
-        <p>
-          Hands-on experience with manual/CNC machining, composite layups, and hybrid engines. Confident working in
-          fast-paced, safety-critical environments where accuracy and teamwork drive success.
-        </p>
-
-        <div class="software-logos">
-          <img src="assets/logos/fusion360.png" alt="Fusion 360">
-          <img src="assets/logos/creo.png" alt="Creo">
-          <img src="assets/logos/ansys.png" alt="Ansys">
-          <img src="assets/logos/matlab.png" alt="MATLAB">
-          <img src="assets/logos/python.png" alt="Python">
-          <img src="assets/logos/windows.png" alt="Windows">
-          <img src="assets/logos/photoshop.png" alt="Photoshop">
-          <img src="assets/logos/illustrator.png" alt="Illustrator">
-        </div>
+        <p>Hands-on experience with Manual/ CNC machining, composite layups, and hybrid engines. Confident working in fast-paced, safety-critical environments where accuracy and teamwork drive success.</p>
       </div>
+    </div>
+
+    <div class="software-logos">
+      <img src="assets/logos/fusion360.png" alt="Fusion 360">
+      <img src="assets/logos/creo.png" alt="Creo">
+      <img src="assets/logos/ansys.png" alt="Ansys">
+      <img src="assets/logos/matlab.png" alt="MATLAB">
+      <img src="assets/logos/python.png" alt="Python">
+      <img src="assets/logos/windows.png" alt="Windows">
+      <img src="assets/logos/photoshop.png" alt="Photoshop">
+      <img src="assets/logos/illustrator.png" alt="Illustrator">
+    </div>
+  </section>
+
+  <!-- ===== MOST RECENT PROJECT ===== -->
+  <section class="project-section">
+    <div class="project-header">
+      <h2 class="project-heading">Most Recent Project</h2>
+    </div>
+
+    <h3 class="project-subheading">Composite Overwrapped Combustion Chamber</h3>
+
+    <div class="project-block">
+      <img src="assets/images/solaris_banner.jpg" alt="Solaris MkIII Banner" class="project-image">
+      <p class="project-caption">
+        Solaris MkIII was the 3rd major iteration of the hybrid engine developed by Monash HPR. 
+        The combustion chamber was a type V COPV (Composite Overwrapped Pressure Vessel) designed 
+        to withstand 60 bar. A full suite of sims were completed to ensure structural integrity 
+        under operation. The chamber was tested at Race2Space using the Airborne test facility in the UK.
+      </p>
+    </div>
+
+    <div class="project-block">
+      <img src="assets/images/solaris_chamber.jpg" alt="Solaris MkIII Combustion Chamber" class="project-image">
+      <p class="project-caption">
+        This project represents countless hours of design, simulation, manufacturing, and testing 
+        while learning new skills. Over 500 hours have gone into making the composite combustion chamber a reality. 
+        The image above shows the finished chamber ready for integration and testing.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== OTHER PROJECTS ===== -->
+  <section class="other-projects">
+    <div class="project-header">
+      <h2 class="project-heading">Some Other Projects</h2>
+    </div>
+
+    <div class="other-projects-grid">
+
+      <a href="/projects/pallimustus" class="project-card">
+        <img src="assets/other/pallimustus.jpg" alt="Pallimustus">
+        <p>Pallimustus</p>
+      </a>
+
+      <a href="/projects/regen-nozzle" class="project-card">
+        <img src="assets/other/regen_nozzle.jpg" alt="NA Regen Nozzle">
+        <p>NA Regen Nozzle</p>
+      </a>
+
+      <a href="/projects/mini-copv" class="project-card">
+        <img src="assets/other/mini_copv.jpg" alt="Mini COPV">
+        <p>Mini COPV</p>
+      </a>
+
+      <a href="/projects/toothless" class="project-card">
+        <img src="assets/other/toothless.jpg" alt="Toothless">
+        <p>Toothless</p>
+      </a>
+
+      <a href="/projects/coffee-table" class="project-card">
+        <img src="assets/other/coffee_table.jpg" alt="PDT Coffee Table">
+        <p>PDT Coffee Table</p>
+      </a>
+
+      <a href="/projects/workbench" class="project-card">
+        <img src="assets/other/workbench.jpg" alt="PDT Work Bench">
+        <p>PDT Work Bench</p>
+      </a>
+
+      <a href="/projects/xxx1" class="project-card">
+        <img src="assets/other/xxx1.jpg" alt="XXX Project 1">
+        <p>XXX</p>
+      </a>
+
+      <a href="/projects/xxx2" class="project-card">
+        <img src="assets/other/xxx2.jpg" alt="XXX Project 2">
+        <p>XXX</p>
+      </a>
+
     </div>
   </section>
 
 
-
-
+  <script src="js/script.js"></script>
 </body>
 </html>

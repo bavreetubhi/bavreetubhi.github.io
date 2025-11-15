@@ -1,31 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- HEAD (common) -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects | Bavreet Ubhi</title>
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
+
 <body>
   <div id="navbar-placeholder"></div>
 
-  <section class="hero" style="--hero-height: 80vh;">
+  <!-- ===== HERO ===== -->
+  <section class="hero hero-projects">
     <div class="hero-content">
       <h1>Projects</h1>
-      <h2>Design • Simulation • Testing</h2>
+      <h2>Propulsion, Composite Design & Engineering</h2>
     </div>
   </section>
 
-  <section class="white-block" style="--white-block-height: 90vh;">
-    <div class="white-content">
-      <h2>Current Work</h2>
-      <p>Regenerative cooling, COPV optimization, and more.</p>
+  <!-- ===== PROJECT CONTENT ===== -->
+  <section class="experience-section">
+    <div class="experience-container">
+      <div class="experience-left">
+        <h2>Highlighted Work</h2>
+        <p>Explore a range of projects from COPV optimization and hybrid engine development to regenerative cooling and supersonic flow experiments. Each project combines simulation, testing, and data analysis to deliver high-performance results.</p>
+      </div>
+
+      <div class="experience-right">
+        <div class="exp-item">
+          <h3>2024</h3>
+          <h4>Composite Overwrapped Pressure Vessel Optimization</h4>
+          <p>Developed a C++ optimization tool using Eigen and ImGui to minimize mass and maximize safety factor under internal pressure loads.</p>
+        </div>
+        <div class="exp-item">
+          <h3>2023</h3>
+          <h4>Regenerative-Cooled Nozzle Design</h4>
+          <p>Simulated ethanol-based regenerative cooling using MATLAB and validated with RPA thermal data to improve cooling efficiency.</p>
+        </div>
+        <div class="exp-item">
+          <h3>2022</h3>
+          <h4>Supersonic Wind Tunnel Experiment</h4>
+          <p>Analyzed oblique shocks and expansion fans using Schlieren imaging and Prandtl-Meyer relations in MATLAB.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <script src="js/script.js"></script>
+  <!-- Load shared navbar -->
+  <script>
+    fetch('navbar.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+        const script = document.createElement('script');
+        script.src = "js/script.js";
+        document.body.appendChild(script);
+      });
+  </script>
 </body>
 </html>

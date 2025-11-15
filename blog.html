@@ -1,31 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- HEAD (common) -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog | Bavreet Ubhi</title>
+  <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
   <div id="navbar-placeholder"></div>
 
-  <section class="hero" style="--hero-height: 70vh;">
+  <!-- ===== HERO ===== -->
+  <section class="hero hero-projects">
     <div class="hero-content">
       <h1>Blog</h1>
-      <h2>Insights & Progress</h2>
+      <h2>Engineering Notes & Reflections</h2>
     </div>
   </section>
 
-  <section class="white-block" style="--white-block-height: 60vh;">
-    <div class="white-content">
-      <h2>Latest Posts</h2>
-      <p>Updates and deep dives coming soon.</p>
+  <!-- ===== BLOG SECTION ===== -->
+  <section class="experience-section">
+    <div class="experience-container" style="display: flex; flex-direction: column; gap: 40px; max-width: 900px;">
+      <article style="background: #fff; color:#111; padding:30px 40px; border-radius:8px; box-shadow:0 4px 10px rgba(0,0,0,0.08);">
+        <h3 style="color:#0c3d52;">🚀 Testing Day: Hybrid Engine Firing Prep</h3>
+        <p style="color:#333;">November 2025</p>
+        <p style="color:#444; line-height:1.7;">
+          With the final assembly ready, we ran a full validation checklist on all pressurant lines and oxidizer valves.
+          Next week’s static test will evaluate thrust efficiency and injector pressure delta using the new injector plate.
+        </p>
+      </article>
+
+      <article style="background: #fff; color:#111; padding:30px 40px; border-radius:8px; box-shadow:0 4px 10px rgba(0,0,0,0.08);">
+        <h3 style="color:#0c3d52;">🧩 Optimizing Composite Layup Angles</h3>
+        <p style="color:#333;">October 2025</p>
+        <p style="color:#444; line-height:1.7;">
+          Explored a binary search optimization algorithm for COPV layups in C++ using Eigen.
+          The result: a 7% reduction in mass while maintaining a FoS above 2.2 — verified against analytical stress models.
+        </p>
+      </article>
+
+      <article style="background: #fff; color:#111; padding:30px 40px; border-radius:8px; box-shadow:0 4px 10px rgba(0,0,0,0.08);">
+        <h3 style="color:#0c3d52;">💡 Thoughts on Engineering Workflow</h3>
+        <p style="color:#333;">August 2025</p>
+        <p style="color:#444; line-height:1.7;">
+          Balancing design and testing is a constant challenge — but it’s where the most rewarding learning happens.
+          Documenting every iteration is as valuable as the hardware itself.
+        </p>
+      </article>
     </div>
   </section>
 
-  <script src="js/script.js"></script>
+  <!-- Load shared navbar -->
+  <script>
+    fetch('navbar.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+        const script = document.createElement('script');
+        script.src = "js/script.js";
+        document.body.appendChild(script);
+      });
+  </script>
 </body>
 </html>
