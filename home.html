@@ -18,27 +18,11 @@
   <!-- ===== ICONS ===== -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
+
 <body>
 
-  <!-- ===== NAVBAR ===== -->
-  <header class="site-header">
-    <nav class="nav">
-      <div class="logo">Bavreet Ubhi | Portfolio</div>
-
-      <!-- Hamburger icon -->
-      <div class="menu-toggle" id="menu-toggle">
-        <i class="fas fa-bars"></i>
-      </div>
-
-      <!-- Nav links -->
-      <ul class="nav-links" id="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <!-- ===== LOAD NAVBAR ===== -->
+  <div id="navbar"></div>
 
   <!-- ===== HERO ===== -->
   <section class="hero hero-home">
@@ -138,81 +122,130 @@
     </div>
   </section>
 
- <!-- ===== MOST RECENT PROJECT ===== -->
-<section class="project-section">
-  <div class="project-header">
-    <h2 class="project-heading">Most Recent Project</h2>
-  </div>
+<!-- ===== MOST RECENT PROJECT ===== -->
+<section class="recent-project-section">
+  
+  <h2 class="recent-project-title">Most Recent Project</h2>
 
-  <h3 class="project-subheading">Composite Overwrapped Combustion Chamber</h3>
+  <h3 class="recent-project-subtitle">Composite Overwrapped Combustion Chamber</h3>
 
-  <div class="project-block">
-    <img src="assets/images/solaris_banner.jpg" alt="Solaris MkIII Banner" class="project-image">
-    <p class="project-caption">
-      Solaris MkIII was the 3rd major iteration of the hybrid engine developed by Monash HPR. 
-      The combustion chamber was a type V COPV (Composite Overwrapped Pressure Vessel) designed 
-      to withstand 60 bar. A full suite of sims were completed to ensure structural integrity 
-      under operation. The chamber was tested at Race2Space using the Airborne test facility in the UK.
+  <div class="recent-project-block">
+    <img src="assets/images/solaris_banner.jpg" alt="Solaris MkIII Banner">
+    <p>
+      Solaris MkIII was the 3rd major iteration of the hybrid engine developed my Monash HPR. 
+      The Combustion chamber was a type V COPV (Composite Overwrapped Pressure Vessel) designed to withstand 
+      60 Bar, a full suite of sims were completed in order to ensure structural integrity under operation. 
+      The chamber was tested at Race2space using the Airborne test facility in the UK.
     </p>
   </div>
 
-  <div class="project-block">
-    <img src="assets/images/solaris_chamber.jpg" alt="Solaris MkIII Combustion Chamber" class="project-image">
-    <p class="project-caption">
-      This project represents countless hours of design, simulation, manufacturing, and testing 
-      while learning new skills. Over 500 hours have gone into making the composite combustion chamber a reality. 
-      The image above shows the finished chamber ready for integration and testing.
+  <div class="recent-project-block">
+    <img src="assets/images/solaris_chamber.jpg" alt="Solaris MkIII Chamber">
+    <p>
+      This project represents countless hours of work designing, simulating, manufacturing and testing all while 
+      learning new skills. Over 500 hours have gone into making the composite combustion chamber a reality. 
+      The image above shows the combustion chamber assembled with the nozzle and forward closure ready to be 
+      sent off and static fired.
     </p>
   </div>
+
 </section>
 
+ 
+
 <!-- ===== OTHER PROJECTS ===== -->
-<section class="other-projects">
-  <div class="project-header">
-    <h2 class="project-heading">Some Other Projects</h2>
-  </div>
+<section class="other-projects-section">
+
+  <h2 class="other-projects-title">Some Other Projects</h2>
 
   <div class="other-projects-grid">
 
     <a href="/projects/pallimustus" class="project-card">
-      <img src="assets/other/pallimustus.jpg" alt="Pallimustus">
+      <img src="assets/other/sample_project.jpg" alt="Pallimustus">
       <p>Pallimustus</p>
     </a>
 
     <a href="/projects/regen-nozzle" class="project-card">
-      <img src="assets/other/regen_nozzle.jpg" alt="NA Regen Nozzle">
+      <img src="assets/other/sample_project.jpg" alt="NA Regen Nozzle">
       <p>NA Regen Nozzle</p>
     </a>
 
     <a href="/projects/mini-copv" class="project-card">
-      <img src="assets/other/mini_copv.jpg" alt="Mini COPV">
+      <img src="assets/other/sample_project.jpg" alt="Mini COPV">
       <p>Mini COPV</p>
     </a>
 
     <a href="/projects/toothless" class="project-card">
-      <img src="assets/other/toothless.jpg" alt="Toothless">
+      <img src="assets/other/sample_project.jpg" alt="Toothless">
       <p>Toothless</p>
     </a>
 
     <a href="/projects/coffee-table" class="project-card">
-      <img src="assets/other/coffee_table.jpg" alt="PDT Coffee Table">
+      <img src="assets/other/sample_project.jpg" alt="PDT Coffee Table">
       <p>PDT Coffee Table</p>
     </a>
 
     <a href="/projects/workbench" class="project-card">
-      <img src="assets/other/workbench.jpg" alt="PDT Work Bench">
+      <img src="assets/other/sample_project.jpg" alt="PDT Work Bench">
       <p>PDT Work Bench</p>
     </a>
 
     <a href="/projects/xxx1" class="project-card">
-      <img src="assets/other/xxx1.jpg" alt="XXX Project 1">
+      <img src="assets/other/sample_project.jpg" alt="XXX Project 1">
       <p>XXX</p>
     </a>
 
     <a href="/projects/xxx2" class="project-card">
-      <img src="assets/other/xxx2.jpg" alt="XXX Project 2">
+      <img src="assets/other/sample_project.jpg" alt="XXX Project 2">
       <p>XXX</p>
     </a>
 
   </div>
 </section>
+
+
+  <!-- ===== Contact me ===== -->
+<section class="contact-section">
+  <h2 class="contact-title">Getting in Touch</h2>
+
+  <div class="contact-grid">
+
+    <!-- Email -->
+    <div class="contact-item">
+      <i class="fas fa-envelope contact-icon"></i>
+      <h3>Email</h3>
+      <p class="contact-main">
+        <a href="mailto:bavreet.ubhi@gmail.com">bavreet.ubhi@gmail.com</a>
+      </p>
+      <p class="contact-desc">Reach out any time for project questions or collaborations.</p>
+    </div>
+
+    <!-- LinkedIn -->
+    <div class="contact-item">
+      <i class="fab fa-linkedin contact-icon"></i>
+      <h3>LinkedIn</h3>
+      <p class="contact-main">
+        <a href="https://www.linkedin.com/in/Bavreet-Ubhi/" target="_blank">Connect with me</a>
+      </p>
+      <p class="contact-desc">Professional updates, engineering projects, and networking.</p>
+    </div>
+
+    <!-- GitHub -->
+    <div class="contact-item">
+      <i class="fab fa-github contact-icon"></i>
+      <h3>GitHub</h3>
+      <p class="contact-main">
+        <a href="https://github.com/bavreetubhi" target="_blank">github.com/bavreetubhi</a>
+      </p>
+      <p class="contact-desc">Code, tools, and engineering software development.</p>
+    </div>
+
+  </div>
+</section>
+
+ 
+
+  <!-- GLOBAL SCRIPT (navbar + scroll + carousel) -->
+  <script src="js/script.js"></script>
+</body>
+</html>

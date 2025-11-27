@@ -1,25 +1,38 @@
-/* ===== NAVBAR ===== */
+/* ===========================
+   NAVBAR
+   =========================== */
+
+/* ===== NAVBAR WRAPPER ===== */
 .site-header {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   z-index: 1000;
-  background: transparent;
-  transition: background-color 0.4s ease;
-}
-.site-header.solid { background: rgba(0, 0, 0, 1); }
 
+  /* Start fully transparent — JS will animate this */
+  background-color: rgba(17, 17, 17, 0);
+
+  /* Smooth opacity fade handled by script.js */
+  transition: background-color 0.05s ease;
+}
+
+/* ===== NAV CONTENT ===== */
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 60px;
 }
+
 .logo {
   color: var(--text-light);
   font-weight: 500;
   font-size: 1.4em;
+  text-decoration: none;
 }
+
+/* ===== DESKTOP LINKS ===== */
 .nav-links {
   display: flex;
   list-style: none;
@@ -27,6 +40,7 @@
   margin: 0;
   padding: 0;
 }
+
 .nav-links a {
   color: var(--text-light);
   text-decoration: none;
@@ -34,19 +48,27 @@
   font-size: 1.1em;
   position: relative;
   padding-bottom: 3px;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
+
+/* Hover + Active Underline */
 .nav-links a::after {
-  content: '';
+  content: "";
   position: absolute;
-  left: 0; bottom: 0;
-  width: 0; height: 2px;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
   background: var(--accent);
   transition: width 0.3s ease;
 }
-.nav-links a:hover::after,
-.nav-links a.active::after { width: 100%; }
 
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* ===== MOBILE TOGGLE ===== */
 .menu-toggle {
   display: none;
   cursor: pointer;
@@ -54,23 +76,38 @@
   color: var(--text-light);
 }
 
-/* RESPONSIVE NAVBAR */
+/* ===========================
+   RESPONSIVE NAVBAR
+   =========================== */
 @media (max-width: 950px) {
-  .nav { padding: 20px 30px; }
-  .menu-toggle { display: block; }
+  .nav {
+    padding: 20px 30px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
   .nav-links {
     position: absolute;
-    top: 70px; right: 0;
-    background: rgba(0, 0, 0, 0.95);
-    flex-direction: column;
+    top: 70px;
+    right: 0;
     width: 100%;
-    text-align: center;
     padding: 20px 0;
+
+    flex-direction: column;
+    text-align: center;
     gap: 20px;
+
+    /* Mobile dropdown style */
+    background: rgba(0, 0, 0, 0.95);
+
+    /* Hidden by default */
     transform: translateY(-200%);
     opacity: 0;
     transition: all 0.4s ease;
   }
+
   .nav-links.active {
     transform: translateY(0);
     opacity: 1;

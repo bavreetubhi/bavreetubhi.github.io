@@ -3,60 +3,149 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Projects | Bavreet Ubhi</title>
-  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- GLOBAL STYLES -->
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <!-- Page-specific styles -->
+  <link rel="stylesheet" href="css/projects.css" />
+
+  <!-- ICONS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
-
 <body>
-  <div id="navbar-placeholder"></div>
+
+  <!-- GLOBAL NAVBAR -->
+  <div id="navbar"></div>
 
   <!-- ===== HERO ===== -->
   <section class="hero hero-projects">
     <div class="hero-content">
       <h1>Projects</h1>
       <h2>Propulsion, Composite Design & Engineering</h2>
+      <p class="hero-tagline">
+        A collection of work ranging from hybrid engines and COPVs to regenerative cooling
+        and experimental rigs.
+      </p>
     </div>
   </section>
 
-  <!-- ===== PROJECT CONTENT ===== -->
-  <section class="experience-section">
-    <div class="experience-container">
-      <div class="experience-left">
-        <h2>Highlighted Work</h2>
-        <p>Explore a range of projects from COPV optimization and hybrid engine development to regenerative cooling and supersonic flow experiments. Each project combines simulation, testing, and data analysis to deliver high-performance results.</p>
-      </div>
-
-      <div class="experience-right">
-        <div class="exp-item">
-          <h3>2024</h3>
-          <h4>Composite Overwrapped Pressure Vessel Optimization</h4>
-          <p>Developed a C++ optimization tool using Eigen and ImGui to minimize mass and maximize safety factor under internal pressure loads.</p>
-        </div>
-        <div class="exp-item">
-          <h3>2023</h3>
-          <h4>Regenerative-Cooled Nozzle Design</h4>
-          <p>Simulated ethanol-based regenerative cooling using MATLAB and validated with RPA thermal data to improve cooling efficiency.</p>
-        </div>
-        <div class="exp-item">
-          <h3>2022</h3>
-          <h4>Supersonic Wind Tunnel Experiment</h4>
-          <p>Analyzed oblique shocks and expansion fans using Schlieren imaging and Prandtl-Meyer relations in MATLAB.</p>
-        </div>
-      </div>
+  <!-- ===== INTRO SECTION ===== -->
+  <section class="projects-intro">
+    <div class="projects-intro-inner">
+      <h2>Highlighted Work</h2>
+      <p>
+        These projects represent a mix of simulation, design, manufacturing and testing across
+        propulsion and composite structures. Each one pushed a different part of my skillset –
+        from CFD and FEA to CNC machining, composite layups and test planning.
+      </p>
     </div>
   </section>
 
-  <!-- Load shared navbar -->
-  <script>
-    fetch('navbar.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('navbar-placeholder').innerHTML = data;
-        const script = document.createElement('script');
-        script.src = "js/script.js";
-        document.body.appendChild(script);
-      });
-  </script>
+  <!-- ===== PROJECTS GRID ===== -->
+  <section class="projects-grid-section">
+    <div class="projects-grid">
+
+      <!-- 1: COPV / Solaris -->
+      <a href="/projects/solaris-copv" class="project-card">
+        <img src="assets/other/mini_copv.jpg" alt="Composite Overwrapped Combustion Chamber">
+        <div class="project-card-content">
+          <h3>Composite Overwrapped Combustion Chamber</h3>
+          <p>
+            Type V COPV combustion chamber for Solaris MkIII, designed for 60 bar operation,
+            combining composite overwrap with metallic couplers and extensive FEA validation.
+          </p>
+        </div>
+      </a>
+
+      <!-- 2: Regen nozzle -->
+      <a href="/projects/regen-nozzle" class="project-card">
+        <img src="assets/other/regen_nozzle.jpg" alt="Regen Nozzle">
+        <div class="project-card-content">
+          <h3>Regeneratively Cooled Nozzle</h3>
+          <p>
+            Ethanol-cooled hybrid rocket nozzle concept, using RPA and MATLAB to size cooling
+            channels and assess wall temperatures and pressure drops.
+          </p>
+        </div>
+      </a>
+
+      <!-- 3: Pallimustus -->
+      <a href="/projects/pallimustus" class="project-card">
+        <img src="assets/other/pallimustus.jpg" alt="Pallimustus Rocket">
+        <div class="project-card-content">
+          <h3>Pallimustus</h3>
+          <p>
+            High-powered rocket airframe and recovery integration, focusing on structural layout,
+            avionics mounting, and manufacturability.
+          </p>
+        </div>
+      </a>
+
+      <!-- 4: Toothless -->
+      <a href="/projects/toothless" class="project-card">
+        <img src="assets/other/toothless.jpg" alt="Toothless Project">
+        <div class="project-card-content">
+          <h3>Toothless</h3>
+          <p>
+            Early experimental build exploring CAD, FEA and hands-on fabrication, forming the base
+            for later composite and propulsion work.
+          </p>
+        </div>
+      </a>
+
+      <!-- 5: Coffee table -->
+      <a href="/projects/coffee-table" class="project-card">
+        <img src="assets/other/coffee_table.jpg" alt="PDT Coffee Table">
+        <div class="project-card-content">
+          <h3>PDT Coffee Table</h3>
+          <p>
+            CNC-routed plywood table designed as a furniture/manufacturing exercise in tolerances,
+            fixturing and post-processing.
+          </p>
+        </div>
+      </a>
+
+      <!-- 6: Work bench -->
+      <a href="/projects/workbench" class="project-card">
+        <img src="assets/other/workbench.jpg" alt="PDT Work Bench">
+        <div class="project-card-content">
+          <h3>PDT Work Bench</h3>
+          <p>
+            Heavy-duty bench project for workshop organisation, focused on joinery, stiffness,
+            and workflow layout.
+          </p>
+        </div>
+      </a>
+
+      <!-- 7: XXX placeholders -->
+      <a href="/projects/xxx1" class="project-card">
+        <img src="assets/other/xxx1.jpg" alt="Future Project 1">
+        <div class="project-card-content">
+          <h3>Future Project Slot</h3>
+          <p>
+            Placeholder for upcoming propulsion or structures work – to be updated as new
+            projects are completed.
+          </p>
+        </div>
+      </a>
+
+      <a href="/projects/xxx2" class="project-card">
+        <img src="assets/other/xxx2.jpg" alt="Future Project 2">
+        <div class="project-card-content">
+          <h3>Future Project Slot</h3>
+          <p>
+            Reserved for next iteration of engine development, test rigs, or tooling work.
+          </p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- GLOBAL SCRIPT (navbar + scroll + carousel) -->
+  <script src="js/script.js"></script>
 </body>
 </html>
