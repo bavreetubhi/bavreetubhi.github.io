@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const sections = document.querySelectorAll(".fade-section");
+  const slidingBlocks = document.querySelectorAll(".slide-in");
 
   if (!("IntersectionObserver" in window)) {
-    // Fallback for older browsers: just show everything
-    sections.forEach(sec => sec.classList.add("in-view"));
+    // Fallback: show everything if observer isn't supported
+    slidingBlocks.forEach(block => block.classList.add("in-view"));
     return;
   }
 
@@ -17,9 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     },
     {
-      threshold: 0.15, // animate when ~15% of the section is visible
+      threshold: 0.15,
     }
   );
 
-  sections.forEach(sec => observer.observe(sec));
+  slidingBlocks.forEach(block => observer.observe(block));
 });
