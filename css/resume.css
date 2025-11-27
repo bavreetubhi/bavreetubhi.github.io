@@ -1,0 +1,222 @@
+/* =============================
+   RESUME PAGE STYLES
+   ============================= */
+
+/* ----- HERO (same as home) ----- */
+
+.hero {
+  height: var(--hero-height);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 8%;
+  background: url('../assets/images/rocket.jpg') center/cover no-repeat;
+  color: var(--text-light);
+  position: relative;
+  text-align: left;
+}
+
+/* Overlay for readability */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.2)
+  );
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 650px;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  margin-bottom: 0.3em;
+}
+
+.hero-content h2 {
+  font-size: 1.8rem;
+  color: #ddd;
+  margin-bottom: 0.8em;
+}
+
+.hero-contact {
+  font-size: 0.95rem;
+  color: #f5f5f5;
+}
+
+.hero-contact a {
+  color: #f5f5f5;
+  text-decoration: underline;
+}
+
+/* Extra padding so text sits below the fixed navbar */
+.hero-resume {
+  padding-top: 120px;
+}
+
+/* ----- MAIN RESUME SECTIONS ----- */
+
+.resume-content-section {
+  background: var(--light-bg);
+  color: var(--text-dark);
+  padding: 80px 8% 60px;
+}
+
+.resume-content-section.resume-secondary {
+  padding-top: 40px;
+}
+
+/* Summary block */
+
+.resume-summary {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+}
+
+.resume-summary h2 {
+  font-size: 1.9rem;
+  color: #0c3d52;
+  margin-bottom: 12px;
+}
+
+.resume-summary p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+/* Two-column container */
+
+.resume-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1.2fr;
+  gap: 60px;
+}
+
+/* Left column heading */
+
+.resume-left h2,
+.resume-right h2 {
+  font-size: 2rem;
+  color: #0c3d52;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+/* Education items */
+
+.edu-item {
+  margin-bottom: 18px;
+}
+
+.edu-item h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.edu-meta {
+  font-size: 0.95rem;
+  color: #444;
+  display: flex;
+  flex-direction: column;
+}
+
+.edu-dates {
+  font-style: italic;
+  color: #64748b;
+}
+
+/* Right column (experience timeline) */
+
+.resume-right {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.resume-item {
+  border-left: 3px solid #0c3d52;
+  padding-left: 15px;
+}
+
+.resume-item h3 {
+  font-size: 0.95rem;
+  color: #0c3d52;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.3em;
+  font-weight: 700;
+}
+
+.resume-item h4 {
+  font-size: 1.15rem;
+  margin-bottom: 0.4em;
+  font-weight: 600;
+}
+
+/* Shared list styling */
+
+.resume-list {
+  list-style: disc;
+  padding-left: 1.1rem;
+  font-size: 0.97rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+/* Skills / blocks */
+
+.skills-block {
+  margin-bottom: 20px;
+}
+
+.skills-block h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #0c3d52;
+}
+
+.skills-block p {
+  font-size: 0.97rem;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* ----- RESPONSIVE ----- */
+
+@media (max-width: 900px) {
+  .hero-resume {
+    padding-top: 100px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.8rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .resume-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .resume-content-section {
+    padding: 60px 6% 50px;
+  }
+}

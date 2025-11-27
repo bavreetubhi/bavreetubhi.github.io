@@ -1,0 +1,111 @@
+/* ==========================
+   CONTACT PAGE STYLES
+   ========================== */
+
+/* Cropped hero ONLY for the contact page */
+.hero-contact {
+  padding-top: 130px;         /* space for navbar */
+  position: relative;
+  height: 40vh;               /* crop amount */
+  background: url('../assets/images/rocket.jpg') center 35% / cover no-repeat;
+  z-index: 1;
+}
+
+/* Make sure the hero overlay from .hero::before stays INSIDE the hero */
+.hero-contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.2)
+  );
+  z-index: 0;
+}
+
+/* White block under hero */
+.contact-section {
+  background: #ffffff;
+  padding: 80px 8% 120px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 5; /* above hero overlay */
+}
+
+.contact-inner {
+  max-width: 700px;
+  text-align: center;
+}
+
+/* Intro paragraph */
+.contact-intro {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #222 !important;
+  margin-bottom: 50px;
+}
+
+/* Phone line */
+.contact-phone {
+  font-size: 1rem;
+  color: #222 !important;
+  margin-top: 20px;
+}
+
+/* ==========================
+   BUTTONS
+   ========================== */
+
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  background: #ffffff;
+  color: #0c3d52;
+  padding: 16px 34px;
+
+  border-radius: 999px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: none;
+  border: 2px solid #0c3d52;
+
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.contact-btn i {
+  font-size: 1.2rem;
+}
+
+.contact-btn:hover {
+  background: #0c3d52;
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+/* ==========================
+   RESPONSIVE
+   ========================== */
+
+@media (max-width: 600px) {
+  .contact-section {
+    padding: 60px 6% 80px;
+  }
+
+  .contact-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 0;
+  }
+}

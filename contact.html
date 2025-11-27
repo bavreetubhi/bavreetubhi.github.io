@@ -3,46 +3,70 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Contact | Bavreet Ubhi</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- GLOBAL + NAV + HERO STYLES -->
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/home.css" />
+
+  <!-- CONTACT PAGE STYLES -->
+  <link rel="stylesheet" href="css/contact.css" />
+
+  <!-- ICONS -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
 <body>
-  <div id="navbar-placeholder"></div>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero hero-about">
+  <!-- NAVBAR -->
+  <div id="navbar"></div>
+
+  <!-- ===== HERO (same style as home) ===== -->
+  <section class="hero hero-contact">
     <div class="hero-content">
       <h1>Contact</h1>
-      <h2>Let's Connect</h2>
+      <h2>Let’s connect.</h2>
     </div>
   </section>
 
   <!-- ===== CONTACT CONTENT ===== -->
-  <section class="experience-section">
-    <div class="experience-container" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-      <h2>Get in Touch</h2>
-      <p>Whether you're interested in collaboration, discussing propulsion systems, or just saying hi — feel free to reach out.</p>
+  <section class="contact-section">
+    <div class="contact-inner">
 
-      <div class="socials" style="margin-top: 30px;">
-        <a href="https://github.com/bavreetubhi" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/Bavreet-Ubhi/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:bavreet.ubhi@gmail.com"><i class="fas fa-envelope"></i></a>
+      <p class="contact-intro">
+        Best way to reach me is by email or LinkedIn. I’m always happy to chat about
+        propulsion, composite design, or potential collaborations.
+      </p>
+
+      <div class="contact-buttons">
+        <a href="mailto:bavreet.ubhi@gmail.com" class="contact-btn">
+          <i class="fas fa-envelope"></i>
+          Email me
+        </a>
+
+        <a href="https://www.linkedin.com/in/bavreet-ubhi" target="_blank" class="contact-btn">
+          <i class="fab fa-linkedin"></i>
+          LinkedIn
+        </a>
+
+        <a href="https://github.com/bavreetubhi" target="_blank" class="contact-btn">
+          <i class="fab fa-github"></i>
+          GitHub
+        </a>
       </div>
+
+      <p class="contact-phone">
+        
+      </p>
+
     </div>
   </section>
 
-  <!-- Load shared navbar -->
-  <script>
-    fetch('navbar.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('navbar-placeholder').innerHTML = data;
-        const script = document.createElement('script');
-        script.src = "js/script.js";
-        document.body.appendChild(script);
-      });
-  </script>
+  <!-- NAVBAR LOGIC -->
+  <script src="js/navbar.js"></script>
+
 </body>
 </html>

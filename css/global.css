@@ -92,6 +92,35 @@ h1, h2, h3, h4, p { margin: 0; }
 }
 .software-logos img:hover { transform: scale(1.1); }
 
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Generic fade-in section animation */
+.fade-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* When the section is in view */
+.fade-section.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional: subtle image hover like a “breathing” motion */
+.motion-image {
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.motion-image:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+
 /* ===== GLOBAL RESPONSIVE ===== */
 @media (max-width: 950px) {
   .software-logos { justify-content: center; gap: 25px; padding: 0 10%; }
