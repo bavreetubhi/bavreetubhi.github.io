@@ -1,0 +1,37 @@
+.project-hero {
+  background: #124b5f;
+  color: white;
+  text-align: center;
+  padding: 100px 8% 80px;
+}
+
+.project-hero h1 {
+  font-size: 2.4em;
+  font-weight: 800;
+}
+
+.project-page-content {
+  background: var(--light-bg);
+  color: var(--text-dark);
+  padding: 80px 8% 120px;
+}
+
+.project-container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.project-container img {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.project-container p {
+  font-size: 1.05em;
+  line-height: 1.8;
+  color: #333;
+}
