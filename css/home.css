@@ -11,7 +11,7 @@
   justify-content: center;
   align-items: flex-start;
   padding: 0 8%;
-  background: url('assets/images/rocket.jpg') center/cover no-repeat;
+  background: url('../assets/images/rocket.jpg') center/cover no-repeat;
   color: var(--text-light);
   position: relative;
   text-align: left;
