@@ -224,17 +224,21 @@
 /* ===== OTHER PROJECTS ===== */
 .other-projects-section {
   background: #fff;
-  padding: 0 0 80px;
+  padding: 0 8% 80px;   /* match other sections */
   text-align: center;
 }
 
 .other-projects-grid {
-  width: 85%;
+  max-width: 1200px;                      /* same container width as others */
   margin: 50px auto 0;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(220px, 1fr)
+  );                                      /* auto responsive columns */
+  gap: 30px;
 }
+
 
 .project-card {
   text-decoration: none;
