@@ -60,6 +60,59 @@
   font-size: 1.4rem;
 }
 
+/* ===== EXPERIENCE ===== */
+.experience-section {
+  background: var(--light-bg);
+  color: var(--text-dark);
+  padding: 80px 8% 50px;
+}
+
+.experience-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.experience-left h2 {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  color: #0c3d52;
+  font-weight: 700;
+}
+
+.experience-left p {
+  color: #333;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.experience-right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 50px;
+}
+
+.exp-item h3 {
+  color: #0c3d52;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.3em;
+}
+
+.exp-item h4 {
+  font-size: 1.05rem;
+  margin-bottom: 0.3em;
+}
+
+.exp-item p {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.6;
+}
 
 /* ===== CAROUSEL ===== */
 .carousel-section {
