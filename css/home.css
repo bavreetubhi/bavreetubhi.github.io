@@ -3,30 +3,41 @@
    Sections: Hero, Experience, Carousel, Profile, Recent Project, Other Projects
    =========================== */
 
-/* ===== HERO ===== */
+/* ===== HERO (HOME PAGE) ===== */
+
 .hero {
   height: var(--hero-height);
+  position: relative;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+
   padding: 0 8%;
-  background: url('../assets/images/rocket.jpg') center/cover no-repeat;
-  color: var(--text-light);
-  position: relative;
+
+  /* Correct path FROM css/home.css → assets/images/ */
+  background: url('../assets/images/rocket.jpg') center 35% / cover no-repeat;
+
   text-align: left;
+  color: var(--text-light);
 }
 
+/* Overlay ON TOP of the background, but UNDER the text */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
+
+  /* Fixed gradient – not fully black */
   background: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.6),
-    rgba(0, 0, 0, 0.2)
+    to bottom,
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.15)
   );
+
   z-index: 0;
+  pointer-events: none;
 }
 
 .hero-content {
@@ -41,20 +52,33 @@
 }
 
 .hero-content h2 {
-  font-size: 1.8rem;
-  color: #ddd;
+  font-size: 2rem;
   margin-bottom: 1.5em;
 }
 
-.hero .socials {
-  display: flex;
-  gap: 18px;
-  margin-top: 1.2em;
+/* Button styling stays the same */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 30px;
+  background: #ffffff;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  margin-bottom: 20px;
 }
 
-.hero .socials a {
-  font-size: 1.4rem;
+/* Social icons */
+.socials {
+  display: flex;
+  gap: 20px;
 }
+
+.socials a {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
 
 /* ===== EXPERIENCE ===== */
 .experience-section {
