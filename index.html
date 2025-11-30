@@ -3,25 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Bavreet Ubhi | Portfolio</title>
 
-  <!-- ===== GLOBAL CSS ===== -->
+  <!-- Global styles -->
   <link rel="stylesheet" href="css/global.css" />
-
-  <!-- ===== NAVBAR CSS ===== -->
   <link rel="stylesheet" href="css/navbar.css" />
-
-  <!-- ===== HOME PAGE CSS ===== -->
   <link rel="stylesheet" href="css/home.css" />
 
-  <!-- ===== ICONS ===== -->
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
 </head>
 
 <body>
-  <!-- ===== NAVBAR (loaded by JS) ===== -->
+  <!-- Navbar (injected via JS) -->
   <div id="navbar"></div>
 
   <!-- ===== HERO ===== -->
@@ -34,23 +31,26 @@
 
       <div class="socials">
         <a href="https://github.com/bavreetubhi" target="_blank" rel="noopener">
-          <i class="fab fa-github"></i>
+          <i class="fab fa-github" aria-hidden="true"></i>
+          <span class="sr-only">GitHub</span>
         </a>
         <a href="https://www.linkedin.com/in/Bavreet-Ubhi/" target="_blank" rel="noopener">
-          <i class="fab fa-linkedin"></i>
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+          <span class="sr-only">LinkedIn</span>
         </a>
         <a href="mailto:bavreet.ubhi@gmail.com">
-          <i class="fas fa-envelope"></i>
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+          <span class="sr-only">Email</span>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ===== PROFILE (MOVED UP) ===== -->
+  <!-- ===== PROFILE ===== -->
   <section class="profile-section">
     <div class="profile-container">
       <div class="profile-image">
-        <img src="assets/images/bavreet.jpg" alt="Portrait of Bavreet Ubhi">
+        <img src="assets/images/bavreet.jpg" alt="Portrait of Bavreet Ubhi" />
       </div>
 
       <div class="profile-content">
@@ -67,7 +67,7 @@
           for analysis and simulation.
         </p>
 
-        <h3>Manufacturing & Testing</h3>
+        <h3>Manufacturing &amp; Testing</h3>
         <p>
           Hands-on experience with manual/CNC machining, composite layups, and hybrid engines.
           Confident in fast-paced, safety-critical environments.
@@ -76,14 +76,14 @@
     </div>
 
     <div class="software-logos">
-      <img src="assets/logos/fusion360.png" alt="Fusion 360">
-      <img src="assets/logos/creo.png" alt="Creo">
-      <img src="assets/logos/ansys.png" alt="Ansys">
-      <img src="assets/logos/matlab.png" alt="MATLAB">
-      <img src="assets/logos/python.png" alt="Python">
-      <img src="assets/logos/windows.png" alt="Windows">
-      <img src="assets/logos/photoshop.png" alt="Photoshop">
-      <img src="assets/logos/illustrator.png" alt="Illustrator">
+      <img src="assets/logos/fusion360.png" alt="Fusion 360" />
+      <img src="assets/logos/creo.png" alt="Creo" />
+      <img src="assets/logos/ansys.png" alt="Ansys" />
+      <img src="assets/logos/matlab.png" alt="MATLAB" />
+      <img src="assets/logos/python.png" alt="Python" />
+      <img src="assets/logos/windows.png" alt="Windows" />
+      <img src="assets/logos/photoshop.png" alt="Photoshop" />
+      <img src="assets/logos/illustrator.png" alt="Illustrator" />
     </div>
   </section>
 
@@ -92,11 +92,11 @@
     <h2>Project Highlights</h2>
     <div class="carousel-container">
       <div class="carousel-slide" id="carousel-slide">
-        <img src="assets/carousel/carousel1.jpg" alt="Project 1">
-        <img src="assets/carousel/carousel2.jpg" alt="Project 2">
-        <img src="assets/carousel/carousel3.jpg" alt="Project 3">
-        <img src="assets/carousel/carousel4.jpg" alt="Project 4">
-        <img src="assets/carousel/carousel5.jpg" alt="Project 5">
+        <img src="assets/carousel/carousel1.jpg" alt="Project 1" />
+        <img src="assets/carousel/carousel2.jpg" alt="Project 2" />
+        <img src="assets/carousel/carousel3.jpg" alt="Project 3" />
+        <img src="assets/carousel/carousel4.jpg" alt="Project 4" />
+        <img src="assets/carousel/carousel5.jpg" alt="Project 5" />
       </div>
     </div>
   </section>
@@ -107,7 +107,10 @@
     <h3 class="recent-project-subtitle">Composite Overwrapped Combustion Chamber</h3>
 
     <div class="recent-project-block">
-      <img src="assets/images/solaris_banner.jpg" alt="Solaris MkIII banner at test facility">
+      <img
+        src="assets/images/solaris_banner.jpg"
+        alt="Solaris MkIII banner at test facility"
+      />
       <p>
         The Solaris MkIII combustion chamber was a Type V COPV designed to withstand 60 bar.
         It was static-tested at the Airborne Test Facility in the UK.
@@ -115,7 +118,10 @@
     </div>
 
     <div class="recent-project-block">
-      <img src="assets/images/solaris_chamber.jpg" alt="Solaris MkIII chamber fully assembled">
+      <img
+        src="assets/images/solaris_chamber.jpg"
+        alt="Solaris MkIII chamber fully assembled"
+      />
       <p>
         Over 500 hours of design, simulation, and manufacturing work went into the composite
         chamber. This image shows the chamber fully assembled and ready for testing.
@@ -129,42 +135,42 @@
 
     <div class="other-projects-grid">
       <a href="projects/copv.html" class="project-card">
-        <img src="assets/other/sample_project.jpg" alt="Composite chamber project">
+        <img src="assets/other/sample_project.jpg" alt="Composite chamber project" />
         <p>Composite Chamber</p>
       </a>
 
       <a href="projects/regen_nozzle.html" class="project-card">
-        <img src="assets/other/sample_project.jpg" alt="Next Aero regen nozzle project">
+        <img src="assets/other/sample_project.jpg" alt="Next Aero regen nozzle project" />
         <p>Next Aero Regen Nozzle</p>
       </a>
 
       <a href="projects/mini-copv.html" class="project-card">
-        <img src="assets/other/sample_project.jpg" alt="Mini COPV">
+        <img src="assets/other/sample_project.jpg" alt="Mini COPV project" />
         <p>Mini COPV</p>
       </a>
 
       <a href="projects/toothless.html" class="project-card">
-        <img src="assets/other/sample_project.jpg" alt="Toothless project">
+        <img src="assets/other/sample_project.jpg" alt="Toothless project" />
         <p>Toothless</p>
       </a>
 
       <a href="projects/coffee-table.html" class="project-card">
-        <img src="assets/other/sample_project.jpg" alt="PDT coffee table">
+        <img src="assets/other/sample_project.jpg" alt="PDT coffee table project" />
         <p>PDT Coffee Table</p>
       </a>
 
       <a href="projects/workbench.html" class="project-card">
-        <img src="assets/other/sample_project.jpg" alt="PDT work bench">
+        <img src="assets/other/sample_project.jpg" alt="PDT work bench project" />
         <p>PDT Work Bench</p>
       </a>
 
       <a href="projects/xxx1.html" class="project-card">
-        <img src="assets/other/sample_project.jpg" alt="Placeholder project 1">
+        <img src="assets/other/sample_project.jpg" alt="Placeholder project 1" />
         <p>XXX</p>
       </a>
 
       <a href="projects/project_1.html" class="project-card">
-        <img src="assets/other/sample_project.jpg" alt="Placeholder project 2">
+        <img src="assets/other/sample_project.jpg" alt="Placeholder project 2" />
         <p>XXX</p>
       </a>
     </div>
@@ -176,7 +182,7 @@
 
     <div class="contact-grid">
       <div class="contact-item">
-        <i class="fas fa-envelope contact-icon"></i>
+        <i class="fas fa-envelope contact-icon" aria-hidden="true"></i>
         <h3>Email</h3>
         <p class="contact-main">
           <a href="mailto:bavreet.ubhi@gmail.com">bavreet.ubhi@gmail.com</a>
@@ -185,10 +191,14 @@
       </div>
 
       <div class="contact-item">
-        <i class="fab fa-linkedin contact-icon"></i>
+        <i class="fab fa-linkedin contact-icon" aria-hidden="true"></i>
         <h3>LinkedIn</h3>
         <p class="contact-main">
-          <a href="https://www.linkedin.com/in/Bavreet-Ubhi/" target="_blank" rel="noopener">
+          <a
+            href="https://www.linkedin.com/in/Bavreet-Ubhi/"
+            target="_blank"
+            rel="noopener"
+          >
             Connect with me
           </a>
         </p>
@@ -196,7 +206,7 @@
       </div>
 
       <div class="contact-item">
-        <i class="fab fa-github contact-icon"></i>
+        <i class="fab fa-github contact-icon" aria-hidden="true"></i>
         <h3>GitHub</h3>
         <p class="contact-main">
           <a href="https://github.com/bavreetubhi" target="_blank" rel="noopener">
@@ -208,7 +218,7 @@
     </div>
   </section>
 
-  <!-- ===== SCRIPTS ===== -->
+  <!-- Scripts -->
   <script src="js/navbar.js"></script>
   <script src="js/carousel.js"></script>
 </body>
