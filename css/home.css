@@ -1,6 +1,5 @@
 /* ===========================
    HOME PAGE STYLES
-   Sections: Hero, Experience, Carousel, Profile, Recent Project, Other Projects, Contact
    =========================== */
 
 /* ===== HERO ===== */
@@ -29,7 +28,6 @@
 }
 
 .hero-home {
-  /* from css/home.css to assets/images/rocket.jpg */
   background: url("../assets/images/rocket.jpg") center 35% / cover no-repeat;
 }
 
@@ -60,99 +58,6 @@
   font-size: 1.4rem;
 }
 
-/* ===== EXPERIENCE ===== */
-.experience-section {
-  background: var(--light-bg);
-  color: var(--text-dark);
-  padding: 80px 8% 50px;
-}
-
-.experience-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.experience-left h2 {
-  font-size: 1.8rem;
-  margin-bottom: 25px;
-  color: #0c3d52;
-  font-weight: 700;
-}
-
-.experience-left p {
-  color: #333;
-  font-size: 1.05rem;
-  line-height: 1.8;
-  margin-bottom: 20px;
-}
-
-.experience-right {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px 50px;
-}
-
-.exp-item h3 {
-  color: #0c3d52;
-  font-weight: 700;
-  font-size: 0.95rem;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.3em;
-}
-
-.exp-item h4 {
-  font-size: 1.05rem;
-  margin-bottom: 0.3em;
-}
-
-.exp-item p {
-  font-size: 0.95rem;
-  color: #444;
-  line-height: 1.6;
-}
-
-/* ===== CAROUSEL ===== */
-.carousel-section {
-  background: var(--grey-bg);
-  color: var(--text-dark);
-  text-align: center;
-  padding: 50px 5% 100px;
-}
-
-.carousel-section h2 {
-  font-size: 2.1rem;
-  margin-bottom: 40px;
-  color: #0c3d52;
-}
-
-.carousel-container {
-  position: relative;
-  width: 100%;
-  max-width: 1000px;
-  aspect-ratio: 16 / 9;
-  margin: 0 auto;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.15);
-}
-
-.carousel-slide {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  transition: transform 1s ease-in-out;
-}
-
-.carousel-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  flex-shrink: 0;
-}
-
 /* ===== PROFILE ===== */
 .profile-section {
   background: var(--light-bg);
@@ -172,7 +77,6 @@
 
 .profile-image img {
   width: 400px;
-  border-radius: 0;
   display: block;
   transition: transform 0.3s ease;
 }
@@ -223,8 +127,8 @@
 .software-logos img {
   height: 40px;
   object-fit: contain;
-  filter: grayscale(10%);
   opacity: 0.9;
+  filter: grayscale(10%);
   transition: transform 0.2s ease, opacity 0.2s ease, filter 0.2s ease;
 }
 
@@ -234,21 +138,59 @@
   filter: none;
 }
 
-/* ===== TITLE STYLES ===== */
+/* ===== CAROUSEL ===== */
+.carousel-section {
+  background: var(--grey-bg);
+  color: var(--text-dark);
+  text-align: center;
+  padding: 50px 5% 100px;
+}
+
+.carousel-section h2 {
+  font-size: 2.1rem;
+  margin-bottom: 40px;
+  color: #0c3d52;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-slide {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  transition: transform 1s ease-in-out;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* ===== TITLES ===== */
 .recent-project-title,
 .other-projects-title {
   background: #0c3d52;
-  color: #ffffff;
+  color: #fff;
   padding: 40px 0;
   margin: 0;
   font-size: 2.4rem;
   font-weight: 800;
-  width: 100%;
 }
 
-/* ===== RECENT PROJECTS ===== */
+/* ===== RECENT PROJECT ===== */
 .recent-project-section {
-  background: #ffffff;
+  background: #fff;
   padding: 0 0 80px;
   text-align: center;
 }
@@ -281,7 +223,7 @@
 
 /* ===== OTHER PROJECTS ===== */
 .other-projects-section {
-  background: #ffffff;
+  background: #fff;
   padding: 0 0 80px;
   text-align: center;
 }
@@ -320,7 +262,7 @@
 
 /* ===== CONTACT ===== */
 .contact-section {
-  background: #ffffff;
+  background: #fff;
   padding: 80px 8% 100px;
   text-align: center;
   border-top: 1px solid #e5e5e5;
@@ -379,7 +321,7 @@
   line-height: 1.6;
 }
 
-/* ========== RESPONSIVE RULES ========== */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 950px) {
   .hero {
     height: 80vh;
@@ -392,14 +334,6 @@
 
   .hero-content h2 {
     font-size: 1.4rem;
-  }
-
-  .experience-container {
-    grid-template-columns: 1fr;
-  }
-
-  .experience-right {
-    grid-template-columns: 1fr;
   }
 
   .profile-section {
