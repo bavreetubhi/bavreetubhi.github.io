@@ -1,6 +1,6 @@
 /* ===========================
    HOME PAGE STYLES
-   Sections: Hero, Experience, Carousel, Profile, Recent Project, Other Projects
+   Sections: Hero, Experience, Carousel, Profile, Recent Project, Other Projects, Contact
    =========================== */
 
 /* ===== HERO ===== */
@@ -26,6 +26,11 @@
     rgba(0, 0, 0, 0.2)
   );
   z-index: 0;
+}
+
+.hero-home {
+  /* from css/home.css to assets/images/rocket.jpg */
+  background: url("../assets/images/rocket.jpg") center 35% / cover no-repeat;
 }
 
 .hero-content {
@@ -229,7 +234,6 @@
   filter: none;
 }
 
-
 /* ===== TITLE STYLES ===== */
 .recent-project-title,
 .other-projects-title {
@@ -314,7 +318,7 @@
   font-weight: 400;
 }
 
-/* ========== CONTACT ========== */
+/* ===== CONTACT ===== */
 .contact-section {
   background: #ffffff;
   padding: 80px 8% 100px;
@@ -405,6 +409,11 @@
   .other-projects-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 20px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -420,16 +429,7 @@
     grid-template-columns: 1fr;
     width: 90%;
   }
-}
 
-@media (max-width: 950px) {
-  .contact-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px 20px;
-  }
-}
-
-@media (max-width: 600px) {
   .contact-grid {
     grid-template-columns: 1fr;
   }
