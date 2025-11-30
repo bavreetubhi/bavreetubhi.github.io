@@ -7,7 +7,7 @@
   padding-top: 130px;         /* space for navbar */
   position: relative;
   height: 40vh;               /* crop amount */
-  background: url('assets/images/rocket.jpg') center 35% / cover no-repeat;
+  background: url('../assets/images/rocket.jpg') center/cover no-repeat;
   z-index: 1;
 }
 
