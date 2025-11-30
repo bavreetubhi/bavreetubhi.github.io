@@ -229,10 +229,8 @@
   filter: none;
 }
 
-/* ======================================================
-   SHARED FULL-WIDTH BLUE TITLE BAR (Unified Styling)
-   ====================================================== */
 
+/* ===== TITLE STYLES ===== */
 .recent-project-title,
 .other-projects-title {
   background: #0c3d52;
@@ -244,10 +242,7 @@
   width: 100%;
 }
 
-/* ======================================================
-   MOST RECENT PROJECT SECTION
-   ====================================================== */
-
+/* ===== RECENT PROJECTS ===== */
 .recent-project-section {
   background: #ffffff;
   padding: 0 0 80px;
@@ -280,10 +275,7 @@
   color: #333;
 }
 
-/* ======================================================
-   OTHER PROJECTS GRID SECTION
-   ====================================================== */
-
+/* ===== OTHER PROJECTS ===== */
 .other-projects-section {
   background: #ffffff;
   padding: 0 0 80px;
@@ -322,7 +314,7 @@
   font-weight: 400;
 }
 
-/* ========== Contact ========== */
+/* ========== CONTACT ========== */
 .contact-section {
   background: #ffffff;
   padding: 80px 8% 100px;
