@@ -222,11 +222,23 @@
 }
 
 /* ===== OTHER PROJECTS ===== */
+/* Keep the title bar full width */
 .other-projects-section {
   background: #fff;
-  padding: 0 8% 80px;   /* match other sections */
   text-align: center;
+  padding-bottom: 80px;
 }
+
+/* This keeps the blue title banner stretching edge-to-edge */
+.other-projects-title {
+  background: #0c3d52;
+  color: #fff;
+  padding: 40px 0;
+  font-size: 2.4rem;
+  font-weight: 800;
+  width: 100%;
+}
+
 
 .other-projects-grid {
   max-width: 1200px;                      /* same container width as others */
