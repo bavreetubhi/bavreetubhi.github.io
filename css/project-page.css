@@ -52,7 +52,7 @@
 .project-inner {
   max-width: 900px;
   margin: 0 auto;
-  text-align: center; /* center headings + images as a block */
+  text-align: center;
 }
 
 .project-inner h2 {
@@ -75,7 +75,7 @@
   padding-left: 1.2rem;
 }
 
-/* IMAGES: static, centered */
+/* IMAGES (Basic) */
 .project-image-large,
 .project-image-small {
   display: block;
@@ -91,7 +91,7 @@
   max-width: 70%;
 }
 
-/* Placeholder box if needed */
+/* Placeholder */
 .placeholder-image {
   width: 100%;
   height: 280px;
@@ -111,30 +111,29 @@
    SLIDE-IN TEXT ANIMATIONS
    ============================ */
 
-/* Ensures sliding content doesn't spill visibly out of section */
 .slide-section {
   overflow: hidden;
 }
 
-/* base slide-in style (from left) */
 .slide-in {
   opacity: 0;
   transform: translateX(-40px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-/* modifier: slide in from right */
 .slide-in.right {
   transform: translateX(40px);
 }
 
-/* when in view */
 .slide-in.in-view {
   opacity: 1;
   transform: translateX(0);
 }
 
-/* Responsive */
+/* =============================
+   RESPONSIVE
+   ============================= */
+
 @media (max-width: 700px) {
   .project-hero {
     height: 40vh;
@@ -148,9 +147,140 @@
     max-width: 100%;
   }
 
-  /* on mobile, just slide from bottom a bit for simplicity */
   .slide-in,
   .slide-in.right {
     transform: translateY(30px);
+  }
+}
+
+
+/* =====================================================
+   NEW STYLES FOR MODERN IMAGE LAYOUTS & CARD GRIDS
+   ===================================================== */
+
+/* ===== FLEX IMAGE ROWS ===== */
+.project-image-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.project-image-half {
+  flex: 1 1 260px;
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  max-height: 320px;
+  display: block;
+}
+
+.project-image-tall {
+  max-height: 420px;
+}
+
+/* ===== MEDIA SPLIT (BIG LEFT + TWO STACKED RIGHT) ===== */
+.project-media-split {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.8rem;
+  align-items: stretch;
+}
+
+.project-media-main {
+  flex: 2 1 320px;
+}
+
+.project-media-main img {
+  width: 100%;
+  height: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.project-media-column {
+  flex: 1 1 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.project-media-small {
+  width: 100%;
+  height: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+/* ===== CARD ROWS (like the example site) ===== */
+.project-card-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  background: #111;
+  border-radius: 14px;
+  padding: 1.4rem 1.4rem 1.8rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.45);
+}
+
+.project-card-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.project-card-title {
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  color: white;
+}
+
+.project-card-text {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0.85;
+  color: #ddd;
+}
+
+/* ===== BIG CLOSING IMAGE ===== */
+.project-image-large {
+  width: 100%;
+  max-width: 900px;
+  margin: 1.8rem auto 0;
+  border-radius: 14px;
+  display: block;
+  object-fit: cover;
+}
+
+/* ===== RESPONSIVE FIXES ===== */
+@media (max-width: 768px) {
+  .project-image-half,
+  .project-image-tall,
+  .project-media-main img {
+    max-height: none;
+  }
+
+  .project-media-split {
+    flex-direction: column;
   }
 }

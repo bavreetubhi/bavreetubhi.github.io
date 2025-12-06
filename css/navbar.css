@@ -9,11 +9,7 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-
-  /* Start fully transparent — JS will animate this */
   background-color: rgba(17, 17, 17, 0);
-
-  /* Smooth opacity fade handled by script.js */
   transition: background-color 0.05s ease;
 }
 
@@ -78,8 +74,89 @@
 }
 
 /* ===========================
+   DROPDOWN MENU
+   =========================== */
+
+.nav-links .dropdown {
+  position: relative;
+}
+
+.dropdown > a {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(6px);
+  padding: 10px 0;
+  border-radius: 10px;
+  min-width: 230px;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  z-index: 9999;
+  list-style: none;
+  margin: 0;
+}
+
+.dropdown-menu li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 12px 18px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.3;
+  border-radius: 6px;
+  transition: background 0.2s ease, padding-left 0.15s ease;
+}
+
+.dropdown-menu a:hover {
+  background: #0c3d52;
+  padding-left: 22px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+/* ===========================
+   MOBILE DROPDOWN
+   =========================== */
+
+@media (max-width: 900px) {
+
+  .dropdown-menu {
+    position: static;
+    background: transparent;
+    backdrop-filter: none;
+    box-shadow: none;
+    padding: 0;
+    display: none;
+  }
+
+  .dropdown-menu a {
+    padding: 10px 0 10px 20px;
+    color: #fff;
+  }
+
+  .dropdown.open .dropdown-menu {
+    display: block;
+  }
+}
+
+/* ===========================
    RESPONSIVE NAVBAR
    =========================== */
+
 @media (max-width: 950px) {
   .nav {
     padding: 20px 30px;
@@ -95,15 +172,10 @@
     right: 0;
     width: 100%;
     padding: 20px 0;
-
     flex-direction: column;
     text-align: center;
     gap: 20px;
-
-    /* Mobile dropdown style */
     background: rgba(0, 0, 0, 0.95);
-
-    /* Hidden by default */
     transform: translateY(-200%);
     opacity: 0;
     transition: all 0.4s ease;
