@@ -1,24 +1,32 @@
 /* =============================
-   HOME PAGE STYLES (MINIMAL)
+   HOME PAGE STYLES (FINAL BUILD)
    ============================= */
 
-/* HERO WITH IMAGE */
+/* ============================================================
+   HERO SECTION — FORCES IMAGE, NO BLACK BACKGROUND POSSIBLE
+   ============================================================ */
+
 .hero.hero-home {
-  min-height: var(--hero-height);
+  min-height: var(--hero-height, 60vh);
+  width: 100%;
   position: relative;
 
-  /* HARD-WIRED, ROOT-ABSOLUTE PATH */
-  background: url("/assets/images/home_hero.jpg")
-              center 40% / cover
-              no-repeat;
+  /* HARD ABSOLUTE PATH SO IT ALWAYS WORKS */
+  background-image: url("/assets/images/home_hero.jpg");
+  background-size: cover;
+  background-position: center 40%;
+  background-repeat: no-repeat;
 }
 
-/* No overlay – keep it simple for now */
+/* Remove ANY overlay for now */
+.hero.hero-home::before {
+  content: none;
+}
 
-/* HERO CONTENT */
+/* HERO TEXT */
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   max-width: 650px;
 }
 
@@ -34,11 +42,211 @@
   opacity: 0.9;
 }
 
-/* PROFILE SECTION (kept simple) */
+/* Keep socials spacing consistent */
+.socials {
+  margin-top: 40px;
+}
+
+
+
+/* ============================================================
+   PROFILE SECTION
+   ============================================================ */
+
 .profile-section {
   padding: 80px 8%;
   background: var(--light-bg);
   color: var(--text-dark);
 }
 
-/* ...you can add the rest of your sections back below later... */
+.profile-container {
+  display: flex;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.profile-image img {
+  width: 300px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.profile-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.profile-content p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+
+
+/* ============================================================
+   SOFTWARE LOGOS
+   ============================================================ */
+
+.software-logos {
+  margin-top: 60px;
+}
+
+
+
+/* ============================================================
+   CAROUSEL SECTION
+   ============================================================ */
+
+.carousel-section {
+  padding: 80px 0;
+  text-align: center;
+  background: var(--grey-bg);
+  color: var(--text-dark);
+}
+
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 40px;
+}
+
+.carousel-slide {
+  display: flex;
+  gap: 20px;
+  animation: slide 20s linear infinite;
+}
+
+.carousel-slide img {
+  width: 350px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+/* ============================================================
+   RECENT PROJECT SECTIONS
+   ============================================================ */
+
+.section-banner {
+  padding: 60px 0;
+  text-align: center;
+  background: var(--dark-bg);
+  color: var(--text-light);
+}
+
+.recent-project-section {
+  padding: 80px 8%;
+  background: var(--light-bg);
+  color: var(--text-dark);
+}
+
+.recent-project-subtitle {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.recent-project-block {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 60px;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.recent-project-block img {
+  width: 450px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+
+/* ============================================================
+   OTHER PROJECTS GRID
+   ============================================================ */
+
+.other-projects-section {
+  padding: 80px 8%;
+  background: var(--grey-bg);
+  color: var(--text-dark);
+}
+
+.other-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--text-dark);
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.project-card p {
+  padding: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+
+/* ============================================================
+   CONTACT SECTION
+   ============================================================ */
+
+.contact-section {
+  padding: 80px 8%;
+  text-align: center;
+  background: var(--dark-bg);
+  color: var(--text-light);
+}
+
+.contact-grid {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.contact-item {
+  max-width: 280px;
+}
+
+.contact-icon {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+.contact-main a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.contact-main a:hover {
+  text-decoration: underline;
+}
