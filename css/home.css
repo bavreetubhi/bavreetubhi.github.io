@@ -35,7 +35,7 @@
   --hero-bg-pos-x: 30%;   /* 0% = left, 50% = center, 100% = right */
   --hero-bg-pos-y: 35%;   /* 0% = top, 100% = bottom */
 
-  background-image: url("../assets/images/Home_Hero.JPG");
+  background-image: url("assets/images/Home_Hero.JPG");
   background-repeat: no-repeat;
   background-position: var(--hero-bg-pos-x) var(--hero-bg-pos-y);
   background-size: var(--hero-bg-size);
