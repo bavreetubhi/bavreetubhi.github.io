@@ -21,7 +21,24 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, p { margin: 0; }
+h1, h2, h3, h4, p { 
+  margin: 0; 
+}
+
+/* ===== GLOBAL HERO BASE ===== */
+.hero {
+  min-height: var(--hero-height);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 8%;
+  position: relative;
+  text-align: left;
+  color: var(--text-light);
+  background-color: #000;   /* fallback ONLY, does NOT override images */
+  overflow: hidden;
+}
 
 /* ===== BUTTON ===== */
 .btn {
@@ -92,7 +109,6 @@ h1, h2, h3, h4, p { margin: 0; }
 }
 .software-logos img:hover { transform: scale(1.1); }
 
-
 html {
   scroll-behavior: smooth;
 }
@@ -119,7 +135,6 @@ html {
   transform: translateY(-4px) scale(1.01);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
 }
-
 
 /* ===== GLOBAL RESPONSIVE ===== */
 @media (max-width: 950px) {
