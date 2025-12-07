@@ -1,46 +1,38 @@
-/* ===========================
+/* =============================
    HOME PAGE STYLES
-   =========================== */
+   ============================= */
 
-/* ===== HERO ===== */
+/* ===== HERO BASE (inherits layout from global.css) ===== */
 
-.hero {
-  height: var(--hero-height);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 0 8%;
-  color: var(--text-light);
+/* HOME HERO SECTION */
+.hero.hero-home {
   position: relative;
-  text-align: left;
+
+  /* Adjustable hero background controls */
+  --hero-bg-size: cover;     /* can be: cover, contain, 120%, 150%, etc */
+  --hero-bg-pos-x: center;   /* can be: left, center, right, or % */
+  --hero-bg-pos-y: 40%;      /* 0% top, 50% mid, 100% bottom */
+
+  background-image: url("../assets/images/home_hero.jpg");
+  background-size: var(--hero-bg-size);
+  background-position: var(--hero-bg-pos-x) var(--hero-bg-pos-y);
+  background-repeat: no-repeat;
 }
 
-.hero::before {
+/* Overlay for readability */
+.hero.hero-home::before {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to right,
-    rgba(0, 0, 0, .6),
-    rgba(0, 0, 0, 0.2)
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.15)
   );
   z-index: 0;
 }
 
-/* Full manual control of hero image */
-.hero-home {
-  /* Control these 3 for zoom + position */
-  --hero-bg-size: 140%;   /* 100%, 140%, 200%, or 'cover' */
-  --hero-bg-pos-x: 30%;   /* 0% = left, 50% = center, 100% = right */
-  --hero-bg-pos-y: 35%;   /* 0% = top, 100% = bottom */
-
-  background-image: url("../assets/images/home_hero.jpg");
-  background-repeat: no-repeat;
-  background-position: var(--hero-bg-pos-x) var(--hero-bg-pos-y);
-  background-size: var(--hero-bg-size);
-}
-
+/* ===== HERO CONTENT ===== */
 .hero-content {
   position: relative;
   z-index: 1;
@@ -53,351 +45,220 @@
 }
 
 .hero-content h2 {
-  font-size: 1.8rem;
-  color: #ddd;
-  margin-bottom: 1.5em;
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  opacity: 0.9;
 }
 
-.hero .socials {
-  display: flex;
-  gap: 18px;
-  margin-top: 1.2em;
+/* ===== SOCIAL ICONS SPACING (inherits from global.css) ===== */
+.socials {
+  margin-top: 40px;
 }
 
-.hero .socials a {
-  font-size: 1.4rem;
-}
 
-/* ===== BASE SECTION SPACING ===== */
 
-.profile-section,
-.carousel-section,
-.recent-project-section,
-.other-projects-section,
-.contact-section {
-  padding: 80px 8%;
-}
-
-/* ===== FULL-WIDTH BANNER SECTIONS ===== */
-
-.section-banner {
-  background: #0c3d52;
-  padding: 24px 8%;
-  text-align: center;
-  color: #fff;
-}
-
-.section-banner h2 {
-  margin: 0;
-  font-size: 2.4rem;
-  font-weight: 800;
-}
-
-/* ===== PROFILE SECTION ===== */
+/* =============================
+   PROFILE SECTION
+   ============================= */
 
 .profile-section {
+  padding: 80px 8%;
   background: var(--light-bg);
   color: var(--text-dark);
 }
 
 .profile-container {
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
   gap: 60px;
-  flex-wrap: wrap;
   max-width: 1200px;
-  margin: 0 auto 30px;
+  margin: 0 auto;
+  align-items: center;
 }
 
 .profile-image img {
-  width: 400px;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.profile-image img:hover {
-  transform: scale(1.02);
-}
-
-.profile-content {
-  flex: 1;
-  min-width: 320px;
-  max-width: 650px;
-}
-
-.profile-content h2,
-.profile-content h3 {
-  color: #0c3d52;
-  margin-bottom: 0.5em;
+  width: 300px;
+  border-radius: 12px;
+  object-fit: cover;
 }
 
 .profile-content h2 {
-  font-size: 1.8rem;
-}
-
-.profile-content h3 {
-  font-size: 1.1rem;
-  margin-top: 1.5em;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 .profile-content p {
-  color: #333;
-  line-height: 1.8;
-  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
 }
 
-/* Software logos inside profile section */
+
+
+/* =============================
+   SOFTWARE LOGOS
+   ============================= */
 
 .software-logos {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px 30px;
-  align-items: center;
-  justify-content: center;
+  margin-top: 60px;
 }
 
-.software-logos img {
-  height: 40px;
-  object-fit: contain;
-  opacity: 0.9;
-  filter: grayscale(10%);
-  transition: transform 0.2s ease, opacity 0.2s ease, filter 0.2s ease;
-}
 
-.software-logos img:hover {
-  transform: translateY(-2px);
-  opacity: 1;
-  filter: none;
-}
 
-/* ===== CAROUSEL SECTION ===== */
+/* =============================
+   CAROUSEL SECTION
+   ============================= */
 
 .carousel-section {
+  padding: 80px 0;
+  text-align: center;
   background: var(--grey-bg);
   color: var(--text-dark);
-  text-align: center;
-  padding: 60px 8%;
-}
-
-.carousel-section h2 {
-  font-size: 2.1rem;
-  margin-bottom: 40px;
-  color: #0c3d52;
 }
 
 .carousel-container {
-  position: relative;
   width: 100%;
-  max-width: 1000px;
-  aspect-ratio: 16 / 9;
-  margin: 0 auto;
   overflow: hidden;
+  margin-top: 40px;
 }
 
 .carousel-slide {
   display: flex;
-  height: 100%;
-  width: 100%;
-  transition: transform 1s ease-in-out;
+  gap: 20px;
+  animation: slide 20s linear infinite;
 }
 
 .carousel-slide img {
-  width: 100%;
-  height: 100%;
+  width: 350px;
+  height: 250px;
   object-fit: cover;
-  flex-shrink: 0;
-  display: block;
+  border-radius: 12px;
 }
 
-/* ===== RECENT PROJECT SECTION ===== */
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+
+/* =============================
+   RECENT PROJECT SECTIONS
+   ============================= */
+
+.section-banner {
+  padding: 60px 0;
+  text-align: center;
+  background: var(--dark-bg);
+  color: var(--text-light);
+}
 
 .recent-project-section {
-  background: #fff;
-  text-align: center;
-  padding: 40px 8% 80px;
+  padding: 80px 8%;
+  background: var(--light-bg);
+  color: var(--text-dark);
 }
 
 .recent-project-subtitle {
-  margin: 20px auto 40px;
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #0c3d52;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
 }
 
 .recent-project-block {
-  max-width: 1000px;
-  margin: 0 auto 60px;
+  display: flex;
+  gap: 40px;
+  margin-bottom: 60px;
+  max-width: 1200px;
+  margin-inline: auto;
 }
 
 .recent-project-block img {
-  width: 100%;
-  border-radius: 4px;
-  margin-bottom: 20px;
+  width: 450px;
+  border-radius: 12px;
+  object-fit: cover;
 }
 
-.recent-project-block p {
-  font-size: 1rem;
-  line-height: 1.8;
-  max-width: 900px;
-  margin: 0 auto;
-  color: #333;
-}
 
-/* ===== OTHER PROJECTS SECTION ===== */
+
+/* =============================
+   OTHER PROJECTS GRID
+   ============================= */
 
 .other-projects-section {
-  background: #fff;
-  text-align: center;
+  padding: 80px 8%;
+  background: var(--grey-bg);
+  color: var(--text-dark);
 }
 
 .other-projects-grid {
-  max-width: 1200px;
-  margin: 40px auto 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .project-card {
+  background: #fff;
+  border-radius: 12px;
   text-decoration: none;
-  color: #222;
-  font-size: 1.1rem;
-  text-align: center;
-  transition: transform 0.25s ease;
+  color: var(--text-dark);
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
 }
 
 .project-card img {
   width: 100%;
-  aspect-ratio: 1.3;
+  height: 180px;
   object-fit: cover;
-  border-radius: 4px;
 }
 
 .project-card p {
-  margin-top: 12px;
-  font-weight: 400;
+  padding: 20px;
+  font-weight: 600;
+  text-align: center;
 }
 
-/* ===== CONTACT SECTION ===== */
+
+
+/* =============================
+   CONTACT SECTION
+   ============================= */
 
 .contact-section {
-  background: #fff;
+  padding: 80px 8%;
   text-align: center;
-  border-top: 1px solid #e5e5e5;
-}
-
-.contact-title {
-  font-size: 2rem;
-  font-weight: 800;
-  color: #0c3d52;
-  margin-bottom: 50px;
+  background: var(--dark-bg);
+  color: var(--text-light);
 }
 
 .contact-grid {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
   gap: 50px;
 }
 
 .contact-item {
-  text-align: center;
+  max-width: 280px;
 }
 
 .contact-icon {
-  font-size: 2.5rem;
-  color: #0c3d52;
+  font-size: 2.2rem;
   margin-bottom: 15px;
 }
 
-.contact-item h3 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin-bottom: 5px;
-  color: #0c3d52;
-}
-
-.contact-main {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
 .contact-main a {
-  color: #0c3d52;
+  color: var(--accent);
   text-decoration: none;
 }
 
 .contact-main a:hover {
   text-decoration: underline;
-}
-
-.contact-desc {
-  font-size: 0.9rem;
-  color: #333;
-  line-height: 1.6;
-}
-
-/* ===== RESPONSIVE ===== */
-
-@media (max-width: 950px) {
-  .hero {
-    height: 80vh;
-    padding: 0 6%;
-  }
-
-  /* Different zoom/position on tablet/mobile if you want */
-  .hero-home {
-    --hero-bg-size: 180%;
-    --hero-bg-pos-x: 50%;
-    --hero-bg-pos-y: 40%;
-  }
-
-  .hero-content h1 {
-    font-size: 2.8rem;
-  }
-
-  .hero-content h2 {
-    font-size: 1.4rem;
-  }
-
-  .profile-section,
-  .carousel-section,
-  .recent-project-section,
-  .other-projects-section,
-  .contact-section {
-    padding: 60px 6%;
-  }
-
-  .contact-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px 20px;
-  }
-}
-
-@media (max-width: 600px) {
-  .profile-image img {
-    width: 280px;
-  }
-
-  .carousel-section {
-    padding: 40px 4% 40px;
-  }
-
-  .other-projects-grid {
-    grid-template-columns: 1fr;
-    width: 90%;
-  }
-
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
 }
