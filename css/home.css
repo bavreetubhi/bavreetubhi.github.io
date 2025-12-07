@@ -1,32 +1,51 @@
-/* =============================
-   HOME PAGE STYLES (FINAL BUILD)
-   ============================= */
+/* ===========================
+   HOME PAGE STYLES
+   =========================== */
 
-/* ============================================================
-   HERO SECTION — FORCES IMAGE, NO BLACK BACKGROUND POSSIBLE
-   ============================================================ */
+/* ===== HERO ===== */
 
-.hero.hero-home {
-  min-height: var(--hero-height, 60vh);
-  width: 100%;
+.hero {
+  height: var(--hero-height);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 8%;
+  color: var(--text-light);
   position: relative;
+  text-align: left;
+}
 
-  /* HARD ABSOLUTE PATH SO IT ALWAYS WORKS */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, .6),
+    rgba(0, 0, 0, 0.2)
+  );
+  z-index: 0;
+}
+
+/* Full manual control of hero image */
+.hero-home {
+  /* Control these 3 for zoom + position */
+  --hero-bg-size: 140%;   /* 100%, 140%, 200%, or 'cover' */
+  --hero-bg-pos-x: 30%;   /* 0% = left, 50% = center, 100% = right */
+  --hero-bg-pos-y: 35%;   /* 0% = top, 100% = bottom */
+
+  /* FIXED PATH — THIS IS THE ONLY CHANGE */
   background-image: url("/assets/images/home_hero.jpg");
-  background-size: cover;
-  background-position: center 40%;
+
   background-repeat: no-repeat;
+  background-position: var(--hero-bg-pos-x) var(--hero-bg-pos-y);
+  background-size: var(--hero-bg-size);
 }
 
-/* Remove ANY overlay for now */
-.hero.hero-home::before {
-  content: none;
-}
-
-/* HERO TEXT */
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   max-width: 650px;
 }
 
@@ -36,217 +55,350 @@
 }
 
 .hero-content h2 {
-  font-size: 1.75rem;
-  margin-bottom: 1.5rem;
-  font-weight: 500;
-  opacity: 0.9;
+  font-size: 1.8rem;
+  color: #ddd;
+  margin-bottom: 1.5em;
 }
 
-/* Keep socials spacing consistent */
-.socials {
-  margin-top: 40px;
+.hero .socials {
+  display: flex;
+  gap: 18px;
+  margin-top: 1.2em;
 }
 
+.hero .socials a {
+  font-size: 1.4rem;
+}
 
+/* ===== BASE SECTION SPACING ===== */
 
-/* ============================================================
-   PROFILE SECTION
-   ============================================================ */
+.profile-section,
+.carousel-section,
+.recent-project-section,
+.other-projects-section,
+.contact-section {
+  padding: 80px 8%;
+}
+
+/* ===== FULL-WIDTH BANNER SECTIONS ===== */
+
+.section-banner {
+  background: #0c3d52;
+  padding: 24px 8%;
+  text-align: center;
+  color: #fff;
+}
+
+.section-banner h2 {
+  margin: 0;
+  font-size: 2.4rem;
+  font-weight: 800;
+}
+
+/* ===== PROFILE SECTION ===== */
 
 .profile-section {
-  padding: 80px 8%;
   background: var(--light-bg);
   color: var(--text-dark);
 }
 
 .profile-container {
   display: flex;
+  align-items: flex-start;
+  justify-content: center;
   gap: 60px;
+  flex-wrap: wrap;
   max-width: 1200px;
-  margin: 0 auto;
-  align-items: center;
+  margin: 0 auto 30px;
 }
 
 .profile-image img {
-  width: 300px;
-  border-radius: 12px;
-  object-fit: cover;
+  width: 400px;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.profile-image img:hover {
+  transform: scale(1.02);
+}
+
+.profile-content {
+  flex: 1;
+  min-width: 320px;
+  max-width: 650px;
+}
+
+.profile-content h2,
+.profile-content h3 {
+  color: #0c3d52;
+  margin-bottom: 0.5em;
 }
 
 .profile-content h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.profile-content h3 {
+  font-size: 1.1rem;
+  margin-top: 1.5em;
 }
 
 .profile-content p {
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
+  color: #333;
+  line-height: 1.8;
+  font-size: 1.05rem;
 }
 
-
-
-/* ============================================================
-   SOFTWARE LOGOS
-   ============================================================ */
+/* Software logos inside profile section */
 
 .software-logos {
-  margin-top: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 30px;
+  align-items: center;
+  justify-content: center;
 }
 
+.software-logos img {
+  height: 40px;
+  object-fit: contain;
+  opacity: 0.9;
+  filter: grayscale(10%);
+  transition: transform 0.2s ease, opacity 0.2s ease, filter 0.2s ease;
+}
 
+.software-logos img:hover {
+  transform: translateY(-2px);
+  opacity: 1;
+  filter: none;
+}
 
-/* ============================================================
-   CAROUSEL SECTION
-   ============================================================ */
+/* ===== CAROUSEL SECTION ===== */
 
 .carousel-section {
-  padding: 80px 0;
-  text-align: center;
   background: var(--grey-bg);
   color: var(--text-dark);
+  text-align: center;
+  padding: 60px 8%;
+}
+
+.carousel-section h2 {
+  font-size: 2.1rem;
+  margin-bottom: 40px;
+  color: #0c3d52;
 }
 
 .carousel-container {
+  position: relative;
   width: 100%;
+  max-width: 1000px;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
   overflow: hidden;
-  margin-top: 40px;
 }
 
 .carousel-slide {
   display: flex;
-  gap: 20px;
-  animation: slide 20s linear infinite;
+  height: 100%;
+  width: 100%;
+  transition: transform 1s ease-in-out;
 }
 
 .carousel-slide img {
-  width: 350px;
-  height: 250px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 12px;
+  flex-shrink: 0;
+  display: block;
 }
 
-@keyframes slide {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-
-/* ============================================================
-   RECENT PROJECT SECTIONS
-   ============================================================ */
-
-.section-banner {
-  padding: 60px 0;
-  text-align: center;
-  background: var(--dark-bg);
-  color: var(--text-light);
-}
+/* ===== RECENT PROJECT SECTION ===== */
 
 .recent-project-section {
-  padding: 80px 8%;
-  background: var(--light-bg);
-  color: var(--text-dark);
+  background: #fff;
+  text-align: center;
+  padding: 40px 8% 80px;
 }
 
 .recent-project-subtitle {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 40px;
+  margin: 20px auto 40px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0c3d52;
 }
 
 .recent-project-block {
-  display: flex;
-  gap: 40px;
-  margin-bottom: 60px;
-  max-width: 1200px;
-  margin-inline: auto;
+  max-width: 1000px;
+  margin: 0 auto 60px;
 }
 
 .recent-project-block img {
-  width: 450px;
-  border-radius: 12px;
-  object-fit: cover;
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 20px;
 }
 
+.recent-project-block p {
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 900px;
+  margin: 0 auto;
+  color: #333;
+}
 
-/* ============================================================
-   OTHER PROJECTS GRID
-   ============================================================ */
+/* ===== OTHER PROJECTS SECTION ===== */
 
 .other-projects-section {
-  padding: 80px 8%;
-  background: var(--grey-bg);
-  color: var(--text-dark);
+  background: #fff;
+  text-align: center;
 }
 
 .other-projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 40px auto 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
 }
 
 .project-card {
-  background: #fff;
-  border-radius: 12px;
   text-decoration: none;
-  color: var(--text-dark);
-  overflow: hidden;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #222;
+  font-size: 1.1rem;
+  text-align: center;
+  transition: transform 0.25s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+  transform: translateY(-5px);
 }
 
 .project-card img {
   width: 100%;
-  height: 180px;
+  aspect-ratio: 1.3;
   object-fit: cover;
+  border-radius: 4px;
 }
 
 .project-card p {
-  padding: 20px;
-  font-weight: 600;
-  text-align: center;
+  margin-top: 12px;
+  font-weight: 400;
 }
 
-
-/* ============================================================
-   CONTACT SECTION
-   ============================================================ */
+/* ===== CONTACT SECTION ===== */
 
 .contact-section {
-  padding: 80px 8%;
+  background: #fff;
   text-align: center;
-  background: var(--dark-bg);
-  color: var(--text-light);
+  border-top: 1px solid #e5e5e5;
+}
+
+.contact-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0c3d52;
+  margin-bottom: 50px;
 }
 
 .contact-grid {
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 50px;
 }
 
 .contact-item {
-  max-width: 280px;
+  text-align: center;
 }
 
 .contact-icon {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
+  color: #0c3d52;
   margin-bottom: 15px;
 }
 
+.contact-item h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #0c3d52;
+}
+
+.contact-main {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
 .contact-main a {
-  color: var(--accent);
+  color: #0c3d52;
   text-decoration: none;
 }
 
 .contact-main a:hover {
   text-decoration: underline;
+}
+
+.contact-desc {
+  font-size: 0.9rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 950px) {
+  .hero {
+    height: 80vh;
+    padding: 0 6%;
+  }
+
+  .hero-home {
+    --hero-bg-size: 180%;
+    --hero-bg-pos-x: 50%;
+    --hero-bg-pos-y: 40%;
+  }
+
+  .hero-content h1 {
+    font-size: 2.8rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .profile-section,
+  .carousel-section,
+  .recent-project-section,
+  .other-projects-section,
+  .contact-section {
+    padding: 60px 6%;
+  }
+
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .profile-image img {
+    width: 280px;
+  }
+
+  .carousel-section {
+    padding: 40px 4% 40px;
+  }
+
+  .other-projects-grid {
+    grid-template-columns: 1fr;
+    width: 90%;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
 }
