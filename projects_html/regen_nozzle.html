@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Regeneratively Cooled Nozzle | Bavreet Ubhi</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/projects_css/regen_nozzle.css" />
+
+  <!-- Icons -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <div id="navbar"></div>
+
+  <!-- ============================
+       HERO
+  ============================ -->
+  <section class="project-hero slide-section"
+           style="background-image: url('../assets/other/sample_project.jpg');">
+    <div class="project-hero-content slide-in">
+      <h1>Regeneratively Cooled Nozzle</h1>
+      <p>
+        Metal additively manufactured regen nozzle for the Solaris MkIII hybrid rocket engine.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================
+       OVERVIEW
+  ============================ -->
+  <section class="project-content slide-section">
+    <div class="project-inner slide-in">
+
+      <h2>Overview</h2>
+
+      <p>
+        For Solaris MkIII, the combustion chamber and nozzle had to withstand long burn times and high
+        chamber pressures while keeping mass and manufacturing complexity under control. I led the
+        design and CAD of a regeneratively cooled nozzle intended for metal additive manufacturing,
+        replacing a conventional ablative insert with an actively cooled, reusable component.
+      </p>
+
+      <p>
+        The nozzle integrates internal cooling channels, structural support ribs and mounting interfaces
+        into a single printed part. The geometry was iterated alongside in-house performance simulations
+        and cooling analysis to keep wall temperatures within material limits while maintaining an efficient
+        expansion contour.
+      </p>
+
+      <!-- Two asymmetric images -->
+      <div class="project-image-row">
+        <img src="../assets/other/sample_project.jpg"
+             alt="Regen nozzle CAD isometric"
+             class="project-image-half project-image-tall" />
+        <img src="../assets/other/sample_project.jpg"
+             alt="Sectioned view showing cooling channels"
+             class="project-image-half" />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================
+       DESIGN REQUIREMENTS
+  ============================ -->
+  <section class="project-content alt slide-section">
+    <div class="project-inner slide-in right">
+
+      <h2>Design Requirements</h2>
+
+      <p>
+        The regen nozzle design was driven by a combination of propulsion performance, thermal limits and
+        manufacturing constraints from metal additive processes.
+      </p>
+
+      <ul>
+        <li>Operate with the Solaris MkIII hybrid at the target chamber pressure and expansion ratio.</li>
+        <li>Keep wall temperatures within allowable limits for the selected alloy and safety factor.</li>
+        <li>Integrate with the composite combustion chamber and injector mounting pattern.</li>
+        <li>Use channel geometries that can be reliably manufactured by metal 3D printing.</li>
+        <li>Minimise mass without compromising stiffness or fatigue life.</li>
+      </ul>
+
+      <!-- Card-style row -->
+      <div class="project-card-row">
+        <article class="project-card">
+          <img src="../assets/other/sample_project.jpg"
+               alt="Propulsive performance requirements"
+               class="project-card-image" />
+          <h3 class="project-card-title">PERFORMANCE</h3>
+          <p class="project-card-text">
+            Nozzle contour sized to match target expansion ratio and thrust requirements from engine sims.
+          </p>
+        </article>
+
+        <article class="project-card">
+          <img src="../assets/other/sample_project.jpg"
+               alt="Thermal constraints"
+               class="project-card-image" />
+          <h3 class="project-card-title">THERMAL LIMITS</h3>
+          <p class="project-card-text">
+            Cooling architecture designed to keep hot-gas wall temperatures inside material capability.
+          </p>
+        </article>
+
+        <article class="project-card">
+          <img src="../assets/other/sample_project.jpg"
+               alt="AM constraints"
+               class="project-card-image" />
+          <h3 class="project-card-title">AM CONSTRAINTS</h3>
+          <p class="project-card-text">
+            Channel size, overhangs and wall thickness tuned for metal additive manufacturing rules.
+          </p>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================
+       REGEN COOLING CONCEPT
+  ============================ -->
+  <section class="project-content slide-section">
+    <div class="project-inner slide-in">
+
+      <h2>Regenerative Cooling Concept</h2>
+
+      <p>
+        The nozzle uses a network of axial and circumferential cooling channels wrapped around the
+        throat region, where heat fluxes are highest. Coolant enters upstream, passes through channels
+        close to the hot-gas wall, and exits at the nozzle exit plane, extracting heat while preheating the
+        working fluid.
+      </p>
+
+      <p>
+        The channel layout was explored parametrically in CAD, balancing pressure drop, flow distribution
+        and local wall thickness. High curvature regions near the throat were given higher channel density,
+        while the bell section uses longer, smoother channels to limit pressure losses.
+      </p>
+
+      <!-- Big + two small stacked -->
+      <div class="project-media-split">
+        <div class="project-media-main">
+          <img src="../assets/other/sample_project.jpg"
+               alt="Exploded view of cooling channels" />
+        </div>
+        <div class="project-media-column">
+          <img src="../assets/other/sample_project.jpg"
+               alt="Channel cross-section detail"
+               class="project-media-small" />
+          <img src="../assets/other/sample_project.jpg"
+               alt="Flow path visualisation"
+               class="project-media-small" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================
+       GEOMETRY & CAD IMPLEMENTATION
+  ============================ -->
+  <section class="project-content alt slide-section">
+    <div class="project-inner slide-in right">
+
+      <h2>Geometry &amp; CAD Implementation</h2>
+
+      <p>
+        The nozzle contour is based on an axisymmetric bell profile matched to the engine operating point.
+        The CAD model parametrically links key dimensions such as throat radius, expansion ratio and
+        wall thickness, making it straightforward to re-run analyses when the engine configuration changes.
+      </p>
+
+      <p>
+        Cooling channels were modelled as swept cuts following guide curves around the contour. Ribs and
+        outer jackets were then built around these channels to provide stiffness and external connection
+        surfaces. Particular attention was paid to transitions at the throat band and at the inlet and outlet
+        manifolds to avoid sharp corners that are difficult to print and inspect.
+      </p>
+
+      <!-- Side-by-side geometry images -->
+      <div class="project-image-row">
+        <img src="../assets/other/sample_project.jpg"
+             alt="CAD section through nozzle"
+             class="project-image-half" />
+        <img src="../assets/other/sample_project.jpg"
+             alt="Assembly with chamber and injector"
+             class="project-image-half project-image-tall" />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================
+       THERMAL & STRUCTURAL ANALYSIS
+  ============================ -->
+  <section class="project-content slide-section">
+    <div class="project-inner slide-in">
+
+      <h2>Thermal &amp; Structural Analysis</h2>
+
+      <p>
+        Heat flux distributions from engine-level analysis were mapped onto the nozzle inner wall and
+        used as inputs for thermal simulations. The cooling channels were approximated as internal
+        convection boundaries with film coefficients estimated from coolant flow conditions.
+      </p>
+
+      <p>
+        Resulting wall temperature fields were then combined with internal pressure loads and external
+        constraints for structural analysis. This checked both local stress levels in the thin throat region and
+        global stiffness for integration with the rest of the engine.
+      </p>
+
+      <!-- Card-style row -->
+      <div class="project-card-row">
+        <article class="project-card">
+          <img src="../assets/other/sample_project.jpg"
+               alt="Thermal contour"
+               class="project-card-image" />
+          <h3 class="project-card-title">THERMAL MODEL</h3>
+          <p class="project-card-text">
+            Temperature predictions along the contour used to verify that peak wall temperatures stay within limits.
+          </p>
+        </article>
+
+        <article class="project-card">
+          <img src="../assets/other/sample_project.jpg"
+               alt="Stress plot"
+               class="project-card-image" />
+          <h3 class="project-card-title">STRESS ANALYSIS</h3>
+          <p class="project-card-text">
+            Combined pressure and thermal loading checked against yield and fatigue criteria in critical regions.
+          </p>
+        </article>
+
+        <article class="project-card">
+          <img src="../assets/other/sample_project.jpg"
+               alt="Deflection"
+               class="project-card-image" />
+          <h3 class="project-card-title">INTERFACE STIFFNESS</h3>
+          <p class="project-card-text">
+            Deflection at mounting interfaces evaluated to keep misalignment with the chamber within tolerance.
+          </p>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================
+       MANUFACTURING STRATEGY
+  ============================ -->
+  <section class="project-content alt slide-section">
+    <div class="project-inner slide-in right">
+
+      <h2>Manufacturing Strategy</h2>
+
+      <p>
+        From the outset the geometry was constrained by metal additive manufacturing rules: minimum
+        channel diameters, overhang limits, powder removal paths and build orientation were all considered
+        while modelling. The nozzle body is designed to be printed as a single piece, with supports located
+        away from critical sealing and flow surfaces.
+      </p>
+
+      <p>
+        Internal powder removal is enabled by manifolds and access ports at inlet and outlet plenums. Wall
+        thicknesses and rib spacing were tuned to avoid large unsupported spans and to keep print time and
+        cost reasonable while still taking advantage of the design freedom offered by AM.
+      </p>
+
+      <!-- Two asymmetric images -->
+      <div class="project-image-row">
+        <img src="../assets/other/sample_project.jpg"
+             alt="Build orientation study"
+             class="project-image-half project-image-tall" />
+        <img src="../assets/other/sample_project.jpg"
+             alt="Sectioned printability check"
+             class="project-image-half" />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================
+       TESTING & NEXT STEPS
+  ============================ -->
+  <section class="project-content slide-section">
+    <div class="project-inner slide-in">
+
+      <h2>Testing &amp; Next Steps</h2>
+
+      <p>
+        The current design phase focuses on converging CAD, cooling analysis and manufacturability with
+        partner feedback from metal AM suppliers. The next steps involve producing a first article nozzle,
+        validating internal channel quality via CT scan or sectioning, and then hot-fire testing on Solaris MkIII.
+      </p>
+
+      <p>
+        Data from early tests will be used to refine channel sizing, flow distribution and mounting details, with
+        the goal of a repeatable, reusable regen nozzle architecture that can be adapted to future engines.
+      </p>
+
+      <!-- Testing imagery -->
+      <div class="project-image-row">
+        <img src="../assets/other/sample_project.jpg"
+             alt="Prototype planning and review"
+             class="project-image-half" />
+        <img src="../assets/other/sample_project.jpg"
+             alt="Engine integration concept"
+             class="project-image-half project-image-tall" />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================
+       OUTCOME & REFLECTION
+  ============================ -->
+  <section class="project-content alt slide-section">
+    <div class="project-inner slide-in right">
+
+      <h2>Outcome &amp; Reflection</h2>
+
+      <p>
+        This project pulled together nozzle design, regenerative cooling, metal additive constraints and
+        structural analysis into a single CAD model that can move directly toward manufacture. It also
+        provided a foundation for future regeneratively cooled hardware on the team, including manifolds
+        and other hot-section components.
+      </p>
+
+      <p>
+        Working through the iterations refined my approach to coupling propulsion requirements with
+        manufacturability and analysis feedback, rather than treating them as separate steps.
+      </p>
+
+      <!-- Big closing image -->
+      <img src="../assets/other/sample_project.jpg"
+           alt="Final regen nozzle CAD hero render"
+           class="project-image-large" />
+
+    </div>
+  </section>
+
+  <!-- ============================
+       BACK BUTTON
+  ============================ -->
+  <section class="project-content slide-section">
+    <div class="project-inner slide-in" style="text-align:center;">
+      <a href="../projects.html" class="btn" style="margin-top: 20px;">
+        ← Back to All Projects
+      </a>
+    </div>
+  </section>
+
+  <!-- JS -->
+  <script src="../js/navbar.js"></script>
+  <script src="../js/scroll-animations.js"></script>
+
+</body>
+</html>

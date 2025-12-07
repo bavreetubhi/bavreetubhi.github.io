@@ -1,0 +1,248 @@
+/* ============================================
+   COPV PROJECT PAGE STYLES
+   (applies only to this project page)
+============================================ */
+
+/* HERO */
+.project-hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  padding: 0 8%;
+  background-position: center 35%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: var(--text-light);
+}
+
+.project-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.35)
+  );
+  z-index: 0;
+}
+
+.project-hero-content {
+  position: relative;
+  max-width: 720px;
+  z-index: 1;
+}
+
+.project-hero-content h1 {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  margin-bottom: 0.3em;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+
+.project-hero-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 32rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* MAIN CONTENT BLOCKS */
+.project-content {
+  padding: 4rem 8%;
+  background: #ffffff;
+  color: var(--text-dark);
+}
+
+.project-content.alt {
+  background: #f5f5f5;
+}
+
+.project-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* TYPOGRAPHY INSIDE PROJECT SECTIONS */
+.project-content h2 {
+  font-size: 1.9rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.project-content h3 {
+  font-size: 1.25rem;
+  margin: 0.8rem 0 0.5rem;
+  font-weight: 700;
+}
+
+.project-content p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.project-content ul,
+.project-content ol {
+  margin: 0 0 1.4rem 1.4rem;
+  padding: 0;
+  color: #222;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.project-content li {
+  margin-bottom: 0.35rem;
+}
+
+/* IMAGE ROWS */
+.project-image-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.2rem;
+}
+
+.project-image-half,
+.project-image-large,
+.project-media-small,
+.project-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.project-image-tall {
+  max-height: 420px;
+}
+
+/* CARDS (3-UP ROWS) */
+.project-card-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.2rem;
+}
+
+.project-card {
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 1rem;
+  padding: 1.3rem 1.3rem 1.5rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  color: #222;
+}
+
+.project-card-image {
+  height: 180px;
+  margin-bottom: 0.9rem;
+}
+
+.project-card-title {
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+
+.project-card-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* MEDIA SPLIT (1 BIG + 2 SMALL) */
+.project-media-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.2rem;
+  align-items: stretch;
+}
+
+.project-media-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.project-media-column {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+/* BACK BUTTON */
+.project-content .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.6rem;
+  border-radius: 999px;
+  border: 1px solid #ccc;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: #ffffff;
+  color: #222;
+  transition: 0.2s ease;
+}
+
+.project-content .btn:hover {
+  background: #111;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 960px) {
+  .project-card-row,
+  .project-image-row,
+  .project-media-split {
+    grid-template-columns: 1fr;
+  }
+
+  .project-media-column {
+    grid-template-rows: repeat(2, 220px);
+  }
+
+  .project-hero {
+    padding: 0 6%;
+    min-height: 55vh;
+  }
+}
+
+@media (max-width: 640px) {
+  .project-content {
+    padding: 3rem 6%;
+  }
+
+  .project-hero {
+    padding: 0 5%;
+  }
+
+  .project-card-row {
+    gap: 1.2rem;
+  }
+
+  .project-card {
+    padding: 1.1rem 1.1rem 1.3rem;
+  }
+
+  .project-card-image {
+    height: 160px;
+  }
+}
