@@ -30,14 +30,12 @@
 
 /* Full manual control of hero image */
 .hero-home {
-  /* Control these 3 for zoom + position */
-  --hero-bg-size: 140%;   /* 100%, 140%, 200%, or 'cover' */
-  --hero-bg-pos-x: 30%;   /* 0% = left, 50% = center, 100% = right */
-  --hero-bg-pos-y: 35%;   /* 0% = top, 100% = bottom */
+  --hero-bg-size: 140%;   
+  --hero-bg-pos-x: 30%;   
+  --hero-bg-pos-y: 35%;   
 
-  /* FIXED PATH — THIS IS THE ONLY CHANGE */
+  /* WORKING PATH */
   background-image: url("/assets/images/home_hero.jpg");
-
   background-repeat: no-repeat;
   background-position: var(--hero-bg-pos-x) var(--hero-bg-pos-y);
   background-size: var(--hero-bg-size);
