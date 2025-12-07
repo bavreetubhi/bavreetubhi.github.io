@@ -22,7 +22,7 @@
   inset: 0;
   background: linear-gradient(
     to right,
-    rgba(0, 0, 0, .6),
+    rgba(0, 0, 0, 0.6),
     rgba(0, 0, 0, 0.2)
   );
   z-index: 0;
@@ -30,12 +30,12 @@
 
 /* Full manual control of hero image */
 .hero-home {
-  --hero-bg-size: 140%;   
-  --hero-bg-pos-x: 30%;   
-  --hero-bg-pos-y: 35%;   
+  /* Control these 3 for zoom + position */
+  --hero-bg-size: 140%;   /* 100%, 140%, 200%, or 'cover' */
+  --hero-bg-pos-x: 30%;   /* 0% = left, 50% = center, 100% = right */
+  --hero-bg-pos-y: 35%;   /* 0% = top, 100% = bottom */
 
-  /* WORKING PATH */
-  background-image: url("/assets/images/home_hero.jpg");
+  background-image: url("../assets/images/Home_Hero.JPG");
   background-repeat: no-repeat;
   background-position: var(--hero-bg-pos-x) var(--hero-bg-pos-y);
   background-size: var(--hero-bg-size);
@@ -354,6 +354,7 @@
     padding: 0 6%;
   }
 
+  /* Different zoom/position on tablet/mobile if you want */
   .hero-home {
     --hero-bg-size: 180%;
     --hero-bg-pos-x: 50%;
