@@ -1,53 +1,63 @@
 // navbar.js
-// Loads navbar.html + handles mobile menu + scroll opacity
-// Works from root pages AND /projects/* pages
+// Loads /navbar.html + handles mobile menu + scroll opacity
+// Works from root pages AND subfolders like /projects/, /html/projects/, /projects_html/
 
 window.addEventListener("DOMContentLoaded", () => {
   const navbarContainer = document.getElementById("navbar");
   if (!navbarContainer) return;
 
-  // Detect if we are inside /projects/
+  // Where navbar.html lives (root-relative)
+  const NAVBAR_PATH = "/navbar.html";
+
   const path = window.location.pathname.toLowerCase();
-  const inProjectsFolder = path.includes("/projects/");
 
-  // Correct path to navbar.html
-  const navbarUrl = inProjectsFolder ? "../navbar.html" : "navbar.html";
+  // Treat anything in these paths as a "project subpage"
+  const inProjectSubpage =
+    path.includes("/projects/") ||
+    path.includes("/projects_html/") ||
+    path.includes("/html/projects/");
 
-  fetch(navbarUrl)
-    .then(response => response.text())
-    .then(html => {
+  fetch(NAVBAR_PATH)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status} when loading navbar`);
+      }
+      return response.text();
+    })
+    .then((html) => {
       navbarContainer.innerHTML = html;
 
       // ================================
-      // FIX NAVBAR LINKS WHEN IN /projects/
+      // FIX NAVBAR LINKS ON SUBPAGES
       // ================================
-      if (inProjectsFolder) {
+      if (inProjectSubpage) {
         const navLinks = navbarContainer.querySelectorAll(".nav-links a");
 
-        navLinks.forEach(link => {
+        navLinks.forEach((link) => {
           const href = link.getAttribute("href");
           if (!href) return;
 
-          // Don't modify absolute URLs, anchors, mailto, or already-correct "../"
+          // Already fine? then leave it alone
           if (
-            href.startsWith("http") ||
-            href.startsWith("#") ||
-            href.startsWith("mailto:") ||
-            href.startsWith("../")
+            href.startsWith("http") ||    // absolute URL
+            href.startsWith("#") ||       // anchor
+            href.startsWith("mailto:") || // email
+            href.startsWith("/") ||       // already root-relative
+            href.startsWith("../")        // already relative up
           ) {
             return;
           }
 
-          // Convert "home.html" → "../home.html"
-          link.setAttribute("href", "../" + href);
+          // Convert "index.html" → "/index.html"
+          link.setAttribute("href", "/" + href.replace(/^\/+/, ""));
         });
 
-        // Fix the top-left logo link
+        // Fix logo link too
         const logo = navbarContainer.querySelector("#navbar-logo");
         if (logo) {
-          const href = logo.getAttribute("href");
-          if (!href.startsWith("../")) {
-            logo.setAttribute("href", "../" + href);
+          const logoHref = logo.getAttribute("href") || "/";
+          if (!logoHref.startsWith("/") && !logoHref.startsWith("http")) {
+            logo.setAttribute("href", "/" + logoHref.replace(/^\/+/, ""));
           }
         }
       }
@@ -55,12 +65,12 @@ window.addEventListener("DOMContentLoaded", () => {
       // ================================
       // MOBILE MENU TOGGLE
       // ================================
-      const menuToggle = document.getElementById("menu-toggle");
-      const navLinks = document.getElementById("nav-links");
+      const menuToggle = navbarContainer.querySelector("#menu-toggle");
+      const navLinksEl = navbarContainer.querySelector("#nav-links");
 
-      if (menuToggle && navLinks) {
+      if (menuToggle && navLinksEl) {
         menuToggle.addEventListener("click", () => {
-          navLinks.classList.toggle("active");
+          navLinksEl.classList.toggle("active");
 
           const icon = menuToggle.querySelector("i");
           if (icon) {
@@ -74,8 +84,6 @@ window.addEventListener("DOMContentLoaded", () => {
       // SCROLL OPACITY FADE
       // ================================
       const header = document.querySelector(".site-header");
-
-      // Support both root page hero and project page hero
       const hero =
         document.querySelector(".hero") ||
         document.querySelector(".project-hero");
@@ -83,7 +91,7 @@ window.addEventListener("DOMContentLoaded", () => {
       function updateNavbarOpacity() {
         if (!header) return;
 
-        // If NO hero exists → always fully solid
+        // No hero? stay fully opaque
         if (!hero) {
           header.style.backgroundColor = "rgba(17, 17, 17, 1)";
           return;
@@ -92,7 +100,8 @@ window.addEventListener("DOMContentLoaded", () => {
         const heroHeight = hero.offsetHeight || 1;
         let opacity = window.scrollY / heroHeight;
 
-        opacity = Math.max(0, Math.min(1, opacity)); // clamp 0–1
+        // clamp 0–1
+        opacity = Math.max(0, Math.min(1, opacity));
 
         header.style.backgroundColor = `rgba(17, 17, 17, ${opacity})`;
       }
@@ -101,5 +110,5 @@ window.addEventListener("DOMContentLoaded", () => {
       window.addEventListener("scroll", updateNavbarOpacity);
       window.addEventListener("resize", updateNavbarOpacity);
     })
-    .catch(err => console.error("Navbar failed to load:", err));
+    .catch((err) => console.error("Navbar failed to load:", err));
 });
