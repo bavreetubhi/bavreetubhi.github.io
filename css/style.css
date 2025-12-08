@@ -98,7 +98,6 @@ h1, h2, h3, h4, p { margin: 0; }
   justify-content: center;
   align-items: flex-start;
   padding-left: 8%;
-  background: url('../assets/images/rocket.jpg') center/cover no-repeat;
   color: var(--text-light);
   text-align: left;
 }
