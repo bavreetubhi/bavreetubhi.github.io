@@ -12,7 +12,7 @@
   padding: 0 8%;
   
   /* === Manual control via CSS vars === */
-  --hero-bg-size: 120%;   /* 100% (no zoom) / 140% / 200% / or 'cover' */
+  --hero-bg-size: 100%;   /* 100% (no zoom) / 140% / 200% / or 'cover' */
   --hero-bg-pos-x: 120%;   /* 0% = left, 50% = center, 100% = right */
   --hero-bg-pos-y: 35%;   /* 0% = top, 50% = center, 100% = bottom */
 
