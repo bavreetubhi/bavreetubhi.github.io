@@ -3,17 +3,26 @@
 ============================================ */
 
 /* HERO */
+/* HERO */
 .project-hero {
   position: relative;
   min-height: 60vh;
   display: flex;
   align-items: center;
   padding: 0 8%;
-  background-position: center 35%;
-  background-size: cover;
+  
+  /* === Manual control via CSS vars === */
+  --hero-bg-size: 300%;   /* 100% (no zoom) / 140% / 200% / or 'cover' */
+  --hero-bg-pos-x: 50%;   /* 0% = left, 50% = center, 100% = right */
+  --hero-bg-pos-y: 35%;   /* 0% = top, 50% = center, 100% = bottom */
+
+  background-position: var(--hero-bg-pos-x) var(--hero-bg-pos-y);
+  background-size: var(--hero-bg-size);
   background-repeat: no-repeat;
+
   color: var(--text-light);
 }
+
 
 .project-hero::before {
   content: "";
