@@ -16,14 +16,16 @@
      HERO IMAGE MANUAL CONTROLS
      Change these per page
      ============================== */
-  --hero-bg-size: 80%;     /* Zoom: 100%, 120%, 150%, 200%, etc */
-  --hero-bg-pos-x: 70%;     /* Horizontal: 0% left → 50% center → 100% right */
-  --hero-bg-pos-y: 35%;     /* Vertical: 0% top → 100% bottom */
+  --hero-bg-size: 100%;     /* Zoom: 100%, 120%, 150%, 200%, etc */
+  --hero-bg-pos-x: 100%;     /* Horizontal: 0% left → 50% center → 100% right */
+  --hero-bg-pos-y: 40%;     /* Vertical: 0% top → 100% bottom */
+  
 
   background-image: var(--hero-bg-image);
   background-position: var(--hero-bg-pos-x) var(--hero-bg-pos-y);
   background-size: var(--hero-bg-size);
   background-repeat: no-repeat;
+  
 }
 
 /* DARK GRADIENT OVERLAY */
@@ -156,7 +158,7 @@
 }
 
 .project-card-image {
-  height: 180px;
+  height: 210px;
   margin-bottom: 0.9rem;
 }
 
