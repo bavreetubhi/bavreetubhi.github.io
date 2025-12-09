@@ -16,7 +16,7 @@
      HERO IMAGE MANUAL CONTROLS
      Change these per page
      ============================== */
-  --hero-bg-size: 300%;     /* Zoom: 100%, 120%, 150%, 200%, etc */
+  --hero-bg-size: 80%;     /* Zoom: 100%, 120%, 150%, 200%, etc */
   --hero-bg-pos-x: 70%;     /* Horizontal: 0% left → 50% center → 100% right */
   --hero-bg-pos-y: 35%;     /* Vertical: 0% top → 100% bottom */
 
