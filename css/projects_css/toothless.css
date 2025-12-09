@@ -3,18 +3,30 @@
 ============================================ */
 
 /* HERO */
+/* HERO */
 .project-hero {
   position: relative;
   min-height: 60vh;
   display: flex;
   align-items: center;
   padding: 0 8%;
-  background-position: center 35%;
-  background-size: cover;
-  background-repeat: no-repeat;
   color: var(--text-light);
+
+  /* ==============================
+     HERO IMAGE MANUAL CONTROLS
+     Change these per page
+     ============================== */
+  --hero-bg-size: 150%;     /* Zoom: 100%, 120%, 150%, 200%, etc */
+  --hero-bg-pos-x: 50%;     /* Horizontal: 0% left → 50% center → 100% right */
+  --hero-bg-pos-y: 35%;     /* Vertical: 0% top → 100% bottom */
+
+  background-image: var(--hero-bg-image);
+  background-position: var(--hero-bg-pos-x) var(--hero-bg-pos-y);
+  background-size: var(--hero-bg-size);
+  background-repeat: no-repeat;
 }
 
+/* DARK GRADIENT OVERLAY */
 .project-hero::before {
   content: "";
   position: absolute;
@@ -27,6 +39,7 @@
   z-index: 0;
 }
 
+/* CONTENT */
 .project-hero-content {
   position: relative;
   max-width: 720px;
@@ -46,6 +59,7 @@
   max-width: 32rem;
   color: rgba(255, 255, 255, 0.9);
 }
+
 
 /* MAIN CONTENT BLOCKS */
 .project-content {
