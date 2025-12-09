@@ -103,14 +103,21 @@
   gap: 60px;
 }
 
-/* Left column heading */
+/* Left/right column headings (with spacing between sections) */
 
 .resume-left h2,
 .resume-right h2 {
   font-size: 2rem;
   color: #0c3d52;
   font-weight: 700;
-  margin-bottom: 25px;
+  margin-top: 32px;     /* space above each main header */
+  margin-bottom: 18px;  /* space below header */
+}
+
+/* Don't push the very first h2 in each column down */
+.resume-left h2:first-child,
+.resume-right h2:first-child {
+  margin-top: 0;
 }
 
 /* Education items */
