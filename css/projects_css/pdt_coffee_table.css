@@ -122,6 +122,15 @@
   max-height: 420px;
 }
 
+/* CARD ROWS (2-UP) */
+.project-card-row-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.2rem;
+}
+
+
 /* CARD ROWS (3-UP) */
 .project-card-row {
   display: grid;
@@ -142,7 +151,7 @@
 }
 
 .project-card-image {
-  height: 180px;
+  height: 240px;
   margin-bottom: 0.9rem;
 }
 
@@ -266,6 +275,8 @@
   transform: translateY(-1px);
 }
 
+
+
 /* RESPONSIVE */
 @media (max-width: 960px) {
   .project-card-row,
@@ -326,3 +337,5 @@
     grid-template-columns: 1fr;
   }
 }
+
+

@@ -141,3 +141,40 @@ html {
   .software-logos { justify-content: center; gap: 25px; padding: 0 10%; }
   .software-logos img { height: 50px; }
 }
+
+
+
+/* ===========================
+   SCROLL ANIMATIONS
+   =========================== */
+
+.slide-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 600ms ease, transform 600ms ease;
+  will-change: opacity, transform;
+}
+
+/* Optional: direction variants */
+.slide-in.right {
+  transform: translateX(24px);
+}
+
+.slide-in.left {
+  transform: translateX(-24px);
+}
+
+.slide-in.in-view {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .slide-in {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
