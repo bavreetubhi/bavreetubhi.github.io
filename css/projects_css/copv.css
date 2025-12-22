@@ -207,6 +207,20 @@
   transform: translateY(-1px);
 }
 
+
+/* VIDEO (match project-image-large styling) */
+.project-video-large {
+  width: 100%;
+  height: auto;              /* keep aspect ratio */
+  display: block;            /* remove inline gaps */
+  border-radius: 10px;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  background: #000;          /* avoids white bars while loading */
+}
+
+
+
 /* RESPONSIVE */
 @media (max-width: 960px) {
   .project-card-row,
