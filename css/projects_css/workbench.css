@@ -1,27 +1,19 @@
 /* ============================================
-   WORKBENCH PROJECT STYLES
-   ============================================ */
+   COPV PROJECT PAGE STYLES
+   (applies only to this project page)
+============================================ */
 
-/* ============================
-   HERO
-   ============================ */
-
+/* HERO */
 .project-hero {
   position: relative;
   min-height: 60vh;
   display: flex;
   align-items: center;
   padding: 0 8%;
-  color: var(--text-light);
-
-  /* Manual control per page */
-  --hero-bg-size: 120%;
-  --hero-bg-pos-x: 50%;
-  --hero-bg-pos-y: 40%;
-
-  background-size: var(--hero-bg-size);
-  background-position: var(--hero-bg-pos-x) var(--hero-bg-pos-y);
+  background-position: center 35%;
+  background-size: cover;
   background-repeat: no-repeat;
+  color: var(--text-light);
 }
 
 .project-hero::before {
@@ -30,232 +22,227 @@
   inset: 0;
   background: linear-gradient(
     to right,
-    rgba(0,0,0,0.75),
-    rgba(0,0,0,0.35)
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.35)
   );
   z-index: 0;
 }
 
 .project-hero-content {
   position: relative;
-  z-index: 1;
   max-width: 720px;
+  z-index: 1;
 }
 
 .project-hero-content h1 {
-  font-size: clamp(2.6rem, 4vw, 3.6rem);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  margin-bottom: 0.3em;
   font-weight: 800;
-  margin-bottom: 0.25em;
   letter-spacing: 0.03em;
 }
 
 .project-hero-content p {
   font-size: 1.1rem;
-  opacity: 0.9;
+  line-height: 1.6;
+  max-width: 32rem;
+  color: rgba(255, 255, 255, 0.9);
 }
 
-
-/* ============================
-   SECTION LAYOUT
-   ============================ */
-
+/* MAIN CONTENT BLOCKS */
 .project-content {
-  padding: 90px 8%;
-  background: var(--bg-dark);
+  padding: 4rem 8%;
+  background: #ffffff;
+  color: var(--text-dark);
 }
 
 .project-content.alt {
-  background: var(--bg-darker);
+  background: #f5f5f5;
 }
 
 .project-inner {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
-.project-inner h2 {
-  font-size: clamp(1.9rem, 3vw, 2.5rem);
-  margin-bottom: 0.8em;
+/* TYPOGRAPHY INSIDE PROJECT SECTIONS */
+.project-content h2 {
+  font-size: 1.9rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
-.project-inner p {
-  max-width: 820px;
-  line-height: 1.75;
-  opacity: 0.95;
+.project-content h3 {
+  font-size: 1.25rem;
+  margin: 0.8rem 0 0.5rem;
+  font-weight: 700;
 }
 
-.project-inner ul {
-  margin: 1em 0 1.5em 1.2em;
+.project-content p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  color: #222;
 }
 
-.project-inner li {
-  margin-bottom: 0.5em;
-  line-height: 1.6;
+.project-content ul,
+.project-content ol {
+  margin: 0 0 1.4rem 1.4rem;
+  padding: 0;
+  color: #222;
+  font-size: 0.98rem;
+  line-height: 1.7;
 }
 
+.project-content li {
+  margin-bottom: 0.35rem;
+}
 
-/* ============================
-   IMAGE ROWS
-   ============================ */
-
+/* IMAGE ROWS */
 .project-image-row {
-  display: flex;
-  gap: 24px;
-  margin-top: 40px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.2rem;
 }
 
-.project-image-half {
-  width: calc(50% - 12px);
-  border-radius: 14px;
+.project-image-half,
+.project-image-large,
+.project-media-small,
+.project-card-image {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
 .project-image-tall {
-  aspect-ratio: 3 / 4;
+  max-height: 420px;
 }
 
-.project-image-large {
-  width: 100%;
-  margin-top: 40px;
-  border-radius: 16px;
-  object-fit: cover;
-}
-
-
-/* ============================
-   CARD ROW
-   ============================ */
-
+/* CARDS (3-UP ROWS) */
 .project-card-row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 28px;
-  margin-top: 50px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.2rem;
 }
 
 .project-card {
-  background: rgba(255,255,255,0.03);
-  border-radius: 18px;
-  padding: 18px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 1rem;
+  padding: 1.3rem 1.3rem 1.5rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  color: #222;
 }
 
 .project-card-image {
-  width: 100%;
-  height: 190px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 14px;
+  height: 250px;
+  margin-bottom: 0.9rem;
 }
 
 .project-card-title {
-  font-size: 0.95rem;
-  letter-spacing: 0.12em;
-  font-weight: 700;
-  margin-bottom: 0.4em;
-  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
 }
 
 .project-card-text {
   font-size: 0.95rem;
   line-height: 1.6;
-  opacity: 0.9;
+  color: #444;
 }
 
-
-/* ============================
-   MEDIA SPLIT (1 LARGE + 2 SMALL)
-   ============================ */
-
+/* MEDIA SPLIT (1 BIG + 2 SMALL) */
 .project-media-split {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 24px;
-  margin-top: 45px;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.2rem;
+  align-items: stretch;
 }
 
 .project-media-main img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 16px;
+  border-radius: 10px;
 }
 
 .project-media-column {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 1.2rem;
 }
 
-.project-media-small {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 14px;
-}
-
-
-/* ============================
-   BUTTON
-   ============================ */
-
-.btn {
-  display: inline-block;
-  padding: 14px 28px;
-  background: var(--accent);
-  color: #000;
-  font-weight: 700;
+/* BACK BUTTON */
+.project-content .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.6rem;
   border-radius: 999px;
+  border: 1px solid #ccc;
   text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: #ffffff;
+  color: #222;
+  transition: 0.2s ease;
 }
 
-.btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+.project-content .btn:hover {
+  background: #111;
+  color: #ffffff;
+  transform: translateY(-1px);
 }
 
-
-/* ============================
-   RESPONSIVE
-   ============================ */
-
-@media (max-width: 900px) {
-
-  .project-image-half {
-    width: 100%;
-  }
-
+/* RESPONSIVE */
+@media (max-width: 960px) {
+  .project-card-row,
+  .project-image-row,
   .project-media-split {
     grid-template-columns: 1fr;
   }
 
   .project-media-column {
-    flex-direction: row;
+    grid-template-rows: repeat(2, 220px);
   }
 
-  .project-media-small {
-    width: 50%;
+  .project-hero {
+    padding: 0 6%;
+    min-height: 55vh;
   }
 }
 
-@media (max-width: 600px) {
-
+@media (max-width: 640px) {
   .project-content {
-    padding: 70px 6%;
+    padding: 3rem 6%;
   }
 
-  .project-media-column {
-    flex-direction: column;
+  .project-hero {
+    padding: 0 5%;
   }
 
-  .project-media-small {
-    width: 100%;
+  .project-card-row {
+    gap: 1.2rem;
+  }
+
+  .project-card {
+    padding: 1.1rem 1.1rem 1.3rem;
+  }
+
+  .project-card-image {
+    height: 160px;
   }
 }

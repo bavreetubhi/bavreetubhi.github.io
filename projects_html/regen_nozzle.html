@@ -29,7 +29,7 @@
     <div class="project-hero-content slide-in">
       <h1>Regeneratively Cooled Nozzle</h1>
       <p>
-        Metal additively manufactured regen nozzle for the Solaris MkIII hybrid rocket engine.
+        Metal additively manufactured regen nozzles for Solaris MkIII mini.
       </p>
     </div>
   </section>
@@ -43,17 +43,17 @@
       <h2>Overview</h2>
 
       <p>
-        For Solaris MkIII, the combustion chamber and nozzle had to withstand long burn times and high
+        For Solaris MkIII mini, the combustion chamber and nozzle had to withstand long burn times and low
         chamber pressures while keeping mass and manufacturing complexity under control. I led the
-        design and CAD of a regeneratively cooled nozzle intended for metal additive manufacturing,
-        replacing a conventional ablative insert with an actively cooled, reusable component.
+        design and CAD of two regeneratively cooled nozzles intended for metal additive manufacturing,
+        replacing a conventional ablative graphite insert surrounded in bakalite phenolic with an actively cooled, reusable thread on nozzle.
       </p>
 
       <p>
-        The nozzle integrates internal cooling channels, structural support ribs and mounting interfaces
+        The nozzles integrate internal helical cooling channels, fluid manifolds and mounting interfaces
         into a single printed part. The geometry was iterated alongside in-house performance simulations
-        and cooling analysis to keep wall temperatures within material limits while maintaining an efficient
-        expansion contour.
+        and cooling analysis using numerical analysis such as CFD and FEA to keep wall temperatures within material limits while maintaining an efficient
+        expansion contour and minimal mass. Because one of the varients used LOX it was critical to keep LOx under its vaporization temperature, the second iteration was more forgiving due to it using water.
       </p>
 
       <!-- Two asymmetric images -->
@@ -62,7 +62,7 @@
              alt="Regen nozzle CAD isometric"
              class="project-image-half project-image-tall" />
         <img src="../assets/other/sample_project.jpg"
-             alt="Sectioned view showing cooling channels"
+             alt="Opaque view of cooling channels inside nozzle"
              class="project-image-half" />
       </div>
 
@@ -83,22 +83,22 @@
       </p>
 
       <ul>
-        <li>Operate with the Solaris MkIII hybrid at the target chamber pressure and expansion ratio.</li>
-        <li>Keep wall temperatures within allowable limits for the selected alloy and safety factor.</li>
-        <li>Integrate with the composite combustion chamber and injector mounting pattern.</li>
+        <li>Operate with Solaris MkIII mini at the target chamber pressure and expansion ratio.</li>
+        <li>Keep wall temperatures within allowable limits for the selected alloy AlSi10Mg and safety factor of 2.</li>
+        <li>Integrate with the combustion chamber and fluids set up.</li>
         <li>Use channel geometries that can be reliably manufactured by metal 3D printing.</li>
-        <li>Minimise mass without compromising stiffness or fatigue life.</li>
+        <li>Minimise mass without compromising strength or fatigue life.</li>
       </ul>
 
       <!-- Card-style row -->
-      <div class="project-card-row">
+      <div class="project-card-row-2">
         <article class="project-card">
           <img src="../assets/other/sample_project.jpg"
                alt="Propulsive performance requirements"
                class="project-card-image" />
           <h3 class="project-card-title">PERFORMANCE</h3>
           <p class="project-card-text">
-            Nozzle contour sized to match target expansion ratio and thrust requirements from engine sims.
+            Nozzle contour, throat, exit and converging angles sized to match target expansion ratio and thrust requirements from engine sims.
           </p>
         </article>
 
@@ -108,7 +108,7 @@
                class="project-card-image" />
           <h3 class="project-card-title">THERMAL LIMITS</h3>
           <p class="project-card-text">
-            Cooling architecture designed to keep hot-gas wall temperatures inside material capability.
+            Cooling architecture designed to keep hot-gas wall temperatures inside material capability using helical cooling channels & film staggerd film cooling ports.
           </p>
         </article>
 
@@ -116,11 +116,22 @@
           <img src="../assets/other/sample_project.jpg"
                alt="AM constraints"
                class="project-card-image" />
-          <h3 class="project-card-title">AM CONSTRAINTS</h3>
+          <h3 class="project-card-title">MANUFACTURING CONSTRAINTS</h3>
           <p class="project-card-text">
-            Channel size, overhangs and wall thickness tuned for metal additive manufacturing rules.
+            Channel size, overhangs and wall thickness tuned for AlSi10Mg alloy additive manufacturing constraints.
           </p>
         </article>
+
+        <article class="project-card">
+          <img src="../assets/other/sample_project.jpg"
+               alt="AM constraints"
+               class="project-card-image" />
+          <h3 class="project-card-title">TIMELINES</h3>
+          <p class="project-card-text">
+            Design and analysis iterations completed within project timelines to align with overall engine development and testing regime schedule.
+          </p>
+        </article>
+
       </div>
 
     </div>
@@ -132,19 +143,27 @@
   <section class="project-content slide-section">
     <div class="project-inner slide-in">
 
-      <h2>Regenerative Cooling Concept</h2>
+      <h2>Regenerative &amp; Film Cooling</h2>
 
       <p>
-        The nozzle uses a network of axial and circumferential cooling channels wrapped around the
-        throat region, where heat fluxes are highest. Coolant enters upstream, passes through channels
-        close to the hot-gas wall, and exits at the nozzle exit plane, extracting heat while preheating the
-        working fluid.
+        The nozzle uses a network helical cooling channels wrapped around the entire nozzle geometry. 
+        They're designed in a manner that cooling in prioritized at the nozzle throat where heat fluxes are highest,
+        and a higher pressure drop is acceptable for the cooling benifits.
+        Coolant enters from the bottom manifold, passes through the channels flowing opposite to the hot gas flow.
+        It then exits through the top manifold, where it can be routed back to the injector or expelled overboard somewhat similar to an Open Cycle engine.
+      </p> 
+
+      <p>  
+        Film cooling ports are also integrated into the nozzle contour, stratigically placed at locations where the heat flux was the heighest.
+        allowing a small amount of LOX or water to be bled off from the main flow through 0.8mm ports, forming a thin protective layer along the inner wall.
+        This further reduces wall temperatures and thermal stresses, especially in the converging section before the throat
       </p>
 
       <p>
         The channel layout was explored parametrically in CAD, balancing pressure drop, flow distribution
-        and local wall thickness. High curvature regions near the throat were given higher channel density,
-        while the bell section uses longer, smoother channels to limit pressure losses.
+        and local wall thickness. High curvature regions near the throat were given higher channel height and lower width
+        to maximise cooling effectiveness,
+        while the bell and converging section uses wider and thinner channel, trading some cooling performance for reduced pressure drop and mass.
       </p>
 
       <!-- Big + two small stacked -->
@@ -175,16 +194,17 @@
       <h2>Geometry &amp; CAD Implementation</h2>
 
       <p>
-        The nozzle contour is based on an axisymmetric bell profile matched to the engine operating point.
-        The CAD model parametrically links key dimensions such as throat radius, expansion ratio and
-        wall thickness, making it straightforward to re-run analyses when the engine configuration changes.
+        The nozzle contour is based on an axisymmetric bell profile matched to the engine operating point, 
+        the crutial dimensions were obtained from the Rocket propulsion Analysis (RPA) model.
+        The CAD model parametrically links key dimensions such as throat radius, converging length and
+        wall thickness, making it straightforward to re-run computational when the engine configuration changes.
       </p>
 
       <p>
         Cooling channels were modelled as swept cuts following guide curves around the contour. Ribs and
         outer jackets were then built around these channels to provide stiffness and external connection
         surfaces. Particular attention was paid to transitions at the throat band and at the inlet and outlet
-        manifolds to avoid sharp corners that are difficult to print and inspect.
+        manifolds to avoid sharp corners that are difficult to print and known for causing stress concentrations.
       </p>
 
       <!-- Side-by-side geometry images -->
@@ -209,19 +229,20 @@
       <h2>Thermal &amp; Structural Analysis</h2>
 
       <p>
-        Heat flux distributions from engine-level analysis were mapped onto the nozzle inner wall and
-        used as inputs for thermal simulations. The cooling channels were approximated as internal
+        Heat flux distributions from engine-level analysis were mapped onto the nozzle inner wall using combustion modelled with CFD and
+        used as inputs for thermal CFD simulations. The cooling channels were approximated as internal
         convection boundaries with film coefficients estimated from coolant flow conditions.
       </p>
 
       <p>
         Resulting wall temperature fields were then combined with internal pressure loads and external
-        constraints for structural analysis. This checked both local stress levels in the thin throat region and
-        global stiffness for integration with the rest of the engine.
+        constraints for structural FEA. This checked both local stress levels in the thin throat region and
+        global stiffness for integration with the rest of the engine assembly.
+        A numerical solver script was also used to rapidly iterate channel dimensions and flow rates to converge on a design that met thermal and structural requirements without having to re-run the full analysis sweet each time.
       </p>
 
       <!-- Card-style row -->
-      <div class="project-card-row">
+      <div class="project-card-row-3">
         <article class="project-card">
           <img src="../assets/other/sample_project.jpg"
                alt="Thermal contour"
@@ -268,13 +289,13 @@
         From the outset the geometry was constrained by metal additive manufacturing rules: minimum
         channel diameters, overhang limits, powder removal paths and build orientation were all considered
         while modelling. The nozzle body is designed to be printed as a single piece, with supports located
-        away from critical sealing and flow surfaces.
+        away from critical sealing and flow surfaces, or able to me machined away to ensure a smooth finish that can be sealed on.
       </p>
 
       <p>
         Internal powder removal is enabled by manifolds and access ports at inlet and outlet plenums. Wall
-        thicknesses and rib spacing were tuned to avoid large unsupported spans and to keep print time and
-        cost reasonable while still taking advantage of the design freedom offered by AM.
+        thicknesses and rib spacing were tuned to avoid large unsupported spans, the final design only required the top manifold inlet port to be supported. This ensured print time and
+        cost we're reasonable while still taking advantage of the design freedom offered by additive manufacturing.
       </p>
 
       <!-- Two asymmetric images -->
@@ -299,14 +320,17 @@
       <h2>Testing &amp; Next Steps</h2>
 
       <p>
-        The current design phase focuses on converging CAD, cooling analysis and manufacturability with
-        partner feedback from metal AM suppliers. The next steps involve producing a first article nozzle,
-        validating internal channel quality via CT scan or sectioning, and then hot-fire testing on Solaris MkIII.
+        Unforstunately due to project timing constraints the regen nozzles were not able to be printed and Solaris MkIII mini used the ablative graphite nozzle.
+        However, plans are in place to print and test both varients in future hot-fire tests, with a focus on validating thermal performance and manufacturability.
+        while the nozzle were'nt used in the initial test firings, 
+        the design and analysis work has laid the groundwork for future regeneratively cooled hardware on the team, 
+        as now there is a large knowledge base and pre made parametric CAD to build upon.
       </p>
 
       <p>
-        Data from early tests will be used to refine channel sizing, flow distribution and mounting details, with
-        the goal of a repeatable, reusable regen nozzle architecture that can be adapted to future engines.
+        Future work will also look to integrate more advanced cooling channel geometries, such as conformal channels which are even more opimised to the geometry and
+        follow the heat flux contours more closely, and further optimise the film cooling port placement and sizing.
+        Additionally, fatigue testing and analysis will be conducted to ensure long-term durability of the nozzle under repeated thermal cycling and thrust loading.
       </p>
 
       <!-- Testing imagery -->
@@ -331,15 +355,22 @@
       <h2>Outcome &amp; Reflection</h2>
 
       <p>
-        This project pulled together nozzle design, regenerative cooling, metal additive constraints and
+        This project pulled together nozzle design, regenerative & film cooling, metal additive manufacturing constraints and
         structural analysis into a single CAD model that can move directly toward manufacture. It also
         provided a foundation for future regeneratively cooled hardware on the team, including manifolds
-        and other hot-section components.
+        and other hot-section components which eventually will be required for higher performance engines, and possible turbo pumps.
       </p>
 
       <p>
-        Working through the iterations refined my approach to coupling propulsion requirements with
-        manufacturability and analysis feedback, rather than treating them as separate steps.
+        Looking back, more time could have been spent on exploring alternative cooling channel geometries and
+        layouts, as well as optimising the film cooling port placement and sizing using numerical methods and parametric generative topology optimization.
+        Additionally, further validation of the thermal and structural models through experimental testing would
+        have strengthened confidence in the design for future iterations.
+      </p>
+      <p>
+        Overall, this project was a valuable learning experience in advanced nozzle design and additive manufacturing for rocket engines, 
+        usage of RPA for performance prediction and a deeper understanding of CREO parametric CAD modelling.
+        It set the stage for more complex and higher performance propulsion systems in the future.
       </p>
 
       <!-- Big closing image -->
