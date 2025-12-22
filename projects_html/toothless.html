@@ -27,7 +27,7 @@
   <section class="project-hero slide-section"
            style="background-image: url('../assets/images/projects/Toothless/TOOTHLESS_hero_image.jpg');">
     <div class="project-hero-content slide-in">
-      <h1>Toothless L2 Hybrid Rocket</h1>
+      <h1>Toothless - Recruit built L2 Hybrid Rocket</h1>
       <p>
         Level 2 rocket with full custom airframe, composite structures and a student-researched and developed hybrid engine.
       </p>
@@ -43,14 +43,16 @@
       <h2>Overview</h2>
 
       <p>
-        Toothless is a Level 2 high-power rocket designed as a testbed for custom airframe and propulsion
+        Toothless is a Level 2 high-power rocket designed as a testbed for student-researched and designed (SRAD) propulsion
         hardware. I was responsible for the entire airframe, from CAD through to manufacturing, including a
-        3D printed and fibreglass-reinforced nose cone, carbon fibre airframe tube, carbon fibre wrapped
-        plywood fins, and a custom SRAD hybrid rocket engine.
+        3D printed fibreglass-reinforced nose cone, carbon fibre airframe tube, carbon fibre reinforced
+        plywood fins, and worked along side a team of recruits to design and test a custom SRAD hybrid rocket engine Bigbino.
       </p>
 
       <p>
-        The goal was to build a structurally efficient, re-usable platform that could carry the hybrid engine
+        The goal was to build a recruit designed and manufacterd hybrid engine, 
+        this expanded into further manufacturing a structurally efficient, 
+        re-usable platform that could carry the hybrid engine
         and avionics stack safely through boost, coast and recovery while demonstrating reliable composite
         manufacturing and integration at the L2 scale.
       </p>
@@ -79,6 +81,13 @@
       <p>
         The build covered everything from CAD and 3D printing through composite layups, fin can assembly
         and full vehicle integration.
+
+        initially starting with prototyping different materials and layup techniques to finalising
+        the build process for each component. The final assembly involved multiple fit checks, bonding
+        steps and surface finishing to ensure a clean, reliable airframe. 
+        The process spanned several months and culminated in a series of manufacturing milestones and challenges.
+
+        It concluded with ground testing of the recovery system and integration before the maiden flight.
       </p>
 
       <div class="img-grid-3">
@@ -99,16 +108,18 @@
       <h2>Airframe Architecture</h2>
 
       <p>
-        The airframe was designed around a modular layout: nose cone, main carbon fibre body tube, fin
-        can, and separate avionics bay. This made it easier to iterate on individual components without
-        rebuilding the entire rocket.
+        The airframe was designed around a semi-modular layout: nose cone with a imbedded  avionics bay and the main carbon fibre body tube with the integrated fin
+        can, allowing for easy access to electronics and motor replacement without having to disassemble or destroy the airframe. while its not fully modular, 
+        this approach allowed for quick turnaround between flights and easier maintenance without rebuilding the entire rocket from parts. 
+        each section was first prototyped and tested before committing to the final build to ensure fit, finish and structural integrity.
+        The main components included:
       </p>
 
       <ul>
-        <li>3D printed PLA or PETG nose cone reinforced with internal foam and external fibreglass skins.</li>
+        <li>3D printed PLA nose cone reinforced with external fibreglass skins, and a bolt on aluminum nosecone tip. </li>
         <li>Carbon fibre tube forming the main body, laid up over a mandrel for stiffness and low mass.</li>
-        <li>Through-the-wall plywood fins wrapped in carbon fibre, bonded into a fin-can section.</li>
-        <li>Dedicated avionics bay for flight computer, batteries and wiring.</li>
+        <li>Through-the-wall plywood airfoil fin wrapped in carbon fibre, bonded into a fin-can section.</li>
+        <li>Dedicated avionics bay for flight computer, batteries and wiring within the nosecone for radio transparency.</li>
       </ul>
 
       <!-- Airframe cards -->
@@ -119,7 +130,7 @@
                class="project-card-image" />
           <h3 class="project-card-title">NOSE CONE</h3>
           <p class="project-card-text">
-            3D printed core with fibreglass wrap for impact resistance and surface quality.
+            3D printed core with fibreglass wrap for impact resistance, later sanded for surface quality maximising areodynamics.
           </p>
         </article>
 
@@ -129,7 +140,7 @@
                class="project-card-image" />
           <h3 class="project-card-title">CARBON FIBRE TUBE</h3>
           <p class="project-card-text">
-            Composite body tube designed for bending stiffness, low mass and clean outer finish.
+            Composite body designed for bending stiffness, low mass and clean smooth outer finish. premade by the team with intensive finishing process was applied.
           </p>
         </article>
 
@@ -139,7 +150,7 @@
                class="project-card-image" />
           <h3 class="project-card-title">FIN CAN</h3>
           <p class="project-card-text">
-            Carbon wrapped plywood fins bonded through the wall into the motor mount for strong load paths.
+            Carbon wrapped plywood fins bonded through the wall into the motor mount for strong load paths and minimising aby fin flutter even at high speeds.
           </p>
         </article>
       </div>
@@ -156,15 +167,16 @@
       <h2>Nose Cone Design &amp; Build</h2>
 
       <p>
-        The nose cone started as a 3D CAD model sized to match the rocket diameter and desired ogive /
-        profile. The core was 3D printed in segments, then joined, sanded and filled to create a smooth plug
-        for glassing.
+        The nose cone started as a 3D CAD model sized to match the rocket diameter and desired parabolic profile. 
+        The core was 3D printed in 3 segments, then bonded with glue, followed by a rough sanding to prepare for bonding.
+        finally fibreglass skins were applied over the surface and vaccume bagged to create a strong, impact resistant shell which could handle much greater landing loads.
+        this was sanded to a 2000 grit finish before painting and applying decals. 
+        The nose cone tip was CNC machined from aluminum to provide a durable leading edge and mounting point for the recovery system, while adhearing to the profile to maximmise apogee.
       </p>
 
       <p>
-        Multiple layers of fibreglass were applied with epoxy to create a tough, impact resistant shell. The
-        internal volume was reserved for future payloads or tracker hardware, and a bulkhead was added at
-        the shoulder to interface with the recovery system.
+        The internal volume was reserved for the avionics sleds, which housed the tracker and deployment hardware, 
+        and a simple plywood was added at the shoulder to interface with the recovery system and seal off the avionics from any black powder residue, blowback and corrosion.
       </p>
 
       <!-- Nose cone imagery -->
@@ -189,14 +201,22 @@
       <h2>Carbon Fibre Tube &amp; Fins</h2>
 
       <p>
-        The main body tube was produced by laying up carbon fibre over a cylindrical mandrel. The layup
-        schedule was selected to give sufficient bending stiffness for L2 loads while keeping the wall thin
-        enough to save mass.
+        The main body tube was produced by a team member experienced in composite layups. It was constructed
+        over a mandrel using twill and uni-directional carbon fibre for axial, bending and torsional strength.
+        Multiple layers were applied with a vacuum bagging process to ensure good resin distribution and consolidation. 
+        After curing, the tube was removed from the mandrel and trimmed to length. 
+    
+      </p>
+
+      <p>
+        The outer surface was sanded and finished to a high standard to reduce drag and improve aesthetics.
+        Internal reinforcements were added at key load points in the form of aluminum bulkheads, such as the fin can and top motor mount interfaces.
+        A small hole was drilled near the top to allow for Bigbinos vent tube to pass through and avoid pressure build up during motor operation.
       </p>
 
       <p>
         Fins were cut from plywood, profiled and then wrapped in carbon fibre to improve stiffness and edge
-        durability. A through-the-wall design tied the fins into the internal motor mount tube to create a
+        durability. A through-the-wall design tied the fins into the internal fin can to create a
         robust load path from aerodynamic forces into the airframe.
       </p>
 
@@ -259,14 +279,14 @@
       <!-- Engine visuals -->
       <div class="project-media-split">
         <div class="project-media-main">
-          <img src="../assets/other/sample_project.jpg"
-               alt="Hybrid engine CAD" />
+          <img src="../assets/images/projects/Toothless/TOOTHLESS_bigbino_on_stand.jpg"
+               alt="Bigbino on teststand" />
         </div>
         <div class="project-media-column">
-          <img src="../assets/other/sample_project.jpg"
-               alt="Engine components laid out"
+          <img src="../assets/images/projects/Toothless/TOOTHLESS_bigbino_crossection.jpg"
+               alt="Engine crossection"
                class="project-media-small" />
-          <img src="../assets/other/sample_project.jpg"
+          <img src="../assets/images/projects/Toothless/TOOTHLESS_injector.jpg"
                alt="Nozzle and injector details"
                class="project-media-small" />
         </div>
@@ -284,22 +304,25 @@
       <h2>Integration &amp; Avionics</h2>
 
       <p>
-        The airframe, engine and avionics were integrated through a central motor mount and removable
-        avionics bay. The bay held the flight computer, power system and wiring for pyro channels and
-        tracking, with access ports to arm the system on the pad.
+        The airframe, engine and avionics were integrated through a central motor mounting fin can and removable
+        avionics bay in the nose cone. The bay held the flight computer, power system and wiring for pyro channels and
+        tracking. the whole assembly was sandwiched between the nosecone tip and shoulder bulkhead using a threaded rod and eyebolt, allowing for secure mounting with no force loads through the electronics.        
+        There was access ports to arm the system on the pad through a small hole drilled in the fiberglass shell.
       </p>
 
       <p>
         Internal structure was arranged so that thrust, fin loads and recovery forces were all transmitted
-        along clear, reinforced paths, reducing the chance of local failures during boost or deployment.
+        along clear, reinforced paths, reducing the chance of local failures during boost or deployment. 
+        All thrust loading transitioned through the fin can to the body tube, 
+        while recovery loads were taken by the nose cone shoulder bulkhead eyebolt.
       </p>
 
       <!-- Integration images -->
       <div class="project-image-row">
-        <img src="../assets/other/sample_project.jpg"
+        <img src="../assets/images/projects/Toothless/TOOTHLESS_rrc3_avionics.jpg"
              alt="Avionics bay assembly"
              class="project-image-half" />
-        <img src="../assets/other/sample_project.jpg"
+        <img src="../assets/images/projects/Toothless/TOOTHLESS_fincan_openrocket.jpg"
              alt="Motor mount and fin can"
              class="project-image-half project-image-tall" />
       </div>
@@ -316,9 +339,10 @@
       <h2>Testing </h2>
 
       <p>
-        Before flying, the airframe and recovery system were ground tested, including harness tests, ejection
+        Before flying, the airframe and recovery system were ground tested, including shock-cord tests, ejection
         charge verification and fit checks of all sections. The hybrid engine underwent separate subsystem
-        checks for plumbing and ignition.
+        checks for sealing and ignition. Once integrated, a full systems check was performed to ensure
+        everything was functioning correctly before transport to the launch site.
       </p>
 
       <!-- Flight imagery -->
@@ -344,7 +368,8 @@
 
       <p>
         The build involved 3D printing, surface finishing, composite layups, sanding, bonding and repeated
-        fit checks to ensure everything assembled cleanly.
+        fit checks to ensure everything assembled cleanly. Each stage required careful attention to detail
+        to maintain tolerances and surface quality. The following images highlight key stages in the manufacturing and finished results:
       </p>
 
       <div class="img-grid-feature">
@@ -376,13 +401,13 @@
       <p>
         Toothless consolidated a full stack of skills: 3D CAD, composite manufacturing, hybrid engine design
         and high-power rocketry integration. Building the rocket from the nose cone down to the fin can and
-        propulsion system gave a much deeper understanding of how each subsystem affects reliability and
-        performance.
+        propulsion system gave a much deeper understanding of how each subsystem affects reliability, 
+        preformance and integration challenges.
       </p>
 
       <p>
-        The project also provided a stepping stone towards more advanced composite airframes and hybrid
-        propulsion work at higher altitudes and larger scales.
+        The project also provided a stepping stone towards more advanced composite manufacturing and hybrid
+        propulsion work at higher altitudes and larger scales.  
       </p>
 
       <!-- Big closing image -->
