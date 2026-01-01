@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>COPV Combustion Chamber | Bavreet Ubhi</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/projects_css/copv.css" />
+
+  <!-- Icons -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <div id="navbar"></div>
+
+  <!-- ============================
+       HERO
+  ============================ -->
+  <section class="project-hero slide-section"
+           style="background-image: url('../assets/images/projects/COPV_Optimization/COPV_OPTIMIZATION_main_gui.jpg');">
+    <div class="project-hero-content slide-in">
+      <h1>COPV Layup Optimization script</h1>
+      <p>Application designed to reduce the time intensity it takes to work out COPV layups</p>
+    </div>
+  </section>
+
+  <!-- ============================
+       OVERVIEW
+  ============================ -->
+  <section class="project-content slide-section">
+    <div class="project-inner slide-in">
+
+      <h2>Overview</h2>
+
+      <p>
+        While working the combustion chamber for MkIII one onf the most tedious steps was trying
+        to optimize the layup, this included number of layers, material, angles & thickness. With
+        so many variables and very limited time to validate the stackups there were countless late
+        nights and early mornings to try optimize the COPV.
+      </p>
+
+      <p>
+        To try combat this I've been further progressing the capabilities of a In house Layup analysis
+        script initially written by <a href="https://www.linkedin.com/in/thomas-russell-40016566/">Thomas Russell</a>.
+        I took it upon my self to fully flush out and optimize the code implementing features and
+        simplifying the user experience to ensure it could be used even after I leave the team.
+
+        The GUI is still being worked on but the actual back end math is compleated and full running, 
+        able to output results for a single vessel or run a sweep through many different variables and
+        picking the best result for each step.
+      </p>
+
+      <!-- Two asymmetric images -->
+      <div class="project-image-row">
+        <img src="../assets/images/projects/COPV_Optimization/COPV_OPTIMIZATION_main_gui.jpg"
+             alt="COPV CAD"
+             class="project-image-half project-image-tall" />
+        <img src="../assets/images/projects/COPV/COPV_packed.jpg"
+             alt="COPV Hardware"
+             class="project-image-half" />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================
+       DESIGN & LAYUP
+  ============================ -->
+  <section class="project-content alt slide-section">
+    <div class="project-inner slide-in right">
+
+      <h2>Design &amp; Layup Architecture</h2>
+
+      <p>
+        The wall structure is a multi-material laminate designed for hoop strength, thermal
+        isolation, and manufacturability using university workshop tooling, composites workshop and the teams accsess to composite materials. 
+        The baseline layup is:
+      </p>
+
+      <ul>
+        <li>1 × inner fibreglass ply providing thermal protection and leak resistance</li>
+        <li>11 × 0/90 carbon-fibre 3k twill plies carrying the primary hoop and axial load</li>
+        <li>1 × external carbon-fibre sleeve for abrasion resistance</li>
+        <li>Al7075-T6 threaded couplers bonded into the laminate during curing</li>
+      </ul>
+
+      
+
+      <!-- Card-style row like the screenshot -->
+      <div class="project-card-row">
+        <article class="project-card">
+          <img src="../assets/images/projects/COPV/COPV_fibers.jpg"
+               alt="Layup Architecture"
+               class="project-card-image" />
+          <h3 class="project-card-title">LAYUP ARCHITECTURE</h3>
+          <p class="project-card-text">
+            Fibreglass liner, 11 structural carbon plies and an external sleeve tuned for hoop and axial loads.
+          </p>
+        </article>
+
+        <article class="project-card">
+          <img src="../assets/images/projects/COPV/COPV_couplers.jpg"
+               alt="Coupler Interfaces"
+               class="project-card-image" />
+          <h3 class="project-card-title">COUPLER INTERFACES</h3>
+          <p class="project-card-text">
+            Al7075-T6 couplers bonded into the laminate transfer load to the injector and nozzle.
+          </p>
+        </article>
+
+        <article class="project-card">
+          <img src="../assets/images/projects/COPV/COPV_mini_copv_internal.jpg"
+               alt="Modular Sections"
+               class="project-card-image" />
+          <h3 class="project-card-title">THERMAL BARRIER</h3>
+          <p class="project-card-text">
+            Internal fiber glass heat protective layer
+          </p>
+        </article>
+      </div>
+      
+
+      <p></p>
+      <p>
+        the chamber is constructed as one monolithic piece to maximise composite stregnth with bonded couplers at each end to interface with the injector and nozzle. 
+        The internal fibreglass layer acts as a thermal barrier and sacriffical  layer to prevent the high combustion temperatures from degrading the carbon fibre resin matrix.
+        while the external sleeve protects against handling damage during assembly and transport. 
+
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================
+       MANUFACTURING DEVELOPMENT
+  ============================ -->
+  <section class="project-content slide-section">
+    <div class="project-inner slide-in">
+
+      <h2>Manufacturing Development &amp; Process</h2>
+
+      <p>
+        Developing a repeatable manufacturing method for a Type-V combustion chamber required several
+        iterations. I progressed through four main prototype approaches, starting with simple
+        heatshrink-only consolidation and evolving towards a full vacuum-bagged, heat-treated process
+        using Technirez R2600 / H2409 high-temperature resin.
+      </p>
+
+      <p>
+        Early tubes used a fibreglass wet layup with heatshrink consolidation,
+        which caused fibre wrinkling and resin pooling. Doughnut-style vacuum bagging improved
+        cosmetic finish but produced soft, leaking laminates. Through later attempts I converged on a
+        hybrid process: vacuum-bagged fibreglass liner, carbon fibre overwrap, and controlled
+        heatshrink compression.
+      </p>
+
+      <p>
+        This informed the final large-scale workflow involving proper mandrel prep, Resin Pre-Coat
+        (RPC) bonding of aluminium couplers, a staged composite layup, and a multi-step thermal cure
+        out to 200&nbsp;°C.
+      </p>
+
+      <!-- Big + two small stacked -->
+      <div class="project-media-split">
+        <div class="project-media-main">
+          <img src="../assets/images/projects/COPV/COPV_couplers.jpg"
+               alt="Full COPV Layup"
+               />
+        </div>
+        <div class="project-media-column">
+          <img src="../assets/images/projects/COPV/COPV_heat_shrink.jpg"
+               alt="Vacuum Bagged"
+               class="project-media-small" />
+          <img src="../assets/images/projects/COPV/COPV_reefing.jpg"
+               alt="Heat Treatment"
+               class="project-media-small" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================
+       STRUCTURAL PERFORMANCE
+  ============================ -->
+  <section class="project-content alt slide-section">
+    <div class="project-inner slide-in right">
+
+      <h2>Structural Performance</h2>
+
+      <p>
+        The chamber wall was analysed using ANSYS (ACP + Static
+        Structural). Ply-level orthotropic modelling confirmed that the laminate maintains a
+        Factor of Safety above 3 at peak operating pressure. Interface stresses at
+        the couplers were examined to ensure the preferred failure mode is thread shear rather than
+        COPV rupture.
+      </p>
+
+      <p>
+        Sub-scale burst tests closely matched simulation predictions and validated the manufacturing
+        approach, shrink-tape consolidation, and R2600 resin cure schedule. Full-scale proof testing
+        will confirm the chamber is leak-tight and structurally sound to 1.5× MEOP, this is currently in progress.
+      </p>
+
+      <!-- Side-by-side FEA style -->
+      <div class="project-image-row">
+        <img src="../assets/images/projects/COPV/COPV_MKIII_convergence.jpg"
+             alt="Hoop Stress"
+             class="project-image-half" />
+        <img src="../assets/images/projects/COPV/COPV_hydro_burst.jpg"
+             alt="Interface Detail"
+             class="project-image-half project-image-tall" />
+      </div>
+
+    </div>
+  </section>
+
+  <!--junk commit-->
+  <!-- ============================
+       TESTING & VALIDATION
+  ============================ -->
+  <section class="project-content slide-section">
+    <div class="project-inner slide-in">
+
+      <h2>Testing &amp; Validation</h2>
+
+      <p>A full validation program was completed, including:</p>
+
+      <ul>
+        <li>Laminate coupon tensile &amp; flexural testing, to try approximate material properties for ANSYS validation and to prove the epoxy shear strength will substantially be able to withstand the axial loading  </li>
+        <li>60 mm sub-scale COPV hydrostatic burst tests validated the manufacturing process and worked to prove that acp results closley matched the experimental results</li>
+        <li>Full-scale chamber hydrostatic proof testing to 1.5× MEOP - currently in progress</li>
+      </ul>
+
+      <!-- Testing cards row -->
+      <div class="project-card-row">
+        <article class="project-card">
+          <img src="../assets/images/projects/COPV/COPV_tensile_coupons.jpg"
+               alt="Coupon Testing"
+               class="project-card-image" />
+          <h3 class="project-card-title">COUPON TESTING</h3>
+          <p class="project-card-text">
+            Flat laminate coupons characterised the strength and stiffness of the CF and FG systems.
+          </p>
+        </article>
+
+        <article class="project-card">
+          <img src="../assets/images/projects/COPV/COPV_hydro_burst.jpg"
+               alt="Sub-scale Burst"
+               class="project-card-image" />
+          <h3 class="project-card-title">SUB-SCALE BURSTS</h3>
+          <p class="project-card-text">
+            60&nbsp;mm COPVs were hydro-tested to burst to validate analytical sizing and FEA.
+          </p>
+        </article>
+
+        <article class="project-card">
+          <img src="../assets/images/projects/COPV/COPV_full_scale.jpg"
+               alt="Full-Scale Proof"
+               class="project-card-image" />
+          <h3 class="project-card-title">FULL-SCALE PROOF</h3>
+          <p class="project-card-text">
+            The assembled chamber will be taken to 1.5× MEOP to confirm leak-tightness and margin.
+          </p>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================
+       CONCLUSION
+  ============================ -->
+  <section class="project-content alt slide-section">
+    <div class="project-inner slide-in right">
+
+      <h2>Conclusion</h2>
+
+      <p>
+        The Solaris MkIII composite combustion chamber represents a significant advance in the team's
+        capability. The Type-V COPV architecture delivers high structural performance with minimal
+        mass, while the manufacturing workflow developed for this project forms the basis for future
+        high-pressure propulsion hardware.
+        <br><br>    
+        This was a huge learning experience for me as a propulsion engineer, getting to grips with composite design, manufacturing and testing. 
+        Leading the development of the first all-composite combustion chamber for the team was a challenging but rewarding experience, 
+        and I am proud of the final result which I believe will set a new standard for student rocketry projects.
+        <br><br>
+        
+      </p>
+
+      <!-- Big closing image -->
+      <!-- Big closing image -->
+      <img src="../assets/images/projects/COPV/solaris_chamber.jpg"
+          alt="COPV Installed"
+          class="project-image-large" />
+      
+
+      <br><br><br><br>
+      <p>
+        Some key takeways from this project were the importance of iterative prototyping and testing to refine manufacturing processes,
+        as well as the need to balance theoretical design with practical considerations like manufacturability and assembly. But most importantly, 
+        the importance of properly machining parts and hitting critical tolerances. 
+        unfurtunatly due to time constraints we were unable to machine the couplers to the required tolerances which led to some issues during assembly and a rapid unscheduled disassembly after proof testing at the Airborne test site
+        Overall, this project has significantly expanded my skills and knowledge in propulsion engineering and composite materials.
+      </p>
+      <br><br><br>
+      <video class="project-video-large" controls>
+        <source src="../assets/videos/Projects/COPV/COPV_HotfireAllAngles.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+
+    </div>
+  </section>
+
+  <!-- ============================
+       BACK BUTTON
+  ============================ -->
+  <section class="project-content slide-section">
+    <div class="project-inner slide-in" style="text-align:center;">
+      <a href="../projects.html" class="btn" style="margin-top: 20px;">
+        ← Back to All Projects
+      </a>
+    </div>
+  </section>
+
+  <!-- JS -->
+  <script src="../js/navbar.js"></script>
+  <script src="../js/scroll-animations.js"></script>
+
+</body>
+</html>
