@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>COPV 3D Sweep Plot</title>
+
+    <script>
+      // Keeps Plotly from trying to load MathJax from a CDN
+      window.PlotlyConfig = { MathJaxConfig: "local" };
+    </script>
+    <script src="https://cdn.plot.ly/plotly-2.4.1.min.js"></script>
+
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        background: #ffffff;
+      }
+
+      #plot {
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="plot"></div>
+
+    <script>
+      /* ============================================================
+         THEME VARIABLES
+         ============================================================ */
+
+      const POINT_COLOR = "rgb(30,150,210)";
+      const POINT_SIZE = 5;
+      const POINT_OPACITY = 0.85;
+
+      const PAPER_BG = "#ffffff";
+      const SCENE_BG = "#ffffff";
+
+      const AXIS_TEXT = "#111111";
+      const AXIS_PLANE = "#ffffff";
+      const AXIS_GRID = "#c8c8c8";
+      const AXIS_ZERO = "#c8c8c8";
+
+      const HOVER_BG = "#111111";
+      const HOVER_BORDER = "#333333";
+      const HOVER_TEXT = "#ffffff";
+
+      const FONT_COLOR = "#111111";
+
+      function axisStyle(titleText) {
+        return {
+          title: { text: titleText, font: { color: AXIS_TEXT } },
+          backgroundcolor: AXIS_PLANE,
+          gridcolor: AXIS_GRID,
+          zerolinecolor: AXIS_ZERO,
+          color: AXIS_TEXT,
+        };
+      }
+
+      const trace = {
+        type: "scatter3d",
+        mode: "markers",
+        marker: {
+          color: POINT_COLOR,
+          opacity: POINT_OPACITY,
+          size: POINT_SIZE,
+        },
+        hovertemplate:
+          "<b>COPV Sweep Result</b><br><br>" +
+          "Pressure: %{x:.1f} bar<br>" +
+          "Diameter: %{y:.4f} m<br>" +
+          "Mass: %{z:.3f} kg<br>" +
+          "FOS: %{customdata[0]}<br>" +
+          "Layers: %{customdata[1]}<extra></extra>",
+        x: [20.0, 40.0, 60.0, 80.0, 100.0, 120.0, 140.0, 160.0, 180.0, 200.0, 220.0, 240.0, 260.0, 280.0, 300.0, 20.0, 40.0, 60.0, 80.0, 100.0, 120.0, 140.0, 160.0, 180.0, 200.0, 220.0, 240.0, 260.0, 280.0, 20.0, 40.0, 60.0, 80.0, 100.0, 120.0, 140.0, 160.0, 180.0, 200.0, 220.0, 240.0],
+        y: [0.1524, 0.1524, 0.1524, 0.1524, 0.1524, 0.1524, 0.1524, 0.1524, 0.1524, 0.1524, 0.1524, 0.1524, 0.1524, 0.1524, 0.1524, 0.1778, 0.1778, 0.1778, 0.1778, 0.1778, 0.1778, 0.1778, 0.1778, 0.1778, 0.1778, 0.1778, 0.1778, 0.1778, 0.1778, 0.2032, 0.2032, 0.2032, 0.2032, 0.2032, 0.2032, 0.2032, 0.2032, 0.2032, 0.2032, 0.2032, 0.2032],
+        z: [1.171, 2.125, 2.608, 3.585, 4.079, 5.08, 5.841, 6.611, 7.651, 8.442, 9.241, 10.049, 11.141, 11.971, 12.809, 1.394, 2.813, 3.388, 4.55, 6.025, 6.922, 8.132, 9.359, 10.29, 11.546, 12.818, 14.107, 15.413, 16.735, 1.626, 3.278, 4.956, 5.976, 7.35, 9.092, 10.86, 12.293, 13.744, 15.582, 17.071, 18.957],
+        customdata: [["4.542", "5"], ["3.162", "9"], ["3.369", "11"], ["3.277", "15"], ["3.104", "17"], ["3.149", "21"], ["3.085", "24"], ["3.059", "27"], ["3.065", "31"], ["3.088", "34"], ["3.024", "37"], ["3.023", "40"], ["3.070", "44"], ["3.027", "47"], ["3.024", "50"], ["3.893", "5"], ["3.793", "10"], ["3.115", "12"], ["3.117", "16"], ["3.245", "21"], ["3.088", "24"], ["3.122", "28"], ["3.097", "32"], ["3.017", "35"], ["3.038", "39"], ["3.029", "43"], ["3.029", "47"], ["3.051", "51"], ["3.053", "55"], ["3.407", "5"], ["3.319", "10"], ["3.291", "15"], ["3.053", "18"], ["3.011", "22"], ["3.066", "27"], ["3.100", "32"], ["3.034", "36"], ["3.027", "40"], ["3.067", "45"], ["3.028", "49"], ["3.053", "54"]],
+      };
+
+      const layout = {
+        margin: { l: 0, r: 0, t: 0, b: 0 },
+        font: { color: FONT_COLOR },
+        paper_bgcolor: PAPER_BG,
+        plot_bgcolor: PAPER_BG,
+
+        hoverlabel: {
+          bgcolor: HOVER_BG,
+          bordercolor: HOVER_BORDER,
+          font: { color: HOVER_TEXT },
+        },
+
+        scene: {
+          bgcolor: SCENE_BG,
+          xaxis: axisStyle("Pressure (bar)"),
+          yaxis: axisStyle("Diameter (m)"),
+          zaxis: axisStyle("Mass (kg)"),
+        },
+      };
+
+      const config = {
+        responsive: true,
+        displaylogo: false
+      };
+
+      Plotly.newPlot("plot", [trace], layout, config);
+    </script>
+  </body>
+</html>

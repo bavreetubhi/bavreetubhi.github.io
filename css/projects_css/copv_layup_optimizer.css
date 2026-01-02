@@ -64,7 +64,7 @@
   margin: 0 auto;
 }
 
-/* TYPOGRAPHY INSIDE PROJECT SECTIONS */
+/* TYPOGRAPHY */
 .project-content h2 {
   font-size: 1.9rem;
   margin-bottom: 1rem;
@@ -90,7 +90,6 @@
 .project-content ol {
   margin: 0 0 1.4rem 1.4rem;
   padding: 0;
-  color: #222;
   font-size: 0.98rem;
   line-height: 1.7;
 }
@@ -109,7 +108,6 @@
 
 .project-image-half,
 .project-image-large,
-.project-media-small,
 .project-card-image {
   width: 100%;
   height: 100%;
@@ -119,11 +117,7 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
-.project-image-tall {
-  max-height: 420px;
-}
-
-/* CARDS (3-UP ROWS) */
+/* CARDS */
 .project-card-row {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -135,11 +129,10 @@
   background: #ffffff;
   border: 1px solid #dddddd;
   border-radius: 1rem;
-  padding: 1.3rem 1.3rem 1.5rem;
+  padding: 1.3rem;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
-  color: #222;
 }
 
 .project-card-image {
@@ -147,90 +140,64 @@
   margin-bottom: 0.9rem;
 }
 
-.project-card-title {
-  font-size: 0.9rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  margin-bottom: 0.35rem;
-}
-
-.project-card-text {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #444;
-}
-
-/* MEDIA SPLIT (1 BIG + 2 SMALL) */
-.project-media-split {
-  display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-  gap: 1.5rem;
-  margin-top: 2.2rem;
-  align-items: stretch;
-}
-
-.project-media-main img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.project-media-column {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  gap: 1.2rem;
-}
-
-/* BACK BUTTON */
-.project-content .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.75rem 1.6rem;
-  border-radius: 999px;
-  border: 1px solid #ccc;
-  text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  background: #ffffff;
-  color: #222;
-  transition: 0.2s ease;
-}
-
-.project-content .btn:hover {
-  background: #111;
-  color: #ffffff;
-  transform: translateY(-1px);
-}
-
-
-/* VIDEO (match project-image-large styling) */
+/* VIDEO */
 .project-video-large {
   width: 100%;
-  height: auto;              /* keep aspect ratio */
-  display: block;            /* remove inline gaps */
+  height: auto;
   border-radius: 10px;
   border: 1px solid #e5e5e5;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-  background: #000;          /* avoids white bars while loading */
+  background: #000;
 }
 
+/* ============================================
+   PLOTLY IFRAME EMBED (FINAL)
+============================================ */
+
+.plot-embed {
+  width: 100%;
+  max-width: 1100px;     /* matches project column */
+  height: 75vh;          /* BIG */
+  min-height: 520px;
+  margin: 3rem auto;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  background: #ffffff;
+}
+
+.plot-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.plot-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  margin: 40px auto;
+
+  /* This height should match your plot nicely */
+  height: 520px;
+
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.plot-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
 
 
 /* RESPONSIVE */
 @media (max-width: 960px) {
   .project-card-row,
-  .project-image-row,
-  .project-media-split {
+  .project-image-row {
     grid-template-columns: 1fr;
-  }
-
-  .project-media-column {
-    grid-template-rows: repeat(2, 220px);
   }
 
   .project-hero {
@@ -244,21 +211,9 @@
     padding: 3rem 6%;
   }
 
-  .project-hero {
-    padding: 0 5%;
-  }
-
-  .project-card-row {
-    gap: 1.2rem;
-  }
-
-  .project-card {
-    padding: 1.1rem 1.1rem 1.3rem;
-  }
-
-  .project-card-image {
-    height: 160px;
+  .plot-embed {
+    height: 65vh;
+    min-height: 420px;
+    margin: 2rem 0;
   }
 }
-
-

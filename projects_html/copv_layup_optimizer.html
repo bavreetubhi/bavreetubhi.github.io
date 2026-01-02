@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>COPV Combustion Chamber | Bavreet Ubhi</title>
+  <title>COPV Layup Optimisation | Bavreet Ubhi</title>
 
   <!-- CSS -->
   <link rel="stylesheet" href="../css/global.css" />
@@ -25,10 +25,13 @@
        HERO
   ============================ -->
   <section class="project-hero slide-section"
-           style="background-image: url('../assets/images/projects/COPV_Optimization/COPV_OPTIMIZATION_main_gui.jpg');">
+           style="background-image: url('../assets/images/projects/COPV_Optimization/COPV_OPTIMIZATION_gui_main.jpg');">
     <div class="project-hero-content slide-in">
-      <h1>COPV Layup Optimization script</h1>
-      <p>Application designed to reduce the time intensity it takes to work out COPV layups</p>
+      <h1>COPV Layup Optimisation &amp; Progressive Failure Solver</h1>
+      <p>
+        A physics-driven COPV solver that evaluates laminate behaviour at the ply level, models progressive failure,
+        and optimises mass against a target factor of safety — built for rapid design iteration, not black-box guesswork.
+      </p>
     </div>
   </section>
 
@@ -41,30 +44,35 @@
       <h2>Overview</h2>
 
       <p>
-        While working the combustion chamber for MkIII one onf the most tedious steps was trying
-        to optimize the layup, this included number of layers, material, angles & thickness. With
-        so many variables and very limited time to validate the stackups there were countless late
-        nights and early mornings to try optimize the COPV.
+        High-pressure propulsion systems occupy a uniquely difficult design space: they must safely contain extreme internal
+        pressures while meeting aggressive mass targets, surviving thermal and mechanical cycling, and remaining manufacturable
+        within real-world constraints. In rocketry, structural mass directly reduces performance — yet conservative margins are
+        often applied because composite failure behaviour is complex and difficult to predict.
       </p>
 
       <p>
-        To try combat this I've been further progressing the capabilities of a In house Layup analysis
-        script initially written by <a href="https://www.linkedin.com/in/thomas-russell-40016566/">Thomas Russell</a>.
-        I took it upon my self to fully flush out and optimize the code implementing features and
-        simplifying the user experience to ensure it could be used even after I leave the team.
+        Composite Overwrapped Pressure Vessels (COPVs) offer exceptional pressure-to-weight performance, but they introduce a level
+        of structural complexity that can’t be captured with thin-wall pressure vessel theory or a single “burst pressure” calculation.
+        Laminates are anisotropic, non-homogeneous, and fail progressively rather than catastrophically. In practice this often leads to
+        overbuilt designs, or reliance on high-fidelity FEA that is expensive to iterate and provides limited physical intuition early in the design process.
+      </p>
 
-        The GUI is still being worked on but the actual back end math is compleated and full running, 
-        able to output results for a single vessel or run a sweep through many different variables and
-        picking the best result for each step.
+      <p>
+        This project was undertaken to address that gap: I expanded an in-house layup analysis script originally written by
+        <a href="https://www.linkedin.com/in/thomas-russell-40016566/">Thomas Russell</a> into a transparent, computationally efficient
+        COPV solver capable of evaluating composite layups at the ply level, modelling progressive failure,
+        and optimising mass vs. target factor of safety. It is not intended to replace high-fidelity FEA — it is a
+        design-stage decision engine that enables rapid exploration of the design space while keeping a clear link between assumptions,
+        physics, and results.
       </p>
 
       <!-- Two asymmetric images -->
       <div class="project-image-row">
-        <img src="../assets/images/projects/COPV_Optimization/COPV_OPTIMIZATION_main_gui.jpg"
-             alt="COPV CAD"
+        <img src="../assets/images/projects/COPV_Optimization/COPV_OPTIMIZATION_gui_main.jpg"
+             alt="COPV Optimisation GUI"
              class="project-image-half project-image-tall" />
-        <img src="../assets/images/projects/COPV/COPV_packed.jpg"
-             alt="COPV Hardware"
+        <img src="../assets/images/projects/COPV_Optimization/COPV_OPTIMIZATION_sweep_plot.jpg"
+             alt="Sweep Results Plot"
              class="project-image-half" />
       </div>
 
@@ -72,114 +80,101 @@
   </section>
 
   <!-- ============================
-       DESIGN & LAYUP
+       CORE OBJECTIVE
   ============================ -->
   <section class="project-content alt slide-section">
     <div class="project-inner slide-in right">
 
-      <h2>Design &amp; Layup Architecture</h2>
+      <h2>Core Objective</h2>
 
       <p>
-        The wall structure is a multi-material laminate designed for hoop strength, thermal
-        isolation, and manufacturability using university workshop tooling, composites workshop and the teams accsess to composite materials. 
-        The baseline layup is:
+        The solver is built to answer one deceptively simple engineering question:
       </p>
 
-      <ul>
-        <li>1 × inner fibreglass ply providing thermal protection and leak resistance</li>
-        <li>11 × 0/90 carbon-fibre 3k twill plies carrying the primary hoop and axial load</li>
-        <li>1 × external carbon-fibre sleeve for abrasion resistance</li>
-        <li>Al7075-T6 threaded couplers bonded into the laminate during curing</li>
-      </ul>
+      <p style="font-size: 1.1rem; line-height: 1.7; margin-top: 10px;">
+        <strong>What is the lightest composite pressure vessel that can safely survive a specified internal pressure with a defined margin against failure?</strong>
+      </p>
 
-      
+      <p>
+        Achieving this requires more than a single stress calculation. It demands an understanding of how loads are distributed through a
+        laminate, how individual plies contribute to stiffness and strength, how failure initiates, and how damage propagates as pressure increases.
+        The solver explicitly addresses each of these aspects and outputs not only an “answer”, but the reasoning behind it.
+      </p>
 
-      <!-- Card-style row like the screenshot -->
+      <!-- Card-style row -->
       <div class="project-card-row">
         <article class="project-card">
-          <img src="../assets/images/projects/COPV/COPV_fibers.jpg"
-               alt="Layup Architecture"
+          <img src="../assets/images/projects/COPV_Optimization/COPV_OPTIMIZATION_config.jpg"
+               alt="Config Driven Workflow"
                class="project-card-image" />
-          <h3 class="project-card-title">LAYUP ARCHITECTURE</h3>
+          <h3 class="project-card-title">PHYSICS-DRIVEN</h3>
           <p class="project-card-text">
-            Fibreglass liner, 11 structural carbon plies and an external sleeve tuned for hoop and axial loads.
+            Transparent modelling built around ply-level behaviour and failure progression — not opaque burst-margin rules.
           </p>
         </article>
 
         <article class="project-card">
-          <img src="../assets/images/projects/COPV/COPV_couplers.jpg"
-               alt="Coupler Interfaces"
+          <img src="../assets/images/projects/COPV_Optimization/COPV_OPTIMIZATION_results_table.jpg"
+               alt="Ranked Output Table"
                class="project-card-image" />
-          <h3 class="project-card-title">COUPLER INTERFACES</h3>
+          <h3 class="project-card-title">MASS-OPTIMISED</h3>
           <p class="project-card-text">
-            Al7075-T6 couplers bonded into the laminate transfer load to the injector and nozzle.
+            Finds the minimum-mass layup meeting a target factor of safety, with constraints aligned to real manufacturing.
           </p>
         </article>
 
         <article class="project-card">
-          <img src="../assets/images/projects/COPV/COPV_mini_copv_internal.jpg"
-               alt="Modular Sections"
+          <img src="../assets/images/projects/COPV_Optimization/COPV_OPTIMIZATION_layup_plot.jpg"
+               alt="Visualisation"
                class="project-card-image" />
-          <h3 class="project-card-title">THERMAL BARRIER</h3>
+          <h3 class="project-card-title">DESIGN INSIGHT</h3>
           <p class="project-card-text">
-            Internal fiber glass heat protective layer
+            Outputs failure initiation pressure, failure order, and redundancy — not just a single pass/fail number.
           </p>
         </article>
       </div>
-      
 
-      <p></p>
-      <p>
-        the chamber is constructed as one monolithic piece to maximise composite stregnth with bonded couplers at each end to interface with the injector and nozzle. 
-        The internal fibreglass layer acts as a thermal barrier and sacriffical  layer to prevent the high combustion temperatures from degrading the carbon fibre resin matrix.
-        while the external sleeve protects against handling damage during assembly and transport. 
-
-      </p>
     </div>
   </section>
 
   <!-- ============================
-       MANUFACTURING DEVELOPMENT
+       MODELLING APPROACH
   ============================ -->
   <section class="project-content slide-section">
     <div class="project-inner slide-in">
 
-      <h2>Manufacturing Development &amp; Process</h2>
+      <h2>Structural &amp; Material Modelling Approach</h2>
 
       <p>
-        Developing a repeatable manufacturing method for a Type-V combustion chamber required several
-        iterations. I progressed through four main prototype approaches, starting with simple
-        heatshrink-only consolidation and evolving towards a full vacuum-bagged, heat-treated process
-        using Technirez R2600 / H2409 high-temperature resin.
+        At the heart of the solver is a through-thickness representation of the vessel wall. The vessel is modelled as a cylindrical pressure
+        structure consisting of an optional inner liner and an externally wrapped composite laminate. Each ply is defined by its material system,
+        thickness, and fibre orientation angle, allowing arbitrary stacking sequences to be constructed programmatically.
       </p>
 
       <p>
-        Early tubes used a fibreglass wet layup with heatshrink consolidation,
-        which caused fibre wrinkling and resin pooling. Doughnut-style vacuum bagging improved
-        cosmetic finish but produced soft, leaking laminates. Through later attempts I converged on a
-        hybrid process: vacuum-bagged fibreglass liner, carbon fibre overwrap, and controlled
-        heatshrink compression.
+        The inner liner is treated as a first-class structural component rather than a simplifying assumption. Depending on material
+        choice and thickness, the liner may carry a meaningful fraction of axial and hoop load — particularly at lower pressures before the composite
+        plies fully engage. This is especially relevant for combustion chambers, where a liner may also serve thermal and sealing functions.
+        By modelling the liner explicitly, the solver captures evolving load-sharing behaviour between liner and overwrap as pressure increases.
       </p>
 
       <p>
-        This informed the final large-scale workflow involving proper mandrel prep, Resin Pre-Coat
-        (RPC) bonding of aluminium couplers, a staged composite layup, and a multi-step thermal cure
-        out to 200&nbsp;°C.
+        Material behaviour is parameterised using elastic properties and strength limits appropriate to each system. While the solver remains intentionally
+        efficient, it preserves enough fidelity to distinguish fibre-dominated and matrix-dominated behaviour through orientation-dependent stress evaluation.
       </p>
 
       <!-- Big + two small stacked -->
       <div class="project-media-split">
         <div class="project-media-main">
-          <img src="../assets/images/projects/COPV/COPV_couplers.jpg"
-               alt="Full COPV Layup"
-               />
+          <img src="../assets/images/projects/COPV_Optimization/COPV_OPTIMIZATION_architecture.jpg"
+               alt="Solver Architecture Diagram" />
         </div>
         <div class="project-media-column">
-          <img src="../assets/images/projects/COPV/COPV_heat_shrink.jpg"
-               alt="Vacuum Bagged"
+          <img src="../assets/images/projects/COPV_Optimization/COPV_OPTIMIZATION_liner_loadshare.jpg"
+               alt="Liner Load Sharing"
                class="project-media-small" />
-          <img src="../assets/images/projects/COPV/COPV_reefing.jpg"
-               alt="Heat Treatment"
+          <img src="../assets/images/projects/COPV_Optimization/COPV_OPTIMIZATION_ply_stresses.jpg"
+               alt="Ply Stress Resolution"
                class="project-media-small" />
         </div>
       </div>
@@ -188,89 +183,251 @@
   </section>
 
   <!-- ============================
-       STRUCTURAL PERFORMANCE
+       STRESS EVALUATION
   ============================ -->
   <section class="project-content alt slide-section">
     <div class="project-inner slide-in right">
 
-      <h2>Structural Performance</h2>
+      <h2>Stress Evaluation &amp; Load Distribution</h2>
 
       <p>
-        The chamber wall was analysed using ANSYS (ACP + Static
-        Structural). Ply-level orthotropic modelling confirmed that the laminate maintains a
-        Factor of Safety above 3 at peak operating pressure. Interface stresses at
-        the couplers were examined to ensure the preferred failure mode is thread shear rather than
-        COPV rupture.
+        For a given internal pressure, the solver computes global hoop and axial loading and resolves these into ply-level stress states based on each
+        ply’s orientation and material properties. This explicitly captures the structural reality that:
       </p>
+
+      <ul>
+        <li><strong>0° plies</strong> primarily contribute axial stiffness and axial load capacity</li>
+        <li><strong>90° plies</strong> dominate hoop resistance</li>
+        <li><strong>±45° plies</strong> are critical for shear transfer, load redistribution, and damage tolerance</li>
+      </ul>
 
       <p>
-        Sub-scale burst tests closely matched simulation predictions and validated the manufacturing
-        approach, shrink-tape consolidation, and R2600 resin cure schedule. Full-scale proof testing
-        will confirm the chamber is leak-tight and structurally sound to 1.5× MEOP, this is currently in progress.
+        Rather than averaging stresses across the laminate, each ply is evaluated individually. This is a critical distinction: COPV failure is almost
+        always initiated by the overstressing of a specific subset of plies, not uniform material failure through the entire thickness.
       </p>
 
-      <!-- Side-by-side FEA style -->
+    
+
       <div class="project-image-row">
-        <img src="../assets/images/projects/COPV/COPV_MKIII_convergence.jpg"
-             alt="Hoop Stress"
+        <img src="../assets/images/projects/COPV_Optimization/COPV_OPTIMIZATION_angle_roles.jpg"
+             alt="Role of Ply Angles"
              class="project-image-half" />
-        <img src="../assets/images/projects/COPV/COPV_hydro_burst.jpg"
-             alt="Interface Detail"
+        <img src="../assets/images/projects/COPV_Optimization/COPV_OPTIMIZATION_failure_hotspots.jpg"
+             alt="Failure Initiation Hotspots"
              class="project-image-half project-image-tall" />
       </div>
 
     </div>
   </section>
 
-  <!--junk commit-->
   <!-- ============================
-       TESTING & VALIDATION
+       PROGRESSIVE FAILURE
   ============================ -->
   <section class="project-content slide-section">
     <div class="project-inner slide-in">
 
-      <h2>Testing &amp; Validation</h2>
+      <h2>Progressive Failure Modelling</h2>
 
-      <p>A full validation program was completed, including:</p>
+      <p>
+        The defining feature of this project is its implementation of <strong>progressive failure analysis</strong>.
+        In real composite pressure vessels, failure does not occur instantaneously when the first ply reaches a strength limit.
+        Instead, damage initiates locally, stiffness is reduced, and load redistributes to neighbouring plies. This continues incrementally until the
+        remaining structure can no longer sustain the applied load.
+      </p>
+
+      <p>
+        The solver captures this behaviour explicitly. Internal pressure is increased in controlled increments. At each increment, every ply is evaluated
+        against its failure criterion. When a ply fails, its stiffness contribution is removed or degraded, and subsequent increments reflect physically
+        realistic redistribution of load.
+      </p>
+
+      <p>
+        This produces outputs that simpler approaches cannot:
+      </p>
 
       <ul>
-        <li>Laminate coupon tensile &amp; flexural testing, to try approximate material properties for ANSYS validation and to prove the epoxy shear strength will substantially be able to withstand the axial loading  </li>
-        <li>60 mm sub-scale COPV hydrostatic burst tests validated the manufacturing process and worked to prove that acp results closley matched the experimental results</li>
-        <li>Full-scale chamber hydrostatic proof testing to 1.5× MEOP - currently in progress</li>
+        <li><strong>Failure initiation pressure</strong> (when damage begins)</li>
+        <li><strong>Failure sequence</strong> (which plies fail first and why)</li>
+        <li><strong>Damage accumulation behaviour</strong> (stable progression vs brittle collapse)</li>
+        <li><strong>Structural redundancy</strong> (how well the laminate tolerates local failure)</li>
       </ul>
 
-      <!-- Testing cards row -->
+      <p>
+        Two layups can appear equivalent when judged only by ultimate burst pressure, yet behave radically differently once progressive damage is considered.
+        This is exactly the kind of nuance that matters when trying to reduce mass safely.
+      </p>
+
+
+
+      
+
+      <!-- Cards row -->
       <div class="project-card-row">
         <article class="project-card">
-          <img src="../assets/images/projects/COPV/COPV_tensile_coupons.jpg"
-               alt="Coupon Testing"
+          <img src="../assets/images/projects/COPV_Optimization/COPV_OPTIMIZATION_failure_index.jpg"
+               alt="Failure Index"
                class="project-card-image" />
-          <h3 class="project-card-title">COUPON TESTING</h3>
+          <h3 class="project-card-title">FAILURE INITIATION</h3>
           <p class="project-card-text">
-            Flat laminate coupons characterised the strength and stiffness of the CF and FG systems.
+            Identifies the first-ply failures and the pressure levels where damage begins — not just the final burst point.
           </p>
         </article>
 
         <article class="project-card">
-          <img src="../assets/images/projects/COPV/COPV_hydro_burst.jpg"
-               alt="Sub-scale Burst"
+          <img src="../assets/images/projects/COPV_Optimization/COPV_OPTIMIZATION_event_count.jpg"
+               alt="Event Count"
                class="project-card-image" />
-          <h3 class="project-card-title">SUB-SCALE BURSTS</h3>
+          <h3 class="project-card-title">FAILURE SEQUENCE</h3>
           <p class="project-card-text">
-            60&nbsp;mm COPVs were hydro-tested to burst to validate analytical sizing and FEA.
+            Tracks failure order and the structural “story” of the layup as stiffness degrades and load redistributes.
           </p>
         </article>
 
         <article class="project-card">
-          <img src="../assets/images/projects/COPV/COPV_full_scale.jpg"
-               alt="Full-Scale Proof"
+          <img src="../assets/images/projects/COPV_Optimization/COPV_OPTIMIZATION_stiffness_drop.jpg"
+               alt="Stiffness Degradation"
                class="project-card-image" />
-          <h3 class="project-card-title">FULL-SCALE PROOF</h3>
+          <h3 class="project-card-title">LOAD REDISTRIBUTION</h3>
           <p class="project-card-text">
-            The assembled chamber will be taken to 1.5× MEOP to confirm leak-tightness and margin.
+            Reveals brittle layups via rapid stiffness loss vs robust laminates with gradual damage accumulation.
           </p>
         </article>
       </div>
+
+    </div>
+  </section>
+
+  <!-- ============================
+       OPTIMISATION STRATEGY
+  ============================ -->
+  <section class="project-content alt slide-section">
+    <div class="project-inner slide-in right">
+
+      <h2>Optimisation Strategy</h2>
+
+      <p>
+        On top of the structural solver sits an optimisation framework designed to efficiently search the design space.
+        Rather than brute-forcing every possible layup, the optimiser uses a <strong>binary search strategy</strong> to determine the
+        minimum number of plies required to meet a specified factor of safety.
+      </p>
+
+      <p>
+        For each candidate layup size, the solver evaluates whether the vessel survives the target pressure without unacceptable failure progression.
+        Mass is computed directly from ply count, thickness, and material density — ensuring optimisation decisions are grounded in physical reality.
+      </p>
+
+      <p>
+        This approach converges quickly while remaining robust to non-linearities introduced by progressive failure. It also enables fast parametric sweeps
+        across pressure, diameter, material systems, liner thickness, and angle distributions with minimal computational overhead.
+      </p>
+
+      <div class="project-image-row">
+        <img src="../assets/images/projects/COPV_Optimization/COPV_OPTIMIZATION_binary_search.jpg"
+             alt="Binary Search Optimiser"
+             class="project-image-half" />
+        <img src="../assets/images/projects/COPV_Optimization/COPV_OPTIMIZATION_bruteforce.jpg"
+             alt="Bruteforce Validation"
+             class="project-image-half project-image-tall" />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================
+       OUTPUTS & INSIGHT
+  ============================ -->
+  <section class="project-content slide-section">
+    <div class="project-inner slide-in">
+
+      <h2>Outputs &amp; Design Insight</h2>
+
+      <p>
+        The solver produces structured outputs intended for both human interpretation and downstream automation. These include mass vs factor-of-safety curves,
+        optimal layup configurations, and detailed failure progression histories. This shifts decision-making away from simple pass/fail checks and toward
+        informed design trade-offs.
+      </p>
+
+      <p>
+        Importantly, the solver helps explain <em>why</em> a layup performs well or poorly. Poor angle distributions reveal themselves through early failures
+        and rapid stiffness degradation, while well-balanced laminates demonstrate gradual damage accumulation and stable load redistribution. This feedback is
+        invaluable when iterating under tight time constraints.
+      </p>
+
+      <div class="plot-embed">
+        <iframe
+          src="../assets/interactive/copv_sweep_plot.html"
+          title="COPV Sweep Run Plot"
+          loading="lazy"
+          frameborder="0"
+          scrolling="no"
+          style="width:100%; height:80vh; min-height:650px; border:0; display:block;">
+        </iframe>
+      </div>
+
+        <div class="project-media-column">
+          <img src="../assets/images/projects/COPV_Optimization/COPV_OPTIMIZATION_mass_vs_fos.jpg"
+               alt="Mass vs FOS"
+               class="project-media-small" />
+          <img src="../assets/images/projects/COPV_Optimization/COPV_OPTIMIZATION_output_json.jpg"
+               alt="Structured Output JSON"
+               class="project-media-small" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================
+       ENGINEERING IMPACT
+  ============================ -->
+  <section class="project-content alt slide-section">
+    <div class="project-inner slide-in right">
+
+      <h2>Engineering Impact</h2>
+
+      <p>
+        The practical impact of this project lies in reducing uncertainty early in the design process. By providing fast, physically grounded predictions of COPV
+        behaviour, the solver enables engineers to pursue mass reduction while maintaining confidence in structural integrity.
+      </p>
+
+      <ul>
+        <li>Rapid exploration of the design space without relying on time-intensive FEA for every iteration</li>
+        <li>Improved intuition around laminate behaviour through failure sequence and load redistribution outputs</li>
+        <li>Safer designs by highlighting brittle failure modes that might otherwise be overlooked</li>
+        <li>Better use of manufacturing resources by narrowing down to the highest-quality candidates before validation</li>
+      </ul>
+
+      <p>
+        In a propulsion context, this translates directly into performance: lower structural mass improves payload capability and propulsion efficiency,
+        while higher confidence in failure behaviour improves safety and reduces late-stage design churn.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ============================
+       FUTURE DEVELOPMENT
+  ============================ -->
+  <section class="project-content slide-section">
+    <div class="project-inner slide-in">
+
+      <h2>Future Development</h2>
+
+      <p>
+        The solver architecture has been designed to support expansion as test data and requirements evolve. Planned extensions include:
+      </p>
+
+      <ul>
+        <li>More advanced failure criteria and stiffness degradation models</li>
+        <li>Thermal-structural coupling to account for elevated operating temperatures in combustion chamber applications</li>
+        <li>Geometric extensions: domes/bulkheads, thickness variation along length, and improved end-condition modelling</li>
+        <li>Experimental correlation and calibration using burst/proof test data to refine material parameters and failure thresholds</li>
+      </ul>
+
+      <p>
+        The long-term aim is a tool that bridges the gap between analytical theory and full numerical simulation — fast enough for early optimisation,
+        but grounded enough to earn trust when the design stakes are high.
+      </p>
 
     </div>
   </section>
@@ -284,39 +441,16 @@
       <h2>Conclusion</h2>
 
       <p>
-        The Solaris MkIII composite combustion chamber represents a significant advance in the team's
-        capability. The Type-V COPV architecture delivers high structural performance with minimal
-        mass, while the manufacturing workflow developed for this project forms the basis for future
-        high-pressure propulsion hardware.
-        <br><br>    
-        This was a huge learning experience for me as a propulsion engineer, getting to grips with composite design, manufacturing and testing. 
-        Leading the development of the first all-composite combustion chamber for the team was a challenging but rewarding experience, 
-        and I am proud of the final result which I believe will set a new standard for student rocketry projects.
+        This project represents a shift away from black-box structural analysis toward a transparent, physics-driven design methodology.
+        It treats composite pressure vessels not as monolithic components, but as evolving structures whose behaviour can be understood, predicted, and optimised.
         <br><br>
-        
+        By combining progressive failure modelling with efficient optimisation, the solver enables smarter engineering decisions at the stage where they matter most.
+        It stands as both a practical design tool for propulsion hardware and a demonstration of rigorous structural engineering thinking applied to real constraints.
       </p>
 
-      <!-- Big closing image -->
-      <!-- Big closing image -->
-      <img src="../assets/images/projects/COPV/solaris_chamber.jpg"
-          alt="COPV Installed"
+      <img src="../assets/images/projects/COPV_Optimization/COPV_OPTIMIZATION_main_gui.jpg"
+          alt="COPV Optimiser Closing"
           class="project-image-large" />
-      
-
-      <br><br><br><br>
-      <p>
-        Some key takeways from this project were the importance of iterative prototyping and testing to refine manufacturing processes,
-        as well as the need to balance theoretical design with practical considerations like manufacturability and assembly. But most importantly, 
-        the importance of properly machining parts and hitting critical tolerances. 
-        unfurtunatly due to time constraints we were unable to machine the couplers to the required tolerances which led to some issues during assembly and a rapid unscheduled disassembly after proof testing at the Airborne test site
-        Overall, this project has significantly expanded my skills and knowledge in propulsion engineering and composite materials.
-      </p>
-      <br><br><br>
-      <video class="project-video-large" controls>
-        <source src="../assets/videos/Projects/COPV/COPV_HotfireAllAngles.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-
 
     </div>
   </section>
