@@ -111,6 +111,7 @@
   flex-direction: column;
   background: #f8fafc;
   border-radius: 8px;
+  border: 1px solid rgba(12, 61, 82, 0.15);
   overflow: hidden;
   text-decoration: none;
   color: inherit;

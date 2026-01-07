@@ -25,7 +25,7 @@
        HERO
   ============================ -->
   <section class="project-hero slide-section"
-           style="background-image: url('../assets/images/projects/Workbench/workbench_hero.jpg');">
+           style="background-image: url('../assets/images/projects/PDT_Workbench/final_working_drawing.jpg');">
     <div class="project-hero-content slide-in">
       <h1>Heavy-Duty Mobile Workbench</h1>
       <p>Year 11 Product Design — full folio → concept selection → build → evaluation</p>
@@ -52,7 +52,7 @@
         so small parts and bulky tools can be stored separately. A key feature is a replaceable top system:
         the bench is built to take real abuse, but the wear surfaces are designed to be swapped when damaged.
       </p>
-
+<!--
       <div class="project-image-row">
         <img src="../assets/images/projects/Workbench/workbench_final_1.jpg"
              alt="Workbench Finished (Angle)"
@@ -61,6 +61,17 @@
              alt="Workbench Finished (Front)"
              class="project-image-half" />
       </div>
+-->
+
+
+      <a class="btn" href="/assets/pdfs/Workbench_Folio.pdf" target="_blank" rel="noopener">
+        View Workbench Folio (PDF)
+      </a>
+      <a class="btn btn-secondary" href="/assets/pdfs/Workbench_Folio.pdf" download>
+        Download
+      </a>
+
+
 
     </div>
   </section>
@@ -164,7 +175,7 @@
         The design priority was durability: the bench must resist sudden impacts (hammer strikes, dropped tools,
         general workshop abuse) and remain safe and usable over extended periods.
       </p>
-
+<!--
       <div class="project-card-row">
         <article class="project-card">
           <img src="../assets/images/projects/Workbench/feature_light.jpg"
@@ -201,7 +212,7 @@
         Safety and ergonomics were built into the brief: rounded corners, fully sanded surfaces, and an ergonomic
         height so the bench can be used for long sessions without discomfort.
       </p>
-
+    -->
     </div>
   </section>
 
@@ -219,7 +230,7 @@
         <strong>±5 mm</strong> dimensional tolerance with correctly fitted, strong joints.
       </p>
 
-      <img src="../assets/images/projects/Workbench/quality_finish.jpg"
+      <img src="../assets/images/projects/PDT_Workbench/square_edge.jpg"
            alt="Finish and edge quality"
            class="project-image-large" />
 
@@ -241,10 +252,10 @@
       </p>
 
       <div class="project-image-row">
-        <img src="../assets/images/projects/Workbench/design_option_1.jpg"
+        <img src="../assets/images/projects/PDT_Workbench/design_option_1.jpg"
              alt="Design Option 1"
              class="project-image-half" />
-        <img src="../assets/images/projects/Workbench/design_option_2.jpg"
+        <img src="../assets/images/projects/PDT_Workbench/design_option_2.jpg"
              alt="Design Option 2"
              class="project-image-half" />
       </div>
@@ -293,15 +304,15 @@
 
       <div class="project-media-split">
         <div class="project-media-main">
-          <img src="../assets/images/projects/Workbench/preferred_option_annotated.jpg"
+          <img src="../assets/images/projects/PDT_Workbench/design_annotations.jpg"
                alt="Preferred design annotated"
                />
         </div>
         <div class="project-media-column">
-          <img src="../assets/images/projects/Workbench/detail_top_brim.jpg"
+          <img src="../assets/images/projects/PDT_Workbench/hardwood_brim.jpg"
                alt="Hardwood brim detail"
                class="project-media-small" />
-          <img src="../assets/images/projects/Workbench/detail_drawers.jpg"
+          <img src="../assets/images/projects/PDT_Workbench/drawer_layout.jpg"
                alt="Drawer layout detail"
                class="project-media-small" />
         </div>
@@ -329,9 +340,191 @@
         and drawer parts (fronts + internal pieces), ensuring the build could be completed inside budget.
       </p>
 
-      <img src="../assets/images/projects/Workbench/cutting_list.jpg"
-           alt="Materials cutting list"
-           class="project-image-large" />
+            <!-- Transparent cutting-list table (paste anywhere in your HTML) -->
+      <style>
+        .table-wrap {
+          width: 100%;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+        }
+
+        table.cutting-table {
+          width: 100%;
+          min-width: 860px;              /* keeps columns readable on small screens */
+          border-collapse: collapse;
+          background: transparent;       /* transparent table */
+          color: inherit;                /* inherits your page text color */
+          font: inherit;
+        }
+
+        .cutting-table th,
+        .cutting-table td {
+          border: 1px solid rgba(255, 255, 255, 0.18);  /* subtle border */
+          padding: 10px 12px;
+          vertical-align: top;
+        }
+
+        .cutting-table thead th {
+          background: rgba(255, 255, 255, 0.06);        /* slightly tinted header */
+          backdrop-filter: blur(6px);                   /* nice “glass” effect (optional) */
+          -webkit-backdrop-filter: blur(6px);
+          text-align: left;
+          font-weight: 700;
+          white-space: nowrap;
+        }
+
+        .cutting-table tbody tr:hover {
+          background: rgba(255, 255, 255, 0.04);
+        }
+
+        .cutting-table td.num,
+        .cutting-table th.num {
+          text-align: right;
+          white-space: nowrap;
+        }
+
+        .cutting-table td.part {
+          font-weight: 600;
+        }
+      </style>
+
+      <div class="table-wrap">
+        <table class="cutting-table" aria-label="Cutting list">
+          <thead>
+            <tr>
+              <th>part</th>
+              <th>material</th>
+              <th class="num">Length (mm)</th>
+              <th class="num">Width (mm)</th>
+              <th class="num">Hight (mm)</th>
+              <th class="num">amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="part">MDF top</td>
+              <td>MDF</td>
+              <td class="num">1950</td>
+              <td class="num">760</td>
+              <td class="num">25</td>
+              <td class="num">1</td>
+            </tr>
+            <tr>
+              <td class="part">Long top side</td>
+              <td>...</td>
+              <td class="num">1970</td>
+              <td class="num">10</td>
+              <td class="num">65</td>
+              <td class="num">2</td>
+            </tr>
+            <tr>
+              <td class="part">Short top side</td>
+              <td>...</td>
+              <td class="num">780</td>
+              <td class="num">10</td>
+              <td class="num">65</td>
+              <td class="num">2</td>
+            </tr>
+            <tr>
+              <td class="part">Legs</td>
+              <td>Pine</td>
+              <td class="num">850</td>
+              <td class="num">70</td>
+              <td class="num">70</td>
+              <td class="num">6</td>
+            </tr>
+            <tr>
+              <td class="part">Top supports</td>
+              <td>Pine</td>
+              <td class="num">850</td>
+              <td class="num">620</td>
+              <td class="num">20</td>
+              <td class="num">2</td>
+            </tr>
+            <tr>
+              <td class="part">Shelfs</td>
+              <td>Pine</td>
+              <td class="num">760</td>
+              <td class="num">975</td>
+              <td class="num">20</td>
+              <td class="num">2</td>
+            </tr>
+            <tr>
+              <td class="part">Small drawer front</td>
+              <td>Pine</td>
+              <td class="num">850</td>
+              <td class="num">20</td>
+              <td class="num">150</td>
+              <td class="num">2</td>
+            </tr>
+            <tr>
+              <td class="part">Medium drawer front</td>
+              <td>Pine</td>
+              <td class="num">850</td>
+              <td class="num">20</td>
+              <td class="num">190</td>
+              <td class="num">4</td>
+            </tr>
+            <tr>
+              <td class="part">Large drawer front</td>
+              <td>Pine</td>
+              <td class="num">850</td>
+              <td class="num">20</td>
+              <td class="num">270</td>
+              <td class="num">4</td>
+            </tr>
+            <tr>
+              <td class="part">Small drawer large piece</td>
+              <td>Pine</td>
+              <td class="num">820</td>
+              <td class="num">20</td>
+              <td class="num">150</td>
+              <td class="num">4</td>
+            </tr>
+            <tr>
+              <td class="part">Small drawer small piece</td>
+              <td>Pine</td>
+              <td class="num">330</td>
+              <td class="num">20</td>
+              <td class="num">150</td>
+              <td class="num">4</td>
+            </tr>
+            <tr>
+              <td class="part">Medium drawer large piece</td>
+              <td>Pine</td>
+              <td class="num">820</td>
+              <td class="num">20</td>
+              <td class="num">190</td>
+              <td class="num">8</td>
+            </tr>
+            <tr>
+              <td class="part">Medium drawer small piece</td>
+              <td>Pine</td>
+              <td class="num">330</td>
+              <td class="num">20</td>
+              <td class="num">190</td>
+              <td class="num">8</td>
+            </tr>
+            <tr>
+              <td class="part">Large drawer large piece</td>
+              <td>Pine</td>
+              <td class="num">820</td>
+              <td class="num">20</td>
+              <td class="num">270</td>
+              <td class="num">4</td>
+            </tr>
+            <tr>
+              <td class="part">Large drawer small piece</td>
+              <td>Pine</td>
+              <td class="num">330</td>
+              <td class="num">20</td>
+              <td class="num">270</td>
+              <td class="num">4</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br>
 
       <p>
         The sequence plan included the full workflow: measuring and marking, cutting, domino joinery,
@@ -364,7 +557,7 @@
         <li>Allow drill bits to cool before handling</li>
       </ul>
 
-      <img src="../assets/images/projects/Workbench/risk_assessment.jpg"
+      <img src="../assets/images/projects/PDT_Workbench/RA_table.jpg"
            alt="Risk assessment table"
            class="project-image-large" />
 
@@ -392,10 +585,10 @@
       </ul>
 
       <div class="project-image-row">
-        <img src="../assets/images/projects/Workbench/process_1.jpg"
+        <img src="../assets/images/projects/PDT_Workbench/production_process_1.jpg"
              alt="Production process"
              class="project-image-half" />
-        <img src="../assets/images/projects/Workbench/process_2.jpg"
+        <img src="../assets/images/projects/PDT_Workbench/production_process_2.jpg"
              alt="Production process"
              class="project-image-half" />
       </div>
@@ -423,11 +616,11 @@
         <li><strong>Sustainability:</strong> low waste and offcut reuse; end-user impressed by minimal wastage</li>
         <li><strong>Improvements noted:</strong> reduce slight creaking and increase durability further</li>
       </ul>
-
+<!--
       <img src="../assets/images/projects/Workbench/workbench_in_garage.jpg"
            alt="Workbench installed in garage"
            class="project-image-large" />
-
+    -->
     </div>
   </section>
 
@@ -450,7 +643,7 @@
         <li>Replace the MDF top / hardwood brim when wear becomes significant</li>
       </ul>
 
-      <img src="../assets/images/projects/Workbench/care_label.jpg"
+      <img src="../assets/images/projects/PDT_Workbench/care_lable.jpg"
            alt="Care label"
            class="project-image-large" />
 
@@ -471,11 +664,11 @@
         and criteria-based validation. The final bench delivered the core goals: a strong work surface,
         organised storage, and maintainable wear components designed for long-term workshop use.
       </p>
-
+<!--
       <img src="../assets/images/projects/Workbench/workbench_final_close.jpg"
            alt="Final close-up"
            class="project-image-large" />
-
+-->
     </div>
   </section>
 

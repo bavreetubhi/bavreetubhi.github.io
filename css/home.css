@@ -285,6 +285,14 @@
   font-weight: 400;
 }
 
+.other-projects-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+
+
 /* ===== CONTACT SECTION ===== */
 
 .contact-section {
@@ -345,6 +353,7 @@
   color: #333;
   line-height: 1.6;
 }
+
 
 /* ===== RESPONSIVE ===== */
 
